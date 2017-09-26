@@ -1,0 +1,412 @@
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=latex 2007.4.16)  17 APR 2007 15:28
+entering extended mode
+**designers.tex
+(designers.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+("C:\Program Files\MiKTeX 2.5\tex\latex\prosper\prosper.cls"
+Document Class: prosper 2001/07/17, v. 1.5
+(c) 2000-2001 Frederic Goualard, EPFL, Switzerland
+ and Peter Møller Neergaard, Boston Univ., USA
+CVSId: $Id: prosper.cls,v 1.24 2002/11/25 14:35:50 exupery Exp $
+("C:\Program Files\MiKTeX 2.5\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2005/12/29 v1.2 MiKTeX 'graphics' configuration
+)
+Package graphics Info: Driver file: dvips.def on input line 90.
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\seminar.cls"
+Document Class: seminar 1997/10/13, 1.4
+Document Style: `seminar' v1.4 <1997/10/13> (tvz)
+\slidewidth=\dimen104
+\slideheight=\dimen105
+\footheight=\dimen106
+("C:\Program Files\MiKTeX 2.5\tex\latex\base\article.cls"
+Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.5\tex\latex\base\leqno.clo"
+File: leqno.clo 1998/08/17 v1.1c Standard LaTeX option (left equation numbers)
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\base\size10.clo"
+File: size10.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen107
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\sem-page.sty")
+\before@document=\toks15
+\after@document=\toks16
+\before@enddocument=\toks17
+\c@slide=\count87
+\slide@count=\count88
+\@slidebox=\box26
+\not@slidebox=\box27
+\slide@hook=\toks18
+\after@slide=\toks19
+\slide@footins=\insert233
+\slide@listdepth=\count89
+\saved@specials=\box28
+\before@newslide=\toks20
+\after@slidepage=\toks21
+\slidesep=\skip43
+\c@note=\count90
+\slideframewidth=\dimen108
+\slideframesep=\dimen109
+\semin=\dimen110
+\semcm=\dimen111
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\semcolor.sty"
+Style Option: `semcolor' for doc style `seminar' 1.01 <2004/05/18> (tvz)
+File: semcolor.sty 2004/05/18 v1.01 (tvz)
+("C:\Program Files\MiKTeX 2.5\tex\latex\pstricks\pstricks.sty"
+Package: pstricks 2006/08/10 v0.32 LaTeX wrapper for `PSTricks' (RN,HV)
+
+("C:\Program Files\MiKTeX 2.5\tex\generic\pstricks\pstricks.tex"
+`PSTricks' v1.15  <2006/12/22> (tvz)
+\pst@dima=\dimen112
+\pst@dimb=\dimen113
+\pst@dimc=\dimen114
+\pst@dimd=\dimen115
+\pst@dimg=\dimen116
+\pst@dimh=\dimen117
+\pst@hbox=\box29
+\pst@boxg=\box30
+\pst@cnta=\count91
+\pst@cntb=\count92
+\pst@cntc=\count93
+\pst@cntd=\count94
+\pst@cntg=\count95
+\pst@cnth=\count96
+\pst@toks=\toks22
+("C:\Program Files\MiKTeX 2.5\tex\generic\pstricks\pstricks.con")
+\psunit=\dimen118
+\psxunit=\dimen119
+\psyunit=\dimen120
+\pslinewidth=\dimen121
+\pst@customdefs=\toks23
+\pslinearc=\dimen122
+\everypsbox=\toks24
+\psframesep=\dimen123
+\pslabelsep=\dimen124
+\psk@shift=\dimen125
+\pst@shift=\dimen126
+\theoverlaybox=\box31
+)
+File: pstricks.tex 2006/12/22 v1.15 `PSTricks' (tvz)
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\00miktex\color.cfg"
+File: color.cfg 2005/12/29 v1.1 MiKTeX 'color' configuration
+)
+Package xcolor Info: Package option `override' ignored on input line 216.
+Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)))
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\semlayer.sty"
+\@@slidebox=\box32
+\c@overlay=\count97
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\seminar.bug")
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\seminar.bg2"
+seminar.bg2: various corrections for the Seminar document class
+added since seminar.bug and few add-ons for overlays
+(Version 2.1 of <May 31, 2002> (D.G.))
+\Seminar@SlideBoxBackground=\box33
+) ("C:\Program Files\MiKTeX 2.5\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2007/01/18 v6.75o Hypertext links for LaTeX
+\@linkdim=\dimen127
+\Hy@linkcounter=\count98
+\Hy@pagecounter=\count99
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2007/01/18 v6.75o Hyperref: PDFDocEncoding definition (HO)
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2006/02/14 v1.1 MiKTeX 'hyperref' configuration
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2006/08/22 v2.4 Connects package keyval with LaTeX options (
+HO)
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 2237.
+Package hyperref Info: Option `pdffitwindow' set `true' on input line 2237.
+Package hyperref Info: Option `pdfcenterwindow' set `true' on input line 2237.
+Package hyperref Info: Hyper figures OFF on input line 2287.
+Package hyperref Info: Link nesting OFF on input line 2292.
+Package hyperref Info: Hyper index ON on input line 2295.
+Package hyperref Info: Plain pages OFF on input line 2302.
+Package hyperref Info: Backreferencing OFF on input line 2307.
+
+Implicit mode ON; LaTeX internals redefined
+Package hyperref Info: Bookmarks ON on input line 2443.
+("C:\Program Files\MiKTeX 2.5\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 2598.
+\Fld@menulength=\count100
+\Field@Width=\dimen128
+\Fld@charsize=\dimen129
+\Choice@toks=\toks25
+\Field@toks=\toks26
+Package hyperref Info: Hyper figures OFF on input line 3076.
+Package hyperref Info: Link nesting OFF on input line 3081.
+Package hyperref Info: Hyper index ON on input line 3084.
+Package hyperref Info: backreferencing OFF on input line 3091.
+Package hyperref Info: Link coloring OFF on input line 3096.
+\Hy@abspage=\count101
+\c@Item=\count102
+\c@Hfootnote=\count103
+)
+*hyperref using driver hdvips*
+("C:\Program Files\MiKTeX 2.5\tex\latex\hyperref\hdvips.def"
+File: hdvips.def 2007/01/18 v6.75o Hyperref driver for dvips
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\hyperref\pdfmark.def"
+File: pdfmark.def 2007/01/18 v6.75o Hyperref definitions for pdfmark specials
+\pdf@docset=\toks27
+\pdf@box=\box34
+\pdf@toks=\toks28
+\pdf@defaulttoks=\toks29
+\Fld@listcount=\count104
+))
+\theoverlays=\box35
+\c@overlaysCount=\count105
+\c@limitOverlays=\count106
+\@tempoLimit=\count107
+\slideWidth=\skip44
+\c@trueSlideCounter=\count108
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\prosper\PPRtroispoints.sty"
+Package: PPRtroispoints 2000/04/17
+
+`Trois points' style for Prosper ---
+(c) 2000 Frederic Goualard, IRIN, France
+CVSId: $Id: PPRtroispoints.sty,v 1.3 2001/10/24 15:11:25 exupery Exp $
+ 
+("C:\Program Files\MiKTeX 2.5\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2002/01/22 v2.2d
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2001/10/25 v2.2f
+\@emptytoks=\toks30
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+))
+("C:\Program Files\MiKTeX 2.5\tex\latex\pst-grad\pst-grad.sty"
+Package: pst-grad 2004/07/15 package wrapper for pst-grad.tex (hv)
+
+("C:\Program Files\MiKTeX 2.5\tex\generic\pst-grad\pst-grad.tex"
+("C:\Program Files\MiKTeX 2.5\tex\generic\xkeyval\pst-xkey.tex"
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2006/11/18 v2.5f package option processing (HA)
+
+("C:\Program Files\MiKTeX 2.5\tex\generic\xkeyval\xkeyval.tex"
+\XKV@toks=\toks31
+\XKV@depth=\count109
+File: xkeyval.tex 2006/11/18 v2.5f key=value parser (HA)
+)))
+`pst-plot' v1.05, 2006/11/04 (tvz,dg,hv))
+File: pst-grad.tex 2006/11/04 1.05 `pst-grad' (tvz)
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\seminar\semhelv.sty"
+Style Option: `semhelv' for the `seminar' doc style 1.4 <2000/05/08> (tvz)
+Modified by Stefan (see source for details)
+LaTeX Font Info:    Font shape `OT1/helvetica/m/n' will be
+(Font)              scaled to size 8.20007pt on input line 186.
+))
+\c@item@step=\count110
+\c@overlay@page=\count111
+\c@nbAffected=\count112
+\c@savecountAffected=\count113
+) ("C:\Program Files\MiKTeX 2.5\tex\latex\pstricks\pst-node.sty"
+Package: pst-node 2006/01/01 package wrapper for pst-node.tex
+
+("C:\Program Files\MiKTeX 2.5\tex\generic\pstricks\pst-node.tex"
+ v97 patch 11, 2000/11/09
+\psrow=\count114
+\pscol=\count115
+\psmatrixcnt=\count116
+\psrowsep=\skip45
+\pscolsep=\skip46
+)
+File: pst-node.tex 2000/11/09 97 patch 11 `pst-node' (tvz)
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\pstricks\pst-tree.sty"
+Package: pst-tree 2004/07/15 package wrapper for pst-tree.tex
+
+("C:\Program Files\MiKTeX 2.5\tex\generic\pstricks\pst-tree.tex"
+ v97 patch 6, 2004/07/24
+\pstree@rootbox=\box36
+\pstree@box=\box37
+\psnodecnt=\count117
+\pstreelevel=\count118
+\pstreecnt=\count119
+\pstree@cnt=\count120
+\pstree@stop=\count121
+)
+File: pst-tree.tex 2004/07/24 97 patch 6 `pst-tree' (tvz)
+)
+("C:\Program Files\MiKTeX 2.5\tex\latex\base\latexsym.sty"
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
+) (designers.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+Package hyperref Info: Link coloring OFF on input line 34.
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\hyperref\nameref.sty"
+Package: nameref 2006/12/27 v2.28 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\oberdiek\refcount.sty"
+Package: refcount 2006/02/20 v3.0 Data extraction from references (HO)
+)
+\c@section@level=\count122
+)
+LaTeX Info: Redefining \ref on input line 34.
+LaTeX Info: Redefining \pageref on input line 34.
+ (designers.out) (designers.out)
+\@outlinefile=\write3
+LaTeX Font Info:    Font shape `OT1/helvetica/m/n' will be
+(Font)              scaled to size 14.16972pt on input line 35.
+LaTeX Font Info:    Font shape `OT1/helvetica/m/n' will be
+(Font)              scaled to size 11.80809pt on input line 35.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 35.
+ ("C:\Program Files\MiKTeX 2.5\tex\latex\psnfss\t1phv.fd"
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 35.
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/helvetica/m/it' will be
+(Font)              scaled to size 8.20007pt on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 35.
+
+("C:\Program Files\MiKTeX 2.5\tex\latex\base\ulasy.fd"
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `OT1/helvetica/m/n' will be
+(Font)              scaled to size 5.74005pt on input line 35.
+LaTeX Font Info:    Font shape `OT1/helvetica/m/n' will be
+(Font)              scaled to size 4.10004pt on input line 35.
+ [1
+
+
+]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <14.4> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 38.
+File: sims.eps Graphic file (type eps)
+ <sims.eps> [2
+
+]
+File: civilization.eps Graphic file (type eps)
+
+<civilization.eps> [3
+
+]
+File: KQ4.eps Graphic file (type eps)
+ <KQ4.eps>
+File: halflife.eps Graphic file (type eps)
+ <halflife.eps> [4
+
+]
+File: ultimaonline.eps Graphic file (type eps)
+ <ultimaonline.eps> [5
+
+]
+File: wingcommander.eps Graphic file (type eps)
+
+<wingcommander.eps> [6
+
+]
+File: easternfront.eps Graphic file (type eps)
+ <easternfront.eps> [7
+
+]
+File: commanderkeen.eps Graphic file (type eps)
+ <commanderkeen.eps>
+File: doom.eps Graphic file (type eps)
+ <doom.eps>
+[8
+
+]
+File: facade.eps Graphic file (type eps)
+ <facade.eps> [9
+
+] (designers.aux) ) 
+Here is how much of TeX's memory you used:
+ 5989 strings out of 95409
+ 74120 string characters out of 1187165
+ 157659 words of memory out of 1160335
+ 8864 multiletter control sequences out of 60000
+ 23036 words of font info for 45 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 46i,6n,41p,264b,830s stack positions out of 5000i,500n,10000p,200000b,32768s
+
+Output written on designers.dvi (9 pages, 27136 bytes).

@@ -1,0 +1,11 @@
+
+\psset{arrows=->,linewidth=0.05}
+\begin{pspicture}[showgrid=false](0,-1)(8,2)
+\begin{psmatrix}
+{\rnode{A}{\psframebox{Suspicious}}} &
+{\rnode{B}{\psframebox{Hungry}}} & {\rnode{C}{\psframebox{Grateful}}}
+\ncline{A}{B}^{\em reassure}
+\ncline{B}{C}_{\em feed}
+\end{psmatrix}
+\end{pspicture}
+

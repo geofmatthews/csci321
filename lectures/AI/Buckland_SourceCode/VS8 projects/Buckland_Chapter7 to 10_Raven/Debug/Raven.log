@@ -1,0 +1,140 @@
+﻿Build started 3/2/2011 11:38:19 AM.
+     1>Project "C:\cygwin\home\matthews\Teaching\csci321\Buckland_SourceCode\VS8 projects\Buckland_Chapter7 to 10_Raven\Raven.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating ".\Debug\Raven.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /FAs /Fa".\Debug/" /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt main.cpp Raven_Bot.cpp Raven_Game.cpp Raven_Map.cpp armory\Raven_Weapon.cpp armory\Weapon_Blaster.cpp armory\Weapon_RailGun.cpp armory\Weapon_RocketLauncher.cpp armory\Weapon_ShotGun.cpp armory\Projectile_Bolt.cpp armory\Projectile_Pellet.cpp armory\Projectile_Rocket.cpp armory\Projectile_Slug.cpp armory\Raven_Projectile.cpp ..\Common\Game\BaseGameEntity.cpp lua\Raven_Scriptor.cpp ..\Common\Game\EntityManager.cpp GraveMarkers.cpp Raven_Door.cpp Raven_UserOptions.cpp goals\Raven_Goal_Types.cpp goals\Goal_AdjustRange.cpp goals\Goal_AttackTarget.cpp goals\Goal_Explore.cpp goals\Goal_FollowPath.cpp goals\Goal_GetItem.cpp goals\Goal_HuntTarget.cpp goals\Goal_MoveToPosition.cpp goals\Goal_NegotiateDoor.cpp goals\Goal_Think.cpp goals\AttackTargetGoal_Evaluator.cpp goals\ExploreGoal_Evaluator.cpp goals\GetHealthGoal_Evaluator.cpp goals\GetWeaponGoal_Evaluator.cpp goals\Raven_Feature.cpp goals\Goal_DodgeSideToSide.cpp goals\Goal_SayPhrase.cpp goals\Goal_SeekToPosition.cpp goals\Goal_TraverseEdge.cpp goals\Goal_Wander.cpp ..\Common\fuzzy\FuzzyModule.cpp ..\Common\fuzzy\FuzzyOperators.cpp ..\Common\fuzzy\FuzzyVariable.cpp ..\Common\fuzzy\FuzzySet_LeftShoulder.cpp ..\Common\fuzzy\FuzzySet_RightShoulder.cpp ..\Common\fuzzy\FuzzySet_Singleton.cpp ..\Common\fuzzy\FuzzySet_Triangle.cpp navigation\Raven_PathPlanner.cpp Raven_SteeringBehaviors.cpp ..\Common\Messaging\MessageDispatcher.cpp Raven_SensoryMemory.cpp triggers\Trigger_HealthGiver.cpp triggers\Trigger_SoundNotify.cpp triggers\Trigger_WeaponGiver.cpp Raven_WeaponSystem.cpp Raven_TargetingSystem.cpp ..\Common\misc\Cgdi.cpp ..\Common\Time\CrudeTimer.cpp ..\Common\Debug\DebugConsole.cpp ..\Common\misc\FrameCounter.cpp ..\Common\Time\PrecisionTimer.cpp ..\Common\2D\Vector2d.cpp ..\Common\misc\WindowUtils.cpp /Zm200  
+         WindowUtils.cpp
+     1>..\Common\misc\WindowUtils.cpp(1): fatal error C1083: Cannot open include file: 'misc/WindowUtils.h': No such file or directory
+         Vector2d.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\2d\Vector2D.h(16): fatal error C1083: Cannot open include file: 'misc/utils.h': No such file or directory
+         PrecisionTimer.cpp
+     1>..\Common\Time\PrecisionTimer.cpp(1): fatal error C1083: Cannot open include file: 'Time/PrecisionTimer.h': No such file or directory
+         FrameCounter.cpp
+         DebugConsole.cpp
+     1>..\Common\Debug\DebugConsole.cpp(1): fatal error C1083: Cannot open include file: 'Debug/DebugConsole.h': No such file or directory
+         CrudeTimer.cpp
+         Cgdi.cpp
+     1>..\Common\misc\Cgdi.cpp(1): fatal error C1083: Cannot open include file: 'misc/Cgdi.h': No such file or directory
+         Raven_TargetingSystem.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_TargetingSystem.h(13): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Raven_WeaponSystem.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_WeaponSystem.h(15): fatal error C1083: Cannot open include file: '2d/vector2d.h': No such file or directory
+         Trigger_WeaponGiver.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\triggers\Trigger_WeaponGiver.h(14): fatal error C1083: Cannot open include file: 'Triggers/Trigger_Respawning.h': No such file or directory
+         Trigger_SoundNotify.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\triggers\Trigger_SoundNotify.h(17): fatal error C1083: Cannot open include file: 'Triggers/Trigger_LimitedLifetime.h': No such file or directory
+         Trigger_HealthGiver.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\triggers\Trigger_HealthGiver.h(14): fatal error C1083: Cannot open include file: 'Triggers/Trigger_Respawning.h': No such file or directory
+         Raven_SensoryMemory.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_SensoryMemory.h(15): fatal error C1083: Cannot open include file: '2d/vector2d.h': No such file or directory
+         MessageDispatcher.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\messaging\MessageDispatcher.h(18): fatal error C1083: Cannot open include file: 'Messaging/Telegram.h': No such file or directory
+         Raven_SteeringBehaviors.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_SteeringBehaviors.h(17): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Raven_PathPlanner.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\navigation\TimeSlicedGraphAlgorithms.h(22): fatal error C1083: Cannot open include file: 'graph/SparseGraph.h': No such file or directory
+         FuzzySet_Triangle.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\fuzzy\FuzzySet_Triangle.h(13): fatal error C1083: Cannot open include file: 'fuzzy/FuzzySet.h': No such file or directory
+         FuzzySet_Singleton.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\fuzzy\FuzzySet_Singleton.h(12): fatal error C1083: Cannot open include file: 'fuzzy/FuzzySet.h': No such file or directory
+         FuzzySet_RightShoulder.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\fuzzy\FuzzySet_RightShoulder.h(13): fatal error C1083: Cannot open include file: 'fuzzy/FuzzySet.h': No such file or directory
+         FuzzySet_LeftShoulder.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\fuzzy\FuzzySet_LeftShoulder.h(13): fatal error C1083: Cannot open include file: 'fuzzy/FuzzySet.h': No such file or directory
+         Generating Code...
+         Compiling...
+         FuzzyVariable.cpp
+     1>..\Common\fuzzy\FuzzyVariable.cpp(1): fatal error C1083: Cannot open include file: 'fuzzy/fuzzyvariable.h': No such file or directory
+         FuzzyOperators.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\fuzzy\FuzzyOperators.h(14): fatal error C1083: Cannot open include file: 'misc/utils.h': No such file or directory
+         FuzzyModule.cpp
+     1>..\Common\fuzzy\FuzzyModule.cpp(6): fatal error C1083: Cannot open include file: 'Fuzzy/FuzzyModule.h': No such file or directory
+         Goal_Wander.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_Wander.h(12): fatal error C1083: Cannot open include file: 'Goals/Goal.h': No such file or directory
+         Goal_TraverseEdge.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_TraverseEdge.h(5): fatal error C1083: Cannot open include file: 'Goals/Goal.h': No such file or directory
+         Goal_SeekToPosition.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_SeekToPosition.h(5): fatal error C1083: Cannot open include file: 'Goals/Goal.h': No such file or directory
+         Goal_SayPhrase.cpp
+         Goal_DodgeSideToSide.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_DodgeSideToSide.h(13): fatal error C1083: Cannot open include file: 'Goals/Goal.h': No such file or directory
+         Raven_Feature.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\../Raven_Bot.h(16): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         GetWeaponGoal_Evaluator.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\../Raven_Bot.h(16): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         GetHealthGoal_Evaluator.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\../Raven_Bot.h(16): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         ExploreGoal_Evaluator.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\../Raven_Bot.h(16): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         AttackTargetGoal_Evaluator.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\../Raven_Bot.h(16): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         Goal_Think.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_Think.h(15): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Goal_NegotiateDoor.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_NegotiateDoor.h(5): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Goal_MoveToPosition.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_MoveToPosition.h(5): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Goal_HuntTarget.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_HuntTarget.h(13): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Goal_GetItem.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_GetItem.h(5): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Goal_FollowPath.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_FollowPath.h(12): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Goal_Explore.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_Explore.h(5): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Generating Code...
+         Compiling...
+         Goal_AttackTarget.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_AttackTarget.h(13): fatal error C1083: Cannot open include file: 'Goals/Goal_Composite.h': No such file or directory
+         Goal_AdjustRange.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Goal_AdjustRange.h(13): fatal error C1083: Cannot open include file: 'goals/Goal.h': No such file or directory
+         Raven_Goal_Types.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\goals\Raven_Goal_Types.h(5): fatal error C1083: Cannot open include file: 'misc/TypeToString.h': No such file or directory
+         Raven_UserOptions.cpp
+         Raven_Door.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_Door.h(16): fatal error C1083: Cannot open include file: '2d/vector2d.h': No such file or directory
+         GraveMarkers.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\GraveMarkers.h(15): fatal error C1083: Cannot open include file: '2d/vector2d.h': No such file or directory
+         EntityManager.cpp
+     1>..\Common\Game\EntityManager.cpp(1): fatal error C1083: Cannot open include file: 'game/EntityManager.h': No such file or directory
+         Raven_Scriptor.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\lua\Raven_Scriptor.h(12): fatal error C1083: Cannot open include file: 'Script/scriptor.h': No such file or directory
+         BaseGameEntity.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\common\game\BaseGameEntity.h(17): fatal error C1083: Cannot open include file: '2D/Vector2D.h': No such file or directory
+         Raven_Projectile.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Projectile.h(15): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         Projectile_Slug.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Projectile.h(15): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         Projectile_Rocket.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Projectile.h(15): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         Projectile_Pellet.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Projectile.h(15): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         Projectile_Bolt.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Projectile.h(15): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         Weapon_ShotGun.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Weapon.h(14): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Weapon_RocketLauncher.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Weapon.h(14): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Weapon_RailGun.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Weapon.h(14): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Weapon_Blaster.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Weapon.h(14): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Raven_Weapon.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\armory\Raven_Weapon.h(14): fatal error C1083: Cannot open include file: '2d/Vector2D.h': No such file or directory
+         Raven_Map.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_Map.h(19): fatal error C1083: Cannot open include file: 'graph/SparseGraph.h': No such file or directory
+         Generating Code...
+         Compiling...
+         Raven_Game.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_Game.h(21): fatal error C1083: Cannot open include file: 'graph/SparseGraph.h': No such file or directory
+         Raven_Bot.cpp
+     1>c:\cygwin\home\matthews\teaching\csci321\buckland_sourcecode\vs8 projects\buckland_chapter7 to 10_raven\Raven_Bot.h(16): fatal error C1083: Cannot open include file: 'game/MovingEntity.h': No such file or directory
+         main.cpp
+     1>main.cpp(5): fatal error C1083: Cannot open include file: 'misc/utils.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\cygwin\home\matthews\Teaching\csci321\Buckland_SourceCode\VS8 projects\Buckland_Chapter7 to 10_Raven\Raven.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:20.75

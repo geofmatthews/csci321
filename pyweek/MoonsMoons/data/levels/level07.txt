@@ -1,0 +1,35 @@
+player 300 300
+planet 500 400 152 350 600 1 earth
+planet 1700 450 152 450 500 2 moon
+platform a 500 50 600 80 1 prkno
+platform a 230 250 300 150 2 prkno2
+platform a 300 350 230 250 3 orange
+platform a 300 350 300 400 2
+platform r earth 270 150 100 0 prkno3
+platform r earth 120 150 100 0
+platform r earth 0 150 100 0 prkno4
+platform r earth 180 150 100 0
+platform r moon 0 30 100 0
+platform r moon 60 60 100 0
+platform r moon 120 90 100 0
+platform r moon 180 120 100 0 prkno5
+platform r moon 220 130 100 0
+platform r moon 250 50 100 0 gprkno
+checkpoint 600 600
+checkpoint 1450 600
+booster a earth 90 1000
+booster p orange 50 1000
+booster p prkno2 50 1000
+booster p prkno 50 1000
+O a earth 90 90
+O p prkno 0 100
+I a earth 225
+I p prkno5 50
+eye a earth 5
+eye a earth 10
+C a earth 90 90
+C a earth 180 30
+C a earth 200 10
+eye p prkno2 50
+star 300 500
+star 140 140

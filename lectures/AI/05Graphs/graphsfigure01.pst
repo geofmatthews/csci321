@@ -1,0 +1,34 @@
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[rowsep=0.5cm,colsep=0.5cm]
+ & & \Show{Castle} \\
+ & & \Show{Keep} \\
+ & & \Show{Town Hall} & \Show{Peasants} \\
+\Show{Knights} & \Show{Barracks} & \Show{Blacksmith} & \Show{Lumber Mill} \\
+\Show{Foot Soldiers} & \Show{Archers} & \Show{Forge} & \Show{Wood} \\
+& \Show{Gunpowder} & \Show{Iron} & \Show{Arrows} \\
+& \Show{Cannons} & & \Show{Guns}
+\ncline{2,3}{1,3}
+\ncline{3,3}{2,3}
+\ncline{3,3}{4,3}
+\ncline{4,3}{5,3}
+\ncline{5,3}{6,3}
+\ncline{6,3}{7,2}
+\ncline{6,3}{7,4}
+\ncline{3,3}{3,4}
+\ncline{3,4}{4,4}
+\ncline{4,4}{5,4}
+\ncline{5,4}{6,4}
+\ncline{5,4}{5,3}
+\nccurve{5,4}{7,4}
+\ncline{3,3}{4,2}
+\ncline{4,2}{5,2}
+\ncline{4,2}{4,1}
+\ncline{4,2}{5,1}
+\ncline{6,4}{5,2}
+\ncline{6,2}{7,2}
+\ncline{6,2}{7,4}
+\ncline{6,3}{7,2}
+\nccurve[angleA=145,angleB=180]{7,2}{1,3}
+\ncline{4,2}{2,3}
+\end{psmatrix}

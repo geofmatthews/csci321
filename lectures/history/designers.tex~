@@ -1,0 +1,510 @@
+\documentclass[a4paper,troispoints,pdf,colorBG,slideColor]{prosper}
+%\hypersetup{pdfpagemode=FullScreen}
+
+\usepackage{pstricks,pst-node,pst-tree}
+\usepackage{amssymb,latexsym}
+\usepackage{graphicx}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\newcommand{\ns}[1]{\vfill \end{slide}\begin{slide}{#1}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+\newcommand{\graphic}[3]{
+\begin{pspicture}(0,0)(0,0)
+\rput(#1){\resizebox{#2}{!}{\includegraphics{#3}}}
+\end{pspicture}
+}
+\newcommand{\graphicbox}[3]{
+\begin{pspicture}(0,0)(0,0)
+\rput(#1){\fbox{\resizebox{#2}{!}{\includegraphics{#3}}}}
+\end{pspicture}
+}
+
+\newpsobject{showgrid}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+
+\title{History of Video Games}
+\author{Geoffrey Matthews\\
+based on \href{http://en.wikipedia.org/wiki/}{\em Wikipedia} articles}
+\institution{Western Washington University}
+
+\begin{document}
+\maketitle
+
+\begin{slide}{Origins}
+\graphic{8,-4}{2in}{tennisfortwo.eps}
+\bi
+\item 1947: Cathode-Ray Tube Amusement Device, Goldsmith \& Mann
+\item 1951: Draughts (checkers), Christopher Strachey
+\item 1952: OXO, A.S. Douglas, EDSAC computer
+\item 1958: Tennis for Two, Higginbothom
+\ei
+
+\ns{The 1960s}
+\graphicbox{8,-4}{2in}{spacewar.eps}
+\bi
+\item Many university mainframe computer games
+\item 1961: {\em Spacewar!}, Steve Russell, MIT
+\item 1966: {\em Chase}, Ralph Baer, TV display
+\item Ken Thompson, Multics, Unix, {\em Space Travel}
+\ei
+
+\ns{Circa 1970}
+
+Computer and video games split:
+\bi
+\item Arcade machines
+\item University computers
+\item Handhelds
+\item Home computers
+\item Consoles
+\ei
+
+\ns{First Arcade Games}
+\begin{pspicture}(0,0)(0,0)
+\rput(10,-3){\includegraphics[scale=1.5]{computer-space.eps}}
+\end{pspicture}
+\bi
+\item 1972: Computer Space
+\item Bushnell \& Dabney 
+\item Each put their \$250 into {\em Atari}
+\item Dabney left to repair pinball machines
+\item Bushnell stayed \& built {\em PONG}
+\item Success!
+\item Sued by Magnavox
+\item Settled for \$750,000
+\ei
+
+
+\ns{Golden age of arcade games}
+\graphic{9.5,-4}{2in}{pacman.eps}
+\bi
+\item 1971: {\em Computer Space} (too hard)
+\item 1972: {\em PONG}, Atari, 19,000 sold
+\item 1978: {\em Space Invaders}, Taito
+\item 1978: {\em Asteroids}, Atari
+\item 1979: {\em Pac-Man}, Namco
+\ei
+
+\ns{Golden age of arcade games}
+\graphic{9.5,-4}{1.5in}{donkeykong.eps}
+\bi
+\item 1981: {\em Donkey Kong}
+\item 1981: {\em Frogger}
+\item 1981: {\em Galaga}
+\item 1982: {\em Dig Dug}
+\item 1982: {\em Q*bert}
+\item 1983: {\em Dragon's Lair}
+\item 1983: {\em Mario Brothers}
+\ei
+
+\ns{University mainframes}
+\graphic{7.5,-5.5}{3in}{teletype.eps}
+\bi
+\item Pre 1975: Paper teletype
+\item Post 1975: CRT screens
+\ei
+
+\ns{University mainframes, paper}
+\graphicbox{9,-5}{3in}{startrek.eps}
+\bi
+\item 1971: {\em Computer Baseball}
+\item 1971: {\em Star Trek}
+\item 1972: {\em Hunt the Wumpus}
+\item 1974: {\em Maze War}
+\item 1975: {\em Adventure}
+\ei
+
+\ns{University mainframes, CRT}
+\graphic{10,-4}{2in}{zork.eps}
+\bi
+\item 1975: {\em Dungeon}, unlicensed {\em Dungeons \& Dragons}
+\item 1975: {\em dnd}
+\item 1977: {\em Air}, online
+\item 1977: {\em Zork}, founded Infocom
+\item 1980: {\em Rogue}, random dungeons
+\ei
+
+\ns{Early handhelds}
+\graphic{10,-4}{1in}{Microvision2.eps}
+\bi
+\item 1972: {\em OXO}, Waco (Toymaker)
+\item 1979: {\em Microvision}, Milton-Bradley
+\ei
+\bigskip
+
+LCD wasn't available until 1980's
+
+\ns{Consoles: first generation}
+\graphicbox{9,-4}{2in}{Pong.eps}
+\graphic{2,-4}{2in}{Magnavoxodyssey.eps}
+\bi
+\item 1951: Ralph Baer, interactive TV idea
+\item 1972: Magnavox Odyssey, \$100
+\ei
+
+\ns{Consoles: second generation}
+\graphic{9,-5.5}{2in}{spaceinvaders.eps}
+\bi
+\item 1977: Atari 2600
+\item 1978: Odyssey 2
+\item 1979: Activision, third party developer
+\item 1980: Intellivision (Mattel)
+\item Atari {\em vs.} Intellivision, first console war
+\item 1982: Colecovision
+\ei
+
+\ns{Video game crash of 1983}
+\bi
+\item Poor economy
+\item Natural market cycle
+\item Video games perceived as fad
+\item Glut of poor 2600 games
+\item Competition from personal computers
+\item Competition from arcades
+\ei
+
+\ns{Third generation, 1985-1989}
+\begin{pspicture}(0,0)(0,0)
+\rput(9.5,-4.5){\includegraphics[width=2in]{supermariobros.eps}}
+\rput(3,-6){\includegraphics[width=1.5in]{nes.eps}}
+\end{pspicture}
+\bi
+\item 1981: Nintendo {\em Donkey Kong} arcade system
+\item 1985: Nintendo Entertainment System (Famicom)
+\item Super Mario Bros.
+\item Owned 90\% of the market
+\item Introduced the gamepad
+\ei
+
+\ns{Third generation, 1985-1989}
+\graphic{3,-5}{2in}{ffoutside.eps}
+\graphic{8,-4}{2in}{ffinside.eps}
+\bi
+\item 1986: Dragon Quest
+\item 1987: Final Fantasy
+\ei
+
+\ns{Home computers}
+\graphic{9,-3}{2in}{appleII.eps}
+\graphic{3,-5}{2in}{Commodore64.eps}
+\bi
+\item 1977: {\em Apple II}
+\item 1981: {\em IBM PC}
+\item 1982: {\em Commodore 64}\\{\small best selling computer in history}
+\item 1984: {\em Apple Macintosh}
+\ei
+
+\ns{Home computer games}
+\bi
+\item Many clones of university  \& arcade games
+\item Source code in books \& magazines
+\item Floppies, cassettes, ROM cartridges
+\ei
+
+\ns{Home computer games}
+\graphicbox{9,-5}{2in}{pinballconstructionset.eps}
+\bi
+\item 1980: {\em Zork}
+\item 1980: {\em Roberta Williams Mystery House}
+\item 1983: {\em Archon}
+\item 1983: {\em Pinball Construction Set}
+\item 1984: {\em King's Quest}
+\item 1989: {\em SimCity}
+\item 
+\ei
+
+\ns{Home computer games, 1990's}
+\graphic{9,-3}{2in}{doombox.eps}
+\graphic{3,-6.5}{2in}{warcraftbox.eps}
+\bi
+\item 1993: {\em Doom}, FPS
+\item 1993: {\em Myst}
+\item 1994: {\em Warcraft}, RTS
+\item 1996: {\em Quake}, internet play
+\ei
+
+1996:  3d accelerator cards
+
+\ns{Decline and Rebirth of Arcades}
+\graphic{9,-5}{2in}{ddr.eps}
+\bi
+\item Home video games rival quality
+\item Seedy video arcades decline
+\item Family oriented video arcades arise
+\item 1998: Dance Dance Revolution
+\ei
+
+\ns{Handhelds come of age}
+\graphic{9,-2}{1in}{gameboy.eps}
+\bi
+\item 1989: Game Boy
+\item 1990: Sega Game Gear
+\ei
+
+\ns{Fourth generation}
+\graphic{3,-4}{2in}{sonic.eps}
+\graphic{9,-4}{1.75in}{marioyoshi.eps}
+\bi
+\item 1988: Sega Genesis
+\item 1990: SNES
+\ei
+
+\ns{Fifth generation}
+\graphic{9,-4}{2in}{supersmashbros.eps}
+3D games
+\bi
+\item 1994: Sega Saturn
+\item 1994: Sony PlayStation
+\item 1996: Nintendo 64
+\ei
+
+\ns{Sixth generation}
+\graphic{8.5,-5.5}{3in}{grandtheftauto.eps}
+\bi
+\item 1998: Dreamcast
+\item 2000: PlayStation 2
+\item 2001: Nintendo Gamecube
+\item 2001: Xbox
+\ei
+
+\ns{Seventh generation}
+\graphic{8,-4.75}{3in}{wiisports.eps}
+\bi
+\item 2005: Xbox 360
+\item 2006: PlayStation 3
+\item 2006: Wii
+\ei
+
+\ns{Designers}
+{\em Maxis} and Will Wright
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-1){\includegraphics[scale=0.5]{sims.eps}}
+\end{pspicture}
+\bi
+\item 1989: {\em SimCity}
+\item {\em SimAnt}, {\em SimCopter}, ...
+\item {\em Maxis} becomes part of Electronic Arts
+\item 2000: {\em The Sims}
+\item 6 million sold
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-5){\includegraphics[scale=0.4]{civilization.eps}}
+\end{pspicture}
+{\em MicroProse} and Sid Meier
+\bi
+\item Strategic simulations
+\item 1987: {\em Sid Meier's Pirates!}
+\item 1990: {\em Railroad Tycoon}
+\item 1991: {\em Civilization}
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-1){\includegraphics[scale=0.5]{KQ4.eps}}
+\rput(7,-5){\includegraphics[scale=0.4]{halflife.eps}}
+\end{pspicture}
+
+{\em Sierra} and Ken and Roberta Williams
+
+\bi
+\item 1980: {\em Mystery House}
+\item 1984: {\em King's Quest}
+\item 1987: {\em Leisure Suit Larry}
+\item 1998: {\em Half-Life}
+\ei
+
+\ns{Designers}
+{\em Origin Systems} and Richard Garriott
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-4){\includegraphics[scale=0.75]{ultimaonline.eps}}
+\end{pspicture}
+\bi
+\item 1980: {\em Ultima}
+\item 1997: {\em Ultima Online}, early MMORPG
+\item 2000: Disbanded by {\em EA}
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-4){\includegraphics[scale=2]{wingcommander.eps}}
+\end{pspicture}
+
+
+{\em Origin's } other blockbuster by Chris Roberts
+\bi
+\item 1990: {\em Wing Commander}
+\item Epic storyline
+\item Full motion video
+\item 1999: movie spinoff
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-5){\includegraphics[scale=0.5]{easternfront.eps}}
+\end{pspicture}
+
+Chris Crawford
+\bi
+\item 1981: {\em Eastern Front}
+\item 1985: {\em Balance of Power}
+\item 1987: {\em Game Developer's Conference}
+\item 1992: {\em Storytron}
+\ei
+
+
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-1.5){\includegraphics[scale=0.333]{commanderkeen.eps}}
+\rput(8.5,-5.5){\includegraphics[scale=0.5]{doom.eps}}
+\end{pspicture}
+
+{\em Id} and John Carmack
+\bi
+\item 1990: {\em Commander Keen}
+\item 1992: {\em Wolfenstein 3d}
+\item 1993: {\em Doom}
+\item 1996: {\em Quake}
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-4){\includegraphics[scale=0.4]{facade.eps}}
+\end{pspicture}
+
+
+Michael Mateas and Andrew Stern
+\bi
+\item 2005: {\em Fa\c cade}
+\item 200?: {\em The Party}
+\ei
+
+\ns{Phenomena}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-4){\includegraphics[scale=0.75]{SpaceinvadersArcade.eps}}
+\end{pspicture}
+
+{\em Space Invaders}
+\bi
+\item Introduced to US in 1978
+\item First big Japanese success
+\item Introduced the ``High Score'' list
+\ei
+
+\ns{Phenomena}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-4){\includegraphics[scale=0.75]{pacman.eps}}
+\end{pspicture}
+{\em Pac-Man}
+\bi
+\item American debut 1981
+\item Attempt to create non-violent game
+\item Generated \$100 million in sales
+\ei
+
+\ns{Phenomena: Tetris}
+\begin{pspicture}(0,0)(0,0)
+\rput(9.75,-2.5){\includegraphics[scale=0.5]{tetris.eps}}
+\end{pspicture}
+{\scriptsize
+\bi
+\item Created by Alexy Pajitnov in 1985
+\item {\em Andromeda} sold the rights to {\em Spectrum Holobyte}
+\item But {\em Andromeda} never settled the deal with Pajitnov
+\item {\em Specturm Holobyte} releases the game in 1986
+\item {\em Andromeda} continues to sell rights they don't have
+\item {\em Nintendo} buys rights from Russia
+\item {\em Tengen} (a division of {\em Atari}) develops it for NES
+\item {\em Nintendo} claims {\em Atari} stole it;
+{\em Atari } sues {\em Nintendo}
+\item Courts rule:  {\em Nintendo} wins
+\item Game makes {\em Game Boy} phenomenon
+\ei
+}
+
+\ns{Phenomena}
+\begin{pspicture}(0,0)(0,0)
+\rput(10,-1.5){\includegraphics[scale=0.25]{ff4.eps}}
+\rput(8,-5){\includegraphics[scale=0.333]{ff9.eps}}
+\end{pspicture}
+{\em Final Fantasy} by {\em Square Enix}
+\bi
+\item Released in 1987 to stave off bankruptcy
+\item 4th best selling franchise of all time; \\
+  (follows {\em Mario}, {\em Pok\'emon}, {\em Sims})
+\item 70 million units sold
+\item About 28 games in the franchise
+\ei
+
+\ns{Phenomena}
+\begin{pspicture}(0,0)(0,0)
+\rput(9.5,-1){\includegraphics[scale=0.75]{pokemon.eps}}
+\end{pspicture}
+{\em Pok\'emon}
+\bi
+\item Created by Satoshi Tajiri
+\item Interlinkable {\em Game Boy} game
+\item Released 1996
+\item 2nd best selling franchise of all time, \\ after {\em Mario}
+\item {\em Monster in my Pocket} already trademarked
+\item Anime spinoffs
+\ei
+
+\ns{Phenomena: Mario}
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-4){\includegraphics{mario.eps}}
+\end{pspicture}
+\bi
+\item Biggest franchise of all time
+\item 193 million units sold
+\item Over 200 games
+\item 1991: {\em Donkey Kong}
+\item 2007: {\em Super Paper Mario}
+\ei
+
+\ns{Phenomena}
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-5.25){\includegraphics[scale=0.4]{wow.eps}}
+\end{pspicture}
+{\em World of Warcraft}, 2004
+\bi
+\item Spinoff from {\em Warcraft: Orcs \& Humans}, 1994
+\item MMORPG: 8.5 million online players
+\item ``{\em WoW} is the new golf.''
+\ei
+
+
+\ns{\large The Art of Computer Game Design}
+{\footnotesize
+I dreamed of the day when computer games would be a viable medium of
+artistic expression --- an art form. I dreamed of computer games
+expressing the full breadth of human experience and emotion. I dreamed
+of computer games that were tragedies, games about duty and honor,
+self-sacrifice and patriotism. I dreamed of satirical games and
+political games; games about the passionate love between a boy and
+girl, and the serene and mature love of a husband and wife of decades;
+games about a boy becoming a man, and a man realizing that he is no
+longer young. I dreamed of games about a man facing truth on a dusty
+main street at high noon, and a boy and his dog, and a prostitute with
+a heart of gold.
+\hfill --- \sl Chris Crawford, 1984
+}
+
+\end{slide}
+\end{document}

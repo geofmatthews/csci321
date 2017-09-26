@@ -1,0 +1,11 @@
+\begin{pspicture}[showgrid=false](10,5)
+\pscircle*[linecolor=blue](1,2){0.1}
+\pscircle*[linecolor=blue](8,2){0.1}
+\pscircle*[linecolor=red](3,4){0.1}
+\pscircle*[linecolor=red](6,0){0.1}
+\psline[arrowscale=2]{->}(1,2)(8,2)
+\psline[arrowscale=2,linestyle=dashed]{->}(3,4)(3,2)
+\psline[arrowscale=2,linestyle=dashed]{->}(6,0)(6,2)
+\pscircle[linestyle=dashed](6,0){3}
+\pscircle[linestyle=dashed](3,4){1}
+\end{pspicture}

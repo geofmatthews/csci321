@@ -1,0 +1,72 @@
+player 500 -100
+sign a mordor 0 150 level 3
+sign a mordor 270 120 so close ...
+sign 600 80 with
+song 2
+update_all
+planet 500 400 200 350 600 3 mordor
+planet 1700 450 300 400 800 2 opalin
+planet 1000 200 150 200 400 1 eoin
+star 100 450
+eye a mordor 240
+eye a mordor 230
+eye a mordor 220
+eye a mordor 210
+eye a mordor 200
+eye a mordor 190
+platform r mordor 240 160 60 0 
+platform r mordor 210 130 10 0 
+platform r mordor 180 100 10 0 
+platform r mordor 150 60 60 0 
+sign a eoin 315 150 jumping
+sign a eoin 315 100 monsters
+I a eoin 185
+I a eoin 176
+I a eoin 167
+I a eoin 158
+I a eoin 194
+I a eoin 203
+I a eoin 5
+I a eoin 14
+I a eoin 23
+I a eoin 338
+I a eoin 347
+I a eoin 356
+booster a opalin 290 1400
+checkpoint a opalin 310
+sign a opalin 322 150 easy way
+sign a opalin 282 150 hard way
+eye a opalin 330
+I a opalin 334
+eye a opalin 340
+eye a opalin 30
+I a opalin 35
+eye a opalin 40
+sign a opalin 0 180 there are two ways
+sign a opalin 0 130 to make this jump :)
+checkpoint a opalin 65
+star 1780 970
+platform a 1300 500 1300 600 2
+platform r opalin 225 130 20 30
+platform r opalin 210 130 10 30
+platform r opalin 195 130 10 30
+platform r opalin 180 130 10 30
+platform r opalin 160 130 50 0 check
+checkpoint p check 50 
+platform r opalin 150 200 50 0
+platform r opalin 160 270 50 0
+platform r opalin 220 270 10 330
+platform r opalin 230 270 10 330
+platform r opalin 200 270 10 330
+platform r opalin 210 270 10 330
+platform r opalin 190 270 10 330
+platform r opalin 180 270 20 330
+star 1170 770
+eye a opalin 160
+eye a opalin 150
+eye a opalin 140
+eye a opalin 130
+part 2100 450 2
+booster a opalin 90 1600
+port 2400 450 level04
+platform r opalin 90 500 200 0

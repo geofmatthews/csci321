@@ -1,0 +1,6 @@
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[colsep=3]
+\ovalnode{L}{Looking} & \ovalnode{S}{Shooting}
+\nccurve[angleA=30,angleB=150] LS  \ncput*{\fbox{space}}
+\nccurve[angleA=-150,angleB=-30] SL \ncput*{\fbox{anim end}}
+\end{psmatrix}

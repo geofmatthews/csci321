@@ -1,0 +1,9 @@
+
+\psset{arrows=->,linewidth=0.05,linecolor=white}
+\begin{psmatrix}
+{\rnode{A}{\psframebox{Suspicious}}} \\
+{\rnode{B}{\psframebox{Hungry}}} & {\rnode{C}{\psframebox{Grateful}}}
+\ncline{A}{B}>{\em reassure}
+\ncline{B}{C}_{\em feed}
+\end{psmatrix}
+

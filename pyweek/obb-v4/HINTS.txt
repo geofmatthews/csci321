@@ -1,0 +1,62 @@
+Hints for Obb
+
+I didn't have a chance to put in some cheat codes, so here are some
+general strategy tips. Obb is *both* a tile-placement puzzle game *and*
+a real-time strategy / tower defense game. If you overlook one of those
+two aspects, you won't do well in the game. So don't come complaining to
+me if the tile placing got in the way of your tower defensing, because
+it's an essential part of the game. :)
+
+Take some time getting used to the interface. Make sure you understand
+what each piece does, because it might be helpful in your strategy.
+
+
+Tile placement tips:
+
+You want to make as many branches as possible whenever possible. You
+should get in the habit of trashing most non-branching pieces you see.
+The non-branching pieces are really only useful if you need to get out
+of a tight spot or cross stalks against each other. Remember you can
+trash a tile with right-click, so branch early and often, and trash
+anything that gets in the way.
+
+A single hex on the map can be put to multiple uses. Stalks can go
+through it and an organ can occupy the center. Use hexes as efficiently
+as possible. Don't hesitate to build organs over stalks or vice versa.
+
+Try not to cut off any one color from any part of the map. When you're
+placing tiles, think about whether you're making it difficult to get
+one of the three colors into some area. You can technically expand into
+an area just with the green pieces, but you won't last long without the
+oranges, and there's really no point without the purples. Try to develop
+them evenly. Oranges aren't essential at the very beginning, but they
+will be later, so don't cut them off completely.
+
+Finally, don't hesitate to chop pieces off and try again!
+
+
+Real-time strategy tips:
+
+So, it's not the most awesomely balanced tower defense in the world, but
+it's okay. There are a couple of organs you can ignore. Cubes are not
+really essential. Many of the organs will be obsoleted by later ones.
+Don't hesitate to replace them if you need the real estate.
+
+The amount of danger you're in depends on two things: how far out you've
+expanded, and how many organs you have (the number in the lower-right).
+You can stay a little safer by building densely. You don't have to put
+an organ in every single hex, but try to get one in a lot of them. Also
+try to expand out evenly in all directions. Don't put all your
+development into one half of the map.
+
+Your progress is really about one thing: how many mutagen pods you have.
+This is the one with the blue ball. Each one you grow unlocks a new
+organ. So if you want to progress, grow as many of these as you can, and
+pay attention to what's keeping you from doing that.
+
+Remember that if you don't remember what an organ does, you can point to
+it and Obb will tell you if tips are enabled. You can toggle tips by
+clicking on the mouth.
+
+
+

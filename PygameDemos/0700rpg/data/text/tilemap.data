@@ -1,0 +1,12 @@
+stones,     basictiles.png, 16,16, 0,1, s,wall
+stonesTall, basictiles.png, 16,16, 0,2, S,wall
+rocks,      basictiles.png, 16,16, 1,7, r,wall
+flagstones, basictiles.png, 16,16, 1,6, f,floor
+topLeft,    basictiles.png, 16,16, 3,0, 1,wall
+top,        basictiles.png, 16,16, 3,1, 2,wall
+topRight,   basictiles.png, 16,16, 3,2, 3,wall
+left,       basictiles.png, 16,16, 4,0, 4,wall
+right,      basictiles.png, 16,16, 4,2, 5,wall
+bottomLeft, basictiles.png, 16,16, 5,0, 6,wall
+bottom,     basictiles.png, 16,16, 5,1, 7,wall
+bottomRight,basictiles.png, 16,16, 5,2, 8,wall

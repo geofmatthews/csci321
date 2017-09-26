@@ -1,0 +1,27 @@
+\subsection{Gatherers}
+
+To get a handle on state machines, and how they can be used
+in games to make NPC's more lifelike, consider a simple
+resources game.  In this game, there is no player interaction,
+however, there are three NPCs that interact with each other:
+\begin{itemize}
+\item Gatherers
+\item Goodies
+\item Enemies
+\end{itemize}
+The Gatherers gather goodies and move them to the center of the
+screen.  The Enemies try to steal the goodies.  When they spot an
+Enemy, gatherers try to kill it.  A screenshot of the game is shown in
+Figure \ref{Gatherers}.  Here the small blue triangles are the
+gatherers, the red stars are the goodies, and the large black
+triangles are the enemies.  The crosses are the dead enemies.
+\fig{0.5}{StateMachines/Gatherers/screenshot001.eps}{Gatherers}
+
+
+
+\prog{StateMachines/Gatherers/gatherers.py}
+
+\prog{StateMachines/Gatherers/enemies.py}
+\prog{StateMachines/Gatherers/goodies.py}
+\prog{StateMachines/Gatherers/world.py}
+

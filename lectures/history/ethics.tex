@@ -1,0 +1,333 @@
+\documentclass[troispoints,pdf,colorBG,slideColor]{prosper}
+%\hypersetup{pdfpagemode=FullScreen}
+
+\usepackage{pstricks,pst-node,pst-tree}
+\usepackage{amssymb,latexsym}
+\usepackage{graphicx}
+%\setlength{\topmargin}{-0.5in}
+%\setlength{\textwidth}{9in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+
+\newcommand{\ns}[1]{\vfill \end{slide}\begin{slide}{#1}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+\newcommand{\graphic}[3]{
+\begin{pspicture}(0,0)(0,0)
+\rput(#1){\resizebox{#2}{!}{\includegraphics{#3}}}
+\end{pspicture}
+}
+\newcommand{\graphicbox}[3]{
+\begin{pspicture}(0,0)(0,0)
+\rput(#1){\fbox{\resizebox{#2}{!}{\includegraphics{#3}}}}
+\end{pspicture}
+}
+\newcommand{\pspic}{\begin{pspicture}(0,0)(0,0)}
+\newcommand{\epspic}{\end{pspicture}}
+\newcommand{\grph}[3]{\rput(#1){\includegraphics[scale=#2]{#3}}}
+
+\newpsobject{showgrid}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+
+\title{Ethics:  Violence and Addiction in Video Games}
+\author{Geoffrey Matthews\\
+based on \href{http://en.wikipedia.org/wiki/}{\em Wikipedia}
+and \href{http://www.gamespot.com/}{\em Gamespot} articles}
+\institution{Western Washington University}
+
+\begin{document}
+\maketitle
+
+
+\begin{slide}{Death Race, 1976}
+\pspic
+\grph{9.5,-1}{0.25}{deathraceconsole.eps}
+\rput(7,-5){\includegraphics[scale=0.5]{deathrace.eps}}
+\epspic
+\bi
+\item Exidy planned to sell 1,000
+\item After controversy, sold 10,000
+\item Irony: I played one in Blacksburg
+\ei
+
+\ns{Night Trap, 1992}
+\pspic
+\grph{9,-4}{0.5}{nighttrap.eps}
+\epspic
+\bi
+\item Dorm room video cameras
+\item B-movie violence
+\item Kill the vampires
+\ei
+
+\ns{Mortal Combat, 1992}
+\pspic
+\grph{9,-3}{0.5}{mortalkombatarcade.eps}
+\grph{4,-4.5}{0.125}{mortalkombat.eps}
+\epspic
+\bi
+\item Good game play
+\item Graphic violence
+\item Home computer version
+\ei
+
+\ns{1993 Senate Hearings}
+\pspic
+\grph{8.5,-3}{1.33}{lieberman.eps}
+\grph{10.5,-5}{0.5}{kohl.eps}
+\grph{1.1,-5.5}{0.5}{ratingsymbol_ec.eps}
+\grph{2.2,-5.5}{0.5}{ratingsymbol_e.eps}
+\grph{3.3,-5.5}{0.5}{ratingsymbol_e10.eps}
+\grph{4.4,-5.5}{0.5}{ratingsymbol_t.eps}
+\grph{5.5,-5.5}{0.5}{ratingsymbol_m.eps}
+\grph{6.6,-5.5}{0.5}{ratingsymbol_ao.eps}
+\grph{7.7,-5.5}{0.5}{ratingsymbol_rp.eps}
+\epspic
+\bi
+\item Senators Lieberman and Kohl
+\item Video game industry presented 12 point program for self regulation
+\item ESRB born
+\ei
+
+\ns{ESRB Content Descriptors}
+{\scriptsize
+\begin{tabular}{lll}
+Alcohol Reference &
+Animated Blood &
+Blood \\
+Blood and Gore &
+Cartoon Violence &
+Comic Mischief \\
+Crude Humor &
+Drug Reference &
+Edutainment \\
+Fantasy Violence &
+Informational &
+Intense Violence \\
+Language &
+Lyrics &
+Mature Humor \\
+Mild Violence &
+Nudity &
+Partial Nudity \\
+Real Gambling &
+Sexual Themes &
+Sexual Violence \\
+Simulated Gambling &
+Adult Assistance&
+Strong Language \\
+Strong Lyrics &
+Strong Sexual Content &
+Suggestive Themes \\
+Tobacco Reference &
+Use of Drugs &
+Use of Alcohol \\
+Use of Tobacco &
+Violence &
+\\
+\end{tabular}
+}
+
+\ns{Columbine, 1999}
+\pspic
+\grph{3,-5}{0.5}{doomroom.eps}
+\grph{9,-5}{0.25}{columbine.eps}
+\epspic
+\bi
+\item Harris and Klebold played {\em Doom} and {\em Wolfenstein 3D}
+\item 13 dead
+\ei
+
+\ns{2001}
+\pspic
+\grph{8,-5}{0.5}{everquest.eps}
+\epspic
+\bi
+\item 21-year-old commited suicide after addiction to {\em Everquest}
+\ei
+
+\ns{2003}
+\pspic
+\grph{8,-5.25}{0.5}{gtapolice.eps}
+\epspic
+\bi
+\item 18-year-old shot and killed three police officers
+\item Defense claimed he was inspired by {\em Grand Theft Auto III}
+\ei
+
+\ns{2003}
+\pspic
+\grph{8,-5.25}{0.5}{gtadriveby.eps}
+\epspic
+\bi
+\item 13- and 16-year olds used rifles to fire at vehicles on the Interstate
+\item Killed a 45 year old man
+\item Claimed they were inspired by {\em Grand Theft Auto III}
+\ei
+
+\ns{Coquitlam, 2003}
+\pspic
+\grph{8,-5}{0.25}{counterstrike.eps}
+\epspic
+\bi
+\item 17 year old trounced 3 men in internet cafe in {\em Counterstrike}
+\item Men beat the boy, returned with gun, shot him
+\ei
+
+\ns{2004}
+\pspic
+\grph{8,-5}{0.4}{mir.eps}
+\epspic
+\bi
+\item 41-year old stabbed to death 26-year old over a dispute
+involving a virtual weapon they had won in {\em Legend of Mir} 
+\ei
+
+\ns{2005}
+\pspic
+\grph{8,-5}{0.4}{wow.eps}
+\epspic
+\bi
+\item Four month old daughter of couple died after being left
+unattended for five hours while parents played {\em World of Warcraft}
+at internet cafe
+\ei
+
+\ns{2005}
+\pspic
+\grph{8,-5}{0.4}{starcraft.eps}
+\epspic
+\bi
+\item 28-year old died after playing {\em Starcraft} for 50 hours
+straight
+\ei
+
+\ns{2008}
+\pspic
+\grph{8,-5}{0.5}{grandtheftauto4box.eps}
+\epspic
+\bi
+\item Teenager murders a taxi driver in Thailand
+trying to see if it was
+as easy in real life to steal a taxi.
+\ei
+
+\ns{Legal Battles}
+{\small
+\bi
+\item 2000: State of Missouri passes law regulating video games.
+  ESA files lawsuit
+\item 2002: Judge Limbaugh reviews {\em Resident Evil}, {\em Mortal
+Kombat}, {\em Doom}, and {\em Fear Factor}:
+ ``This court reviewed four different video games and
+found no conveyance of ideas, expression, or anything else that could
+possibly amount to speech.  The court finds that video games have more
+in common with board games and sports than they do with motion
+pictures.'' 
+\item Law upheld ...
+\ei
+}
+
+\ns{Legal Battles}
+\bi
+\item 2003:  8th Circuit Court of Appeals in St.~Louis overturns
+decision. 
+\item ``Whether we believe the advent of violent video games adds
+anything of value to society is irrelevant:  guided by the first
+amendment, we are obliged to recognize that `they are as much entitled
+to the protection of free speech as the best of literature'.''
+\ei
+
+\ns{Family Entertainment Protection Act}
+\pspic
+\grph{4,-5.5}{0.5}{clinton.eps}
+\grph{6,-5}{1}{lieberman.eps}
+\grph{8,-4.5}{1}{bayh.eps}
+\epspic
+\bi
+\item 2005: Clinton, Lieberman, Bayh
+\item Mandatory enforcement of ESRB ratings
+\item \$1000/\$5000 fine for selling {\bf M} or {\bf AO} to minor
+\item FTC supervision of ESRB
+\item Failed to pass
+\ei
+
+\ns{Germany Bans Games}
+\bi
+\item Wolfenstein 3D
+\item Soldier of Fortune
+\item Mortal Kombat
+\item Manhunt
+\ei
+
+\ns{Australia Bans Games}
+\pspic
+\grph
+\epspic
+\bi
+\item Grand Theft Auto (*)
+\item Fallout 3
+\item Manhunt
+\item Phtasmagoria
+\item Reservoir Dogs
+\item Silent Hill: Homecoming
+\item Postal 2
+\item Singles: Flirt Up Your Life
+\item Soldier of Forutne
+\item Highest rating is MA 15+
+\ei
+
+
+\ns{Conditioning to Kill}
+\grph{3,-5}{0.5}{onkilling.eps}
+\bi
+\item Only 15-20\% of soldiers killed in WWII
+\item 85-90\% of soldiers killed in Vietnam
+\ei
+
+\ns{Brain Activation}
+\grph{6,-4}{1.0}{amygdala.eps}
+\bi
+\item {\sl Need for Speed: Underground}\\
+vs. {\sl Medal of Honour: Frontline}
+\ei
+
+\ns{ESA Statistics, 2007}
+\bi
+\item US computer \& video software sales \$9.5 billion,
+tripled since 1996
+\item 67\% of American heads of households play
+\item The average player is 33 and has been playing for 12 years
+\item The average buyer is 38 years old.
+\ei
+\ns{ESA Statistics, 2007}
+\bi
+\item 92\% computer game buyers and 80\% console game buyers were over 18
+\item 85\% all games were E or T or E10+
+\item 86\% game players under 18 say they get parents' permission to buy
+\item 91\% game players under 18 say parents are present when they buy
+\ei
+\ns{ESA Statistics, 2007}
+\bi
+\item 36\% Americans parents say the play
+\item 80\% gamer parents say they play with their kids
+\item 66\% say it brought families closer together
+\ei
+
+\ns{ESA Statistics, 2007}
+\bi
+\item 38\% of gamers are women
+\item 24\% of Americans over 50 play
+\item 49\% of gamers play online 1 hour a week or more
+\item 24\% of heads of households play on cell's or PDA's
+\ei
+
+\ns{The ESA}
+For more information:
+\bi
+\item The Entertainment Software Association
+\item  http://www.theesa.com/
+\ei
+
+\end{slide}
+\end{document}

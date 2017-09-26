@@ -1,0 +1,29 @@
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=latex 2007.4.16)  17 APR 2007 16:12
+entering extended mode
+**blockbusters.textex
+("C:\Program Files\MiKTeX 2.5\tex\latex\tools\.tex"
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+File ignored)
+*x
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+<*> x
+     
+? x
+ 
+Here is how much of TeX's memory you used:
+ 9 strings out of 95409
+ 261 string characters out of 1187165
+ 44877 words of memory out of 1048577
+ 3267 multiletter control sequences out of 60000
+ 3640 words of font info for 14 fonts, out of 1000000 for 2000
+ 14 hyphenation exceptions out of 8191
+ 5i,0n,4p,105b,14s stack positions out of 5000i,500n,10000p,200000b,32768s
+No pages of output.

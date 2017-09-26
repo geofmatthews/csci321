@@ -1,0 +1,255 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+
+\usepackage{rotating}
+
+\title{How to Be Creative}
+\subtitle{Some Ideas from\\ {\em The Art of Game Design, a
+  Book of Lenses}\\ Jesse Schell}
+%\author{}
+%\author[R. Rostamian]{Rouben Rostamian}
+%\institute[WWU]{
+%  Department of Computer Science \\
+%  Western Washington University \\
+%  Bellingham, WA 98225
+%}
+
+\begin{document}
+
+%----------- titlepage ----------------------------------------------%
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{The Creative Process}
+
+
+\begin{enumerate}
+\item Think of an idea.
+\item Try it out.
+\item Keep changing it and testing it until it seems good enough.
+\end{enumerate}
+
+\end{frame}
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Inspiration comes from experience}
+
+\begin{itemize}
+\item Stop looking at games and look {\em everywhere else.}\pause
+\begin{itemize}
+\item Playing other video games will make your game look the same.\pause
+\item Watching TV will make your games look like TV shows.\pause
+\item If you like to go to bars, go to church.\pause
+\item If you're not athletic, play a physical game.\pause
+\item If you are athletic, read a book.\pause
+\item If you like classical, listen to pop.\pause
+\end{itemize}
+\item What experience in my life would I want to share with
+  others?\pause
+\item In what small way can I capture the essence of that experience
+  in a game?\pause
+\item What parts of the game could I use?
+\begin{itemize}\item technology\item mechanics\item story\item aesthetics
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Focus on Stating the Problem}
+
+\begin{itemize}
+\item Examples:
+\begin{itemize}
+\item How can I make a board game that uses magnets?\pause
+\item How can I make a videogame about Hansel and Gretel?\pause
+\item How can I make a game that feels like a surrealist painting?\pause
+\item How can I improve on Tetris?\pause
+\end{itemize}
+\item Most people jump to solutions too fast.\pause
+\item What problems are you trying to solve?\pause
+\item Have you been making assumptions about the game that have
+  nothing to do with its true purpose?\pause
+\item Is the game you're imagining really the best solution?\pause
+\item How can you tell when you've solved the problem?
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Connect with Sleep}
+
+\begin{itemize}
+\item Salvador Dali:  slumber with a key.\pause
+\item Write down your ideas when you first wake up.
+\end{itemize}
+
+\end{frame}
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Your Creative Self: A silent partner}
+
+\begin{itemize}
+\item Can't talk\pause
+\item Impulsive\pause
+\item Emotional\pause
+\item Playful\pause
+\item Irrational
+
+\end{itemize}
+
+\end{frame}
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Getting in Touch with your Subconscious}
+
+\begin{itemize}
+\item Pay attention\pause
+\item Record your ideas\pause
+\item Manage its appetites
+\begin{itemize}
+\item take care of food, safety, personal relationships
+\end{itemize}
+\pause
+\item Sleep\pause
+\item Don't push too hard
+\begin{itemize}
+\item ask a question and leave it alone
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Maslow's Hierarchy of Needs}
+
+\begin{itemize}
+
+\item Physiological
+\begin{itemize}
+\item Food, water, shelter, warmth
+\end{itemize}
+
+\item Safety
+\begin{itemize}
+\item Security, stability, freedom from fear
+\end{itemize}
+
+\item Belonging-Love
+\begin{itemize}
+\item Friends, family, spouse, lover
+\end{itemize}
+
+\item Self-esteem
+\begin{itemize}
+\item Achievement, mastery, recognition, respect
+\end{itemize}
+
+\item Self-actualization
+\begin{itemize}
+\item Creativity, fulfillment, inner talent
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Brainstorming Tips}
+
+\begin{columns}
+\column{0.5\textwidth}
+\begin{itemize}
+\item Write them down\pause
+\item Write instead of type\pause
+\item Sketch\pause
+\item Toys\pause
+\item Change your perspective\pause
+\item Immerse yourself\pause
+\item Crack jokes\pause
+\item Spare no expense\pause
+\end{itemize}
+\column{0.5\textwidth}
+\begin{itemize}
+\item Write on the wall\pause
+\item The space remembers\pause
+\item Write everything\pause
+\item Number your lists\pause
+\item Mix and match categories\pause
+\item Talk to yourself\pause
+\item Find a partner\pause
+\end{itemize}
+\end{columns}
+\end{frame}
+
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Mix and Match}
+
+\begin{columns}[t]
+\column{.25\textwidth}
+Technology
+\begin{enumerate}\scriptsize
+\item Cel phone
+\item Handheld game
+\item PC
+\item Use with Instant Messaging
+\item Game console
+\end{enumerate}
+\column{.25\textwidth}
+Mechanics
+\begin{enumerate}\scriptsize
+\item Sims-like game
+\item Interactive fiction
+\item The winner makes the most friends
+\item Try to spread rumors about the other players
+\item Try to help as many people as possible
+\item Tetris-like game
+\end{enumerate}
+\column{.25\textwidth}
+Story
+\begin{enumerate}\scriptsize
+\item High school drama
+\item College-themed
+\item You play cupid
+\item You're a TV star
+\item Hospital theme
+\item You're a rock star
+\item You're a dancer
+\end{enumerate}
+\column{.25\textwidth}
+Aesthetic
+\begin{enumerate}\scriptsize
+\item Cell shading
+\item Anime style
+\item All characters are animals
+\item R\&B music
+\item Punk/rock music
+\end{enumerate}
+\end{columns}
+\pause
+\hfill {\em And make up new categories!}
+
+\end{frame}
+
+
+
+
+\end{document}

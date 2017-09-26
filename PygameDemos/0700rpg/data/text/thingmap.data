@@ -1,0 +1,14 @@
+pillar,     basictiles.png, 16,16, 4,7, 1,horizontal,noextraframe,  8, 4, noanimate
+pillar,     basictiles.png, 16,16, 4,7, 1,horizontal,noextraframe,  11,4, noanimate
+pillar,     basictiles.png, 16,16, 4,7, 1,horizontal,noextraframe,  11,7, noanimate
+yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,    9, 5, animate
+yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,   11,8, animate
+yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,    8,21, animate
+yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,   10,21, animate
+jaildoor,   things.png,     16,16, 0,3, 4,vertical,  noextraframe,  8, 7, animate
+fireplace,  things.png,     16,16, 4,9, 3,horizontal,extraframe,    5, 7, animate
+upstairs,   basictiles.png, 16,16, 7,0, 1,horizontal,noextraframe,  6, 4, noanimate
+downstairs, basictiles.png, 16,16, 7,1, 1,horizontal,noextraframe, 11, 3, noanimate
+pot,        things.png,     16,16, 0,9, 4,vertical,  noextraframe,  6, 6, noanimate
+map,        basictiles.png, 16,16, 6,4, 1,vertical,  noextraframe,  6, 8, noanimate
+chest,      things.png,     16,16, 0,6, 4,vertical,  noextraframe,  3,13, animate

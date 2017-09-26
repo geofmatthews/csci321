@@ -1,0 +1,7 @@
+import vectors as V
+
+ZERO_VECTOR = V.vector((0,0))
+PLAYER_MAXSPEED = 5
+FORCE_PER_TICK = 0.125
+WANDER_RADIUS = 80
+WANDER_OFFSET = 100

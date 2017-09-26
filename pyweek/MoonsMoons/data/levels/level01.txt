@@ -1,0 +1,71 @@
+song 3
+
+player 600 0
+planet 600 400 300 400 800 1 minor_swing
+
+
+
+#platforms
+platform r minor_swing 330 120 200 90 block
+
+platform r minor_swing 50 40 60 0 num1
+platform r minor_swing 70 110 60 0 num2
+platform r minor_swing 105 120 60 0 num3
+platform r minor_swing 140 130 80 0 num4
+
+platform r minor_swing 305 40 40 0 st1
+platform r minor_swing 290 80 40 0 st2
+platform r minor_swing 275 120 40 0 st3
+platform r minor_swing 260 160 40 0 st4
+platform r minor_swing 245 200 40 0 st5
+platform r minor_swing 230 250 40 0 st6
+//platform r minor_swing 215 290 40 0 st7
+//platform r minor_swing 200 330 40 0 st8
+
+#monsters
+eye a minor_swing 70
+eye a minor_swing 80
+eye a minor_swing 90
+eye a minor_swing 100
+eye a minor_swing 110
+eye a minor_swing 120
+
+eye a minor_swing 180
+eye a minor_swing 200
+eye a minor_swing 220
+
+eye p num4 50
+//eye p st5 10
+
+eye p block 0
+eye p block 20
+eye p block 40
+eye p block 60
+eye p block 80
+eye p block 100
+
+
+#signs
+//##sign p platforma pozice, výška text
+sign a minor_swing 0 150 Level 1
+sign a minor_swing 164 195 Bonus star
+sign a minor_swing 320 250 next level
+sign a minor_swing 275 300 part of your ship!
+
+sign p num2 50 15 Beware, eyes!
+sign p num3 50 80 Checkpoint
+
+#rewards
+star 750 850
+star 300 880
+star 250 400
+
+#checkpoints
+checkpoint p num3 50
+checkpoint a minor_swing 320
+
+#part
+part 50 350 0
+
+#porty
+port 280 20 level02

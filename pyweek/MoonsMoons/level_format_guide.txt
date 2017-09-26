@@ -1,0 +1,34 @@
+ colours:
+1 - moon
+2 - azure
+3 - fire
+
+## SETTINGS
+update_all (turns on update of every entity even outside camera rect)
+## PLANET
+planet centerx centery radius gravity gravity_radius colour(1-3) id(any string)
+## PLATFORM - TWO TYPES (absolute/relative)
+platform a startx starty endx endy colour(1-3) [id]
+platform r planet_id planet_angle altitude width angle(relative, 0 means the horizontal position to planet) [id]
+## MONSTER O/C - TWO TYPES
+O/C a planet_id start_angle angle_distance(negative is opposite direction, 0/-1 infinite(left/right))
+O/C p platform_id percentage_start(default 0) percentage_end(default 100)
+## MONSTER I
+I a planet_id angle
+I p platform_id position(0% to 100%)
+## MONSTER eye
+eye a planet_id angle
+eye p platform_id position(0% to 100%)
+## MONSTER Q
+Q planet_id altitude start_angle angle_distance(negative is opposite direction, 0/-1 infinite(left/right))
+## PORT
+port centerx centery levelname (without .txt)
+## BOOSTER - TWO TYPES
+booster a planet_id angle force
+booster p platform_id position(0-100) force
+## CHECKPOINT - THREE TYPES
+checkpoint a planet_id angle [altitude]
+checkpoint p platform_id position(0-100) [altitude]
+checkpoint x y
+## SIGN
+sign a planet_id angle altitude string

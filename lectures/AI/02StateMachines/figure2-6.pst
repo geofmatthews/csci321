@@ -1,0 +1,12 @@
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[rowsep=3]
+&\ovalnode{CS}{CookStew}\\
+\ovalnode{VB}{VisitBathroom}&&&\\
+&\ovalnode{DH}{DoHousework}
+\nccurve[angleA=0,angleB=90]{VB}{DH} \ncput*[nrot=:U]{Return to prev state}
+\nccurve[angleA=180,angleB=-90]{DH}{VB} \ncput*[nrot=:U]{1 in 10 chance}
+\nccurve[angleA=90,angleB=180]{VB}{CS} \ncput*[nrot=:U]{Return to prev state}
+\nccurve[angleA=-90,angleB=0]{CS}{VB} \ncput*[nrot=:U]{1 in 10 chance}
+\nccurve[angleA=30,angleB=-30]{DH}{CS}\ncput*[nrot=:U]{Recd: "HoneyImHome"}
+\nccurve[angleA=0,angleB=0]{CS}{DH}\ncput*[nrot=:U]{Recd: "StewReady"}
+\end{psmatrix}

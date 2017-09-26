@@ -1,0 +1,70 @@
+
+\begin{psmatrix}[colsep=0.25cm]
+&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&&\\
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{X} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{~} & \mbox{X} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+...\\
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{O} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{O} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{O} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{O} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+...
+\ncline[arrows=->]{1,2}{2,1}
+\ncline[arrows=->]{1,2}{2,3}
+\ncline[arrows=->]{1,2}{2,4}
+\ncline[arrows=->]{1,2}{2,5}
+
+\ncline[arrows=->]{2,1}{3,1}
+\ncline[arrows=->]{2,1}{3,2}
+\ncline[arrows=->]{2,1}{3,3}
+\ncline[arrows=->]{2,1}{3,4}
+
+\end{psmatrix}

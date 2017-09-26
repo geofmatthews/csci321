@@ -1,0 +1,101 @@
+song 1
+
+//////////////////////////////////////////NEEEEDS REWORK
+player 450 80
+planet 500 400 200 300 500 1 prima
+planet 1000 400 200 300 500 2 secunda
+planet 1500 400 200 300 500 3 tercie
+planet 1900 400 30 200 150 1 quarta
+planet 2100 400 30 200 150 2 quinta
+planet 2300 400 30 200 150 3 sexta
+planet 2500 400 30 200 150 1 septima
+
+
+
+#platforms
+
+platform r prima 30 60 60 -30 p1
+platform r prima 300 60 60 0 p3
+platform r secunda 340 60 60 0 p2
+
+platform r tercie 180 100 60 0 t1
+
+
+
+
+
+#monsters
+##O/C a planet_id start_angle angle_distance(negative is opposite direction, 0/-1 infinite(left/right))
+##O/C p platform_id percentage_start(default 0) percentage_end(default 100)
+## 
+##I a planet_id angle
+##I p platform_id position(0% to 100%)
+
+-#prima
+	C a prima 30 1
+	C a prima 20 1
+	I a prima 280
+	I a prima 275
+	O a prima 220 60
+	eye a prima 80
+	eye a prima 90 	 
+	eye a prima 130
+	eye a prima 140
+	eye a prima 150
+	eye a prima 160
+	eye a prima 170
+	eye a prima 180
+	eye a prima 320
+	eye a prima 330
+	
+	
+
+-#secunda
+	C a secunda 330 1
+	C a secunda 340 1
+	O a secunda 160 40
+	eye a secunda 90
+	I a secunda 120
+	I a secunda 130 	
+
+-#tercie
+	C a tercie 0 180
+	C a tercie 90 180
+	eye a tercie 270
+	eye a tercie 90
+	I a tercie 30
+	I a tercie 35
+	I a tercie 40
+	O a tercie 180 30
+-#sexta
+	O a sexta 60 60
+
+#geysers
+booster a secunda 270 1000
+
+
+
+#stars
+star 720 470
+star 2000 400
+star 2800 400
+
+#parts
+part 1500 800 4
+
+#checkpoints
+checkpoint p p2 50
+checkpoint a prima 200
+checkpoint a quarta 0
+
+#signs
+//##sign p platforma pozice, výška text
+sign a prima 0 150 Level 5
+sign a secunda 0 150 c-monster
+sign p p3 50 50 stars...
+sign a prima 140 110 only one :/
+
+#ports
+port 3200 400 level06
+
+update_all

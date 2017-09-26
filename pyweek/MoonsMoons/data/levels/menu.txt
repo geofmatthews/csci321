@@ -1,0 +1,19 @@
+song 3
+player 0 -300
+planet 0 0 150 350 1000 1 earth
+port 170 -170 level01
+sign a earth 45 200 lvl 1
+port 230 0 level02
+sign a earth 90 200 lvl 2
+port 170 170 level03
+sign a earth 135 200 lvl 3
+port 0 230 level04
+sign a earth 180 200 lvl 4
+port -170 170 level05
+sign a earth 225 200 lvl 5
+port -230 0 level06
+sign a earth 270 200 lvl 6
+port -170 -170 level07
+sign a earth 315 200 just mess
+sign a earth 0 200 moon's
+sign a earth 0 150 moons

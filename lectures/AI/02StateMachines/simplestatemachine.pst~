@@ -1,0 +1,138 @@
+\documentclass[handout,t,compress]{beamer}
+\usetheme{Singapore}
+
+\sloppy
+%\usepackage[scaled]{helvet}
+%\usepackage{eulervm}
+
+\usepackage{fp-eval}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+%\usepackage{pstricks,pst-node,pst-tree,pst-plot,pst-3dplot,multido}
+\usepackage{graphicx}
+\usepackage{multicol}
+
+\usepackage{alltt}
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\li}{\item}
+\newcommand{\ei}{\end{itemize}}
+
+\newcommand{\sect}[1]{\begin{frame}[fragile]{#1}}
+
+\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
+\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
+\newcommand{\ebnf}{\end{tabular}\end{center}}
+
+\newcommand{\myskip}{\vspace{-1em}\hrulefill}
+\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
+\newcommand{\myline}[1]{\centerline{#1}}
+\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
+\newcommand{\br}{\mbox{~}|\mbox{~}}
+
+\definecolor{orange}{rgb}{1,.5,0}
+\definecolor{pink}{rgb}{1,.75,.75}
+\definecolor{ltblue}{rgb}{.75,.75,1}
+
+\newcommand{\be}{\begin{eqnarray*}}
+\newcommand{\ee}{\end{eqnarray*}}
+
+\newcommand{\grph}[2]{
+\begin{columns}
+\column{0.01\textwidth}
+\column{0.6\textwidth}
+\begin{pspicture}[showgrid=#1](-2,-2)(5,5)
+#2
+\end{pspicture}
+}
+
+\AtBeginSection[]
+{
+\sect{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\title{Finite State Machines}
+\author{CSCI 321}
+\institute{WWU}
+
+\begin{document}
+
+
+
+\sect{~}
+\titlepage
+\end{frame}
+
+\sect{If-then statements}
+%\begin{multicols}{2}
+\scriptsize
+\begin{Verbatim}
+case CurrentState:
+  EvadeEnemy:
+    ...
+    if Safe():
+      ChangeState(Patrol)
+    ...
+  Patrol:
+    ...
+    if Threatened():
+      if StrongerThanEnemy():
+        ChangeState(Attack)
+      else:
+        ChangeState(Runaway)
+    ...
+  Attack:
+    ...
+    if not(StrongerThanEnemy()):
+      ChangeState(Runaway)
+    ...
+  Runaway:
+    ...  
+\end{Verbatim}
+%\end{multicols}
+\end{frame}
+
+\sect{Transition Tables}
+\footnotesize
+\begin{tabular}{|l|l|l|}\hline
+{\bf Current State} & {\bf Condition} & {\bf State Transition} \\\hline
+Runaway & Safe & Patrol\\
+Attack & WeakerThanEnemy & Runaway\\
+Patrol & Threatened AND StrongerThanEnemy & Attack\\
+Patrol & Threatened AND WeakerThanEnemy & Runaway\\\hline
+\end{tabular}
+\end{frame}
+
+\sect{Embedded Rules}
+\begin{itemize}
+\item Embed transitions in rules themselves.
+\item There is no master control or code.
+\item Easily extensible--only affected states need be modified.
+\item {\bf State Design Pattern}
+\end{itemize}
+\end{frame}
+
+\sect{Miner Bob's State Diagram}
+
+\bigskip
+
+\includegraphics[width=\textwidth]{figure2-2.png}
+\end{frame}
+
+\sect{Elsa's State Diagram}
+
+\bigskip
+
+\includegraphics[width=0.5\textwidth]{figure2-5.png}
+\end{frame}
+
+\sect{Elsa's State Diagram with Messaging}
+
+\bigskip
+
+\includegraphics[width=0.75\textwidth]{figure2-6.png}
+\end{frame}
+
+\end{document}

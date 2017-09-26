@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{multicol}
+\begin{document}
+
+\title{CSCI 321, General Instructions For Games}
+\author{Geoffrey Matthews}
+
+
+\maketitle
+
+
+
+
+\begin{enumerate}
+
+\item Game programming must be your own work.  You may consult with
+  each other on ideas, artwork, {\em etc.}, and use each other as game
+  testers, but you may not consult on source code.
+
+\item {\bf All games must be original work.} You can clone an existing
+  game design, but the majority of the programming must be your own.
+  You can use modules and code of others, but it must be acknowledged
+  both in the code and in the documentation, and the bulk of the code
+  must be your own. The artwork and sounds may be original or not, but
+  credit must be given for all work that is not your own.
+
+\item All games must be accompanied by a {\bf Game Manual}.  The game
+  manual must include:
+  \begin{itemize}
+\item {\bf Title page.}
+  Name for the game, your name(s), student number(s), 
+  class number, quarter,
+  instructor's name.
+\item {\bf Back story} for the game (if any).  If you have different
+  kinds of NPCs (non-player characters), give each of them their
+  story.
+\item {\bf User's guide.}
+  This includes how to play, what the objective of the game is, how
+  scoring is decided, different play modes, {\em etc.}.  Most
+  important: how to locate the in-game help
+  screen (ususally {\tt F1}), and how to quit the game (usually
+  {\tt ESC}).  Another common pattern is to have {\tt ESC} bring
+  up a menu, and two of the items on the menu are always {\tt Quit}
+  and {\tt Help}.
+\item {\bf Module documentation.}  A brief summary of each module in your
+  code, what functions and classes are found there, which modules they
+  import.  Also, a brief overview of how the code fits together.
+\item {\bf Cheats.}  I don't have time to solve all your puzzles, or
+  acquire the skill to defeat your game.  A good game should take
+  hours to finish, but I want to see everything you did in a few
+  minutes.  Please provide walkthroughs for your puzzles, and
+  genuine cheats (keys to press to get to the next level without
+  earning it, an immortality mode, unlimited ammo, the BFG,
+  {\em etc.}), so I can see your
+  whole game in just a few
+  minutes.
+\item {\bf Acknowledgement} of credit for any artwork, sounds, or code that
+  is not your own.
+  Failure to acknowledge such is plagiarism and grounds for academic
+  disciplinary action.  Even if the stuff you use is public domain, it
+  is always nice to credit the place you got it.  Whenever you grab
+  something off the internet, just save the URL with the file and list
+  all these in your acknowledgements.
+\item {\bf Autobiographical info} on the programmer.
+  There is a wide skill range in this class in programming, and in
+  game knowledge.  Games will be judged individually, and based on
+  what the student brings to the game.  Some students may focus on the
+  artwork, some on the game physics, some on the puzzles, some on
+  trying out a completely novel game idea, {\em etc.}  Needless to
+  say, grading will be very subjective.  However, I will attempt to
+  discern how much effort went into the project.  To that end, it is
+  not inappropriate here to give some autobiographical information in
+  the Game Manual about your history, what you found challenging, what
+  was easy, how this differs from games you've done in the past, {\em
+    etc.}
+  \end{itemize}
+
+\item All games must have {\bf in-game documentation.}  Usually this
+takes the form of a help screen, traditionally accessed by pressing
+{\tt F1} or by choosing a {\tt Help} menu item.  The help screen
+should give much of what is in the user's manual, but more succinctly.
+
+\newpage
+
+\item{\bf  Grading criteria.}  Notwithstanding the range of games I expect to
+see, here are some of the things I look for in evaluating a game
+(based on John Laird's criteria).  
+\begin{multicols}{2}
+  \begin{enumerate}
+\item{\bf Is the game functional? }
+\item{\bf Manual and in-game documentation. }
+      Things to consider:
+      \begin{itemize}
+  \item Is the  documentation clear?
+     \item Is it entertaining and inviting?
+     \item Is there a back story to the game?
+     \item Does the game have in game instructions on keys and controls?
+     \end{itemize}
+  \item {\bf Non-trivial implementation. }
+      Things to consider:
+     \begin{itemize}
+     \item Sound effects
+     \item Music
+     \item Different difficulty levels
+     \item Multiple opponents with different behavior
+     \item Multiple levels
+     \item Tutorial level
+     \item Complex interactions between player and enemies
+     \item Complex properties of game pieces (health, shields, ...)
+     \item Two player game mode
+     \item Graphics unusual and engaging
+     \item Physics complex
+     \item Universe bigger than screen
+     \item Deep story
+     \item Network support
+     \end{itemize}
+  \item {\bf Bugs/Design Flaws.}
+      Things to consider:
+     \begin{itemize}
+     \item Game crashes
+     \item Game locks up
+     \item Long load time
+     \item Bad controls
+     \item No ability to stay in game after one turn
+     \item Only one life
+     \item Difficult to tell if you're making progress
+     \item Collision detection problems (walking through walls, getting
+     stuck in walls, {\em etc.})
+     \end{itemize}
+  \item {\bf  Game Play.}
+     Things to consider:
+    \begin{itemize}
+    \item Impossible to win
+    \item Too easy to win
+    \item Just a move and shoot game
+    \item Rate of feedback and achievement not good
+    \item Only single level of goals
+    \item Not fun
+    \item Good mechanics for gameplay
+    \item Originality of game
+    \item Goals are well integrated and are appropriately rewarding
+    \item Feedback appropriately informs players of what is important
+    \item Dynamic difficulty adjustment
+    \item Judge gets hooked on playing the game
+    \item Judge shouts, screams, or laughs out loud while playing
+    \end{itemize}
+      \end{enumerate}
+
+\end{multicols}
+  \end{enumerate}
+\end{document}
+\end

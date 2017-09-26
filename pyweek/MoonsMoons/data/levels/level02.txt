@@ -1,0 +1,111 @@
+song 4
+
+player 450 80
+planet 500 400 200 300 500 2 mordor
+planet 1600 450 300 500 800 3 opalin
+
+#platforms
+-#mordor
+platform r mordor 20 40 40 0 prkno2
+platform r mordor 110 60 60 0 prkno3
+platform r mordor 180 80 80 0 prkno4
+platform r mordor 240 80 100 0 prkno5
+platform r mordor 300 80 120 0 prkno6
+//platform r mordor  80 140 0 prkno7
+//platform r mordor 55 320 140 0 prkno8
+//platform r mordor 30 200 80 0 prkno9
+platform r mordor 40 100 80 0 prkno10
+platform r mordor 348 210 60 0 bon1
+
+-#opalin
+platform r opalin 60 45 40 0 test1
+platform r opalin 60 125 100 90 test2 // block
+
+platform r opalin 315 60 110 0 opal1
+
+platform r opalin 90 60 80 0 opal2
+platform r opalin 120 100 80 0 opal3
+platform r opalin 150 140 60 0 opal4
+platform r opalin 175 180 40 0 opal5
+platform r opalin 195 220 20 0 opal6
+
+
+#monsters
+-#mordor
+eye p prkno3 10
+eye p prkno5 80
+
+eye p prkno6 60
+eye p prkno6 90
+
+eye p bon1 60
+eye a mordor 170
+eye a mordor 60
+eye a mordor 290
+eye a mordor 300
+eye a mordor 310
+
+eye a mordor 180
+eye a mordor 190
+eye a mordor 200
+eye a mordor 210
+eye a mordor 220
+eye a mordor 240
+
+-#opalin
+eye a opalin 340
+eye a opalin 330
+eye a opalin 320
+eye a opalin 310
+
+eye p opal1 50
+eye p test2 50
+
+eye a opalin 30
+eye a opalin 20
+eye a opalin 10
+
+eye a opalin 190
+eye a opalin 197
+eye a opalin 132
+eye a opalin 139
+
+
+
+#geyser
+booster a opalin 270 2000
+booster a opalin 350 1000
+booster a opalin 45 3000 //byebye
+
+#signs
+//##sign p platforma pozice, výška text
+sign a mordor 0 150 Level 2
+sign a opalin 272 100 Geyser
+sign a opalin 45 120 carefully!
+
+sign p opal1 50 90  wrong way
+sign p opal1 50 50 (trust me, ...)  
+//sign p num3 50 80 Checkpoint
+
+
+
+#rewards
+star 445 -75
+star 100 600
+star 1450 80
+
+#checkpoints
+checkpoint a opalin 240
+
+//checkpoint 1610 110
+//checkpoint p prkno5 50
+//checkpoint p prkno6 50
+
+#parts
+part 1300 900 1
+
+//booster 730 400 930 400 700
+//booster 1510 300 1310 301 700
+
+#ports
+port 350 100 level03

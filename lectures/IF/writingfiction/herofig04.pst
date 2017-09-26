@@ -1,0 +1,21 @@
+
+\begin{pspicture}[showgrid=false,unit=0.75cm](0,0)(14,8)
+
+\psset{linecolor=cyan}
+\psline(0,4)(14,4)
+\psline[linewidth=0.1,linecolor=green](0,4)(2,5.5)(3,5)(9,8)(10,7)(13,9.5)(14,8)
+\pstextpath[l]{\psline[linestyle=none](10,7)(13,9.5)}{\tiny The Road Back}
+
+\rput(2,6){\tiny First Threshold}
+\rput(9,8.5){\tiny Delayed Crisis}
+\rput(13,10){\tiny Climax}
+
+\psline[linestyle=dashed](2,5.5)(2,1)
+\psline[linestyle=dotted,linecolor=red](9,8)(9,1)
+\psline[linestyle=dashed](10,7)(10,1)
+
+\rput(1,2){\bf Act I}
+\rput(7,2){\bf Act II}
+\rput(12,2){\bf Act III}
+
+\end{pspicture}

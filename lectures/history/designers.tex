@@ -1,0 +1,153 @@
+\documentclass[a4paper,troispoints,pdf,colorBG,slideColor]{prosper}
+%\hypersetup{pdfpagemode=FullScreen}
+
+\usepackage{pstricks,pst-node,pst-tree}
+\usepackage{amssymb,latexsym}
+\usepackage{graphicx}
+\setlength{\topmargin}{-0.5in}
+\setlength{\textwidth}{9in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+
+\newcommand{\ns}[1]{\vfill \end{slide}\begin{slide}{#1}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+\newcommand{\graphic}[3]{
+\begin{pspicture}(0,0)(0,0)
+\rput(#1){\resizebox{#2}{!}{\includegraphics{#3}}}
+\end{pspicture}
+}
+\newcommand{\graphicbox}[3]{
+\begin{pspicture}(0,0)(0,0)
+\rput(#1){\fbox{\resizebox{#2}{!}{\includegraphics{#3}}}}
+\end{pspicture}
+}
+
+\newpsobject{showgrid}{psgrid}{subgriddiv=1,griddots=10,gridlabels=6pt}
+
+\title{Video Game Designers}
+\author{Geoffrey Matthews\\
+based on \href{http://en.wikipedia.org/wiki/}{\em Wikipedia} articles}
+\institution{Western Washington University}
+
+\begin{document}
+\maketitle
+
+\begin{slide}{Designers}
+{\em Maxis} and Will Wright
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-1){\includegraphics[scale=0.5]{sims.eps}}
+\end{pspicture}
+\bi
+\item 1989: {\em SimCity}
+\item {\em SimAnt}, {\em SimCopter}, ...
+\item {\em Maxis} becomes part of Electronic Arts
+\item 2000: {\em The Sims}
+\item 6 million sold
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-5){\includegraphics[scale=0.4]{civilization.eps}}
+\end{pspicture}
+{\em MicroProse} and Sid Meier
+\bi
+\item Strategic simulations
+\item 1987: {\em Sid Meier's Pirates!}
+\item 1990: {\em Railroad Tycoon}
+\item 1991: {\em Civilization}
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-1){\includegraphics[scale=0.5]{KQ4.eps}}
+\rput(7,-5){\includegraphics[scale=0.4]{halflife.eps}}
+\end{pspicture}
+
+{\em Sierra} and Ken and Roberta Williams
+
+\bi
+\item 1980: {\em Mystery House}
+\item 1984: {\em King's Quest}
+\item 1987: {\em Leisure Suit Larry}
+\item 1998: {\em Half-Life}
+\ei
+
+\ns{Designers}
+{\em Origin Systems} and Richard Garriott
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-4){\includegraphics[scale=0.75]{ultimaonline.eps}}
+\end{pspicture}
+\bi
+\item 1980: {\em Ultima}
+\item 1997: {\em Ultima Online}, early MMORPG
+\item 2000: Disbanded by {\em EA}
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-4){\includegraphics[scale=2]{wingcommander.eps}}
+\end{pspicture}
+
+
+{\em Origin's } other blockbuster by Chris Roberts
+\bi
+\item 1990: {\em Wing Commander}
+\item Epic storyline
+\item Full motion video
+\item 1999: movie spinoff
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-5){\includegraphics[scale=0.5]{easternfront.eps}}
+\end{pspicture}
+
+Chris Crawford
+\bi
+\item 1981: {\em Eastern Front}
+\item 1985: {\em Balance of Power}
+\item 1987: {\em Game Developer's Conference}
+\item 1992: {\em Storytron}
+\ei
+
+
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(9,-1.5){\includegraphics[scale=0.333]{commanderkeen.eps}}
+\rput(8.5,-5.5){\includegraphics[scale=0.5]{doom.eps}}
+\end{pspicture}
+
+{\em Id} and John Carmack
+\bi
+\item 1990: {\em Commander Keen}
+\item 1992: {\em Wolfenstein 3d}
+\item 1993: {\em Doom}
+\item 1996: {\em Quake}
+\ei
+
+\ns{Designers}
+
+\begin{pspicture}(0,0)(0,0)
+\rput(8,-4){\includegraphics[scale=0.4]{facade.eps}}
+\end{pspicture}
+
+
+Michael Mateas and Andrew Stern
+\bi
+\item 2005: {\em Fa\c cade}
+\item 200?: {\em The Party}
+\ei
+
+
+\end{slide}
+\end{document}

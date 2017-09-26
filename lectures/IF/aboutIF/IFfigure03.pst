@@ -1,0 +1,7 @@
+\psset{arrows=->,linewidth=0.05}
+\begin{psmatrix}
+{\rnode{A}{\psframebox{Seen the Spaceship?}}} \\
+{\rnode{B}{\psframebox{Take this Book}}} & {\rnode{C}{\psframebox{Go North}}}
+\ncline{A}{B}<{\em yes}
+\ncline{A}{C}>{\em no}
+\end{psmatrix}

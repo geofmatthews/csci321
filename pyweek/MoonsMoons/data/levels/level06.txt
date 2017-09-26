@@ -1,0 +1,93 @@
+player 1000 750
+
+planet 1000 1000 200 300 400 3 prima
+planet 1000 300 150 300 400 3 top
+planet 1700 1000 100 150 300 3 right
+planet 1000 1700 150 300 400 3 bot
+planet 300 1000 150 300 400 3 left
+
+
+
+
+
+
+
+
+
+
+#monsters
+Q prima 100 90 90
+Q prima 100 180 90
+Q prima 100 270 90
+Q prima 100 0 90
+
+Q top 100 90 90
+Q top 100 180 90
+Q top 100 270 90
+Q top 100 0 90 
+
+Q left 100 90 90
+Q left 100 180 90
+Q left 100 270 90
+Q left 100 0 90 
+
+eye a left 330
+eye a left 320
+eye a left 310
+eye a left 300
+
+
+O a left 240 50
+C a left 150 50
+I a left 220
+
+O a bot 90 70
+O a bot 200 70
+eye a bot 178
+eye a bot 182
+I a bot 330
+I a bot 30
+
+I a top 90
+I a top 120
+O a top 270 60
+
+C a right 350 190
+
+#platforms
+platform r right 90 500 100 180 star1
+
+
+#geysir
+
+booster a top 225 1000
+booster a left 135 1000
+
+booster a prima 90 1000
+booster p star1 50 50000
+
+
+#part
+part 1000 500 5
+
+#stars
+star 2200 1000
+star 390 1200
+star 1000 100
+
+#checkpoints
+checkpoint a right 90
+checkpoint a top 160
+checkpoint a left 60
+
+
+#signs
+sign a prima 0 150 Level 6
+sign a prima 315 140 q-monster
+sign a left 1155 150 no way...
+sign a bot 60 100 almost there
+
+#ports
+port 1000 2000 level07
+
+update_all

@@ -1,0 +1,36 @@
+
+\begin{pspicture}[showgrid=false](0,0)(15,10.5)
+\psset{linecolor=cyan}
+\pscircle(8,5){4}
+\psline(4,5)(12,5)
+
+\psline[linestyle=dotted,linecolor=green](8,0)(8,11)
+\psline[linestyle=dotted,linecolor=green](0,5)(15,5)
+
+\psarc[linewidth=0.1]{->}(8,5){3.5}{20}{70}
+\psarc[linewidth=0.1]{->}(8,5){3.5}{110}{160}
+\psarc[linewidth=0.1]{->}(8,5){3.5}{200}{250}
+\psarc[linewidth=0.1]{->}(8,5){3.5}{290}{340}
+
+\rput(1,10){\bf Act I}
+\rput(1,1){\bf Act II}
+\rput(14,1){\bf Act II}
+\rput(14,10){\bf Act III}
+
+\rput(8,6){\large\bf Ordinary World}
+\rput(8,4){\large\bf Special World}
+
+\rput(8,9.5){\small Ordinary World}
+\rput(5.5,8.75){\small Call}
+\rput(4.5,8){\small Refusal}
+\rput(3.5,6.5){\small Mentor}
+\rput(2.5,5){\small Cross Threshold}
+\rput(3.75,3){\small  Tests}
+\rput(5,1.5){\small Approach}
+\rput(8,0.75){\small Ordeal}
+\rput(12,2.5){\small Reward}
+\rput(13,5){\small Road Back}
+\rput(12.75,7){\small Resurrection}
+\rput(11,9){\small Return with Elixir}
+
+\end{pspicture}

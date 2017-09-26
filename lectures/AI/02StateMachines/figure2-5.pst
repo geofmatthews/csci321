@@ -1,0 +1,7 @@
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}
+&\ovalnode{VB}{VisitBathroom}\\\\
+&\ovalnode{DH}{DoHousework}
+\nccurve[angleA=0,angleB=0]{VB}{DH} \ncput*[nrot=:U]{Return to prev state}
+\nccurve[angleA=180,angleB=180]{DH}{VB} \ncput*[nrot=:U]{1 in 10 chance}
+\end{psmatrix}

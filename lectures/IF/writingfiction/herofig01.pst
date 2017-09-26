@@ -1,0 +1,33 @@
+
+\begin{pspicture}[showgrid=false,unit=0.75cm](0,0)(14,8)
+\psset{linecolor=cyan}
+\psline(0,5)(14,5)
+\psline(5,5)(5,2)
+\psline(9,5)(9,2)
+\rput(2,3){\small\bf Act I}
+\rput(7,3){\small\bf Act II}
+\rput(12,3){\small\bf Act III}
+
+\psline[linestyle=dashed](6.5,5)(6.5,10)
+\psline[linestyle=dashed](9.5,5)(9.5,10)
+\psline[linestyle=dashed](10.5,5)(10.5,10)
+\psline[linestyle=dashed](13.5,5)(13.5,10)
+
+\rput(8,10){\small\bf Crisis}
+\rput(12,10){\small\bf Climax}
+
+\psset{linestyle=none}
+\pstextpath[l]{\psline(0,5.5)(10,16)}{\footnotesize Ordinary World}
+\pstextpath[l]{\psline(1,5.5)(11,16)}{\footnotesize Call to Adventure}
+\pstextpath[l]{\psline(2,5.5)(12,16)}{\footnotesize Refusal of Call}
+\pstextpath[l]{\psline(3,5.5)(13,16)}{\footnotesize Mentor}
+\pstextpath[l]{\psline(4,5.5)(14,16)}{\footnotesize First Threshold}
+\pstextpath[l]{\psline(5,5.5)(15,16)}{\footnotesize Tests, Allies, Enemies}
+\pstextpath[l]{\psline(6,5.5)(16,16)}{\footnotesize Inmost Cave}
+\pstextpath[l]{\psline(7,5.5)(17,16)}{\footnotesize Ordeal}
+\pstextpath[l]{\psline(8,5.5)(18,16)}{\footnotesize Reward}
+\pstextpath[l]{\psline(9,5.5)(19,16)}{\footnotesize The Road Back}
+\pstextpath[l]{\psline(10,5.5)(20,16)}{\footnotesize Resurrection}
+\pstextpath[l]{\psline(11,5.5)(21,16)}{\footnotesize Return with Elixir}
+
+\end{pspicture}

@@ -1,0 +1,239 @@
+\documentclass[handout,t,compress]{beamer}
+\usetheme{Singapore}
+
+\sloppy
+%\usepackage[scaled]{helvet}
+%\usepackage{eulervm}
+
+\usepackage{fp-eval}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{pstricks,pst-node,pst-tree,pst-plot,pst-3dplot,multido}
+\usepackage{graphicx}
+
+\usepackage{alltt}
+
+
+\newcommand{\bframe}[1]{\begin{frame}[fragile]\frametitle{#1}}
+
+\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
+\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
+\newcommand{\ebnf}{\end{tabular}\end{center}}
+
+\newcommand{\myskip}{\vspace{-1em}\hrulefill}
+\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
+\newcommand{\myline}[1]{\centerline{#1}}
+\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
+\newcommand{\br}{\mbox{~}|\mbox{~}}
+
+\definecolor{orange}{rgb}{1,.5,0}
+\definecolor{pink}{rgb}{1,.75,.75}
+\definecolor{ltblue}{rgb}{.75,.75,1}
+
+\newcommand{\be}{\begin{eqnarray*}}
+\newcommand{\ee}{\end{eqnarray*}}
+
+\newcommand{\grph}[2]{
+\begin{columns}
+\column{0.01\textwidth}
+\column{0.6\textwidth}
+\begin{pspicture}[showgrid=#1](-2,-2)(5,5)
+#2
+\end{pspicture}
+}
+
+\newcommand{\txt}[1]{
+\column{0.4\textwidth}
+\rput[bl](0,0){\parbox{\textwidth}{
+\footnotesize
+\begin{itemize}
+#1
+\end{itemize}}}
+\end{columns}}
+
+\newcommand{\myvec}[1]{
+\pstThreeDDot[showpoints=true,drawCoor=true](#1)
+\pstThreeDLine[arrows=->,linecolor=blue](0,0,0)(#1)
+}
+
+\AtBeginSection[]
+{
+\bframe{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\title{Notes on Graphs}
+
+\author{CSCI 321}
+\institute{WWU}
+
+\begin{document}\small
+\psset{arrowscale=2}
+
+\bframe{~}
+\titlepage
+\end{frame}
+
+\bframe{Navigation Graphs}
+\includegraphics[width=\textwidth]{Stormwind_waypoints.eps}
+\end{frame}
+
+\bframe{Tile Based Games}
+\includegraphics[width=\textwidth]{starcraft.eps}
+\end{frame}
+
+
+\bframe{Dependency Graphs}
+\newcommand{\Show}[1]{\psshadowbox{#1}}
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[rowsep=0.5cm,colsep=0.5cm]
+ & & \Show{Castle} \\
+ & & \Show{Keep} \\
+ & & \Show{Town Hall} & \Show{Peasants} \\
+\Show{Knights} & \Show{Barracks} & \Show{Blacksmith} & \Show{Lumber Mill} \\
+\Show{Foot Soldiers} & \Show{Archers} & \Show{Forge} & \Show{Wood} \\
+& \Show{Gunpowder} & \Show{Iron} & \Show{Arrows} \\
+& \Show{Cannons} & & \Show{Guns}
+\ncline{2,3}{1,3}
+\ncline{3,3}{2,3}
+\ncline{3,3}{4,3}
+\ncline{4,3}{5,3}
+\ncline{5,3}{6,3}
+\ncline{6,3}{7,2}
+\ncline{6,3}{7,4}
+\ncline{3,3}{3,4}
+\ncline{3,4}{4,4}
+\ncline{4,4}{5,4}
+\ncline{5,4}{6,4}
+\ncline{5,4}{5,3}
+\nccurve{5,4}{7,4}
+\ncline{3,3}{4,2}
+\ncline{4,2}{5,2}
+\ncline{4,2}{4,1}
+\ncline{4,2}{5,1}
+\ncline{6,4}{5,2}
+\ncline{6,2}{7,2}
+\ncline{6,2}{7,4}
+\ncline{6,3}{7,2}
+\nccurve[angleA=145,angleB=180]{7,2}{1,3}
+\ncline{4,2}{2,3}
+\end{psmatrix}
+\end{frame}
+
+
+\bframe{Mental Mazes}
+
+\vfill
+\begin{center}
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[colsep=3cm]
+Suspicious & Angry\\
+Greedy 
+\ncline{1,1}{1,2}^{threaten}
+\ncline{1,1}{2,1}>{bribe}
+\end{psmatrix}
+\end{center}
+\vfill
+
+\end{frame}
+
+\bframe{Large Mental Mazes}
+\includegraphics{largedialoguemaze.eps}
+\end{frame}
+
+
+\bframe{State Graphs}
+
+\begin{psmatrix}[colsep=0.25cm]
+&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&&\\
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{X} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{~} & \mbox{X} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+...\\
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{O} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{O} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{O} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+\begin{tabular}{c|c|c}
+\mbox{X} & \mbox{~} & \mbox{~} \\\hline
+\mbox{~} & \mbox{O} & \mbox{~} \\\hline
+\mbox{~} & \mbox{~} & \mbox{~} 
+\end{tabular}
+&
+...
+\ncline[arrows=->]{1,2}{2,1}
+\ncline[arrows=->]{1,2}{2,3}
+\ncline[arrows=->]{1,2}{2,4}
+\ncline[arrows=->]{1,2}{2,5}
+
+\ncline[arrows=->]{2,1}{3,1}
+\ncline[arrows=->]{2,1}{3,2}
+\ncline[arrows=->]{2,1}{3,3}
+\ncline[arrows=->]{2,1}{3,4}
+
+\end{psmatrix}
+
+\end{frame}
+
+\bframe{Search}
+\begin{itemize}
+\item Uninformed search:
+\begin{itemize}
+\item Depth first search
+\item Breadth first search
+\item Iterative deepening
+\end{itemize}
+\item Informed search:
+\begin{itemize}
+\item Uniform cost (Dijkstra's)
+\item Greedy
+\item $A^*$ (A-star)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\end{document}
+
+

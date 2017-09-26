@@ -1,0 +1,120 @@
+\documentclass[twocolumn]{article}
+\usepackage[margin=1in]{geometry}
+\newcommand{\dt}{\ensuremath{\Delta t}}
+
+\begin{document}
+
+\centerline{\Large Runge Kutta Example}
+
+\centerline{\large Geoffrey Matthews}
+
+\centerline{\today}
+
+
+Here's a rewrite of the stuff I did in class on Tuesday.
+Suppose we have a point moving in space, and the coordinates of the
+point are given by $p(t)$.  For a one-dimensional spring, the
+coordinates we're interested in are position, velocity, and
+acceleration, or 
+\[
+p(t) = (x(t), v(t), a(t))
+\]
+For our simple spring, the acceleration is a simple function:
+\[
+a(t) = -2x(t)
+\]
+We also presume to know the derivative at any position:
+\begin{eqnarray*}
+p'(p(t)) &=& p'(x(t), v(t), a(t))\\
+         &=& (v(t), a(t), ?)
+\end{eqnarray*}
+We don't know the derivative of the acceleration, but it will turn out
+not to matter.
+
+Now, our system starts at a given time, $t_0$, and advances by $\Delta
+t$, giving times $t_n = t_0 + n\Delta t$.
+When we talk about positions or derivatives or vectors 
+at $n$, it is a simple
+translation to actual times:
+\begin{eqnarray*}
+p(n) &=& p(t_0 + n\Delta t)\\
+p'(p(n)) &=& p'(p(t_0 + n\Delta t))
+\end{eqnarray*}
+For Fourth Order Runge-Kutta integration, we need to calculate four new
+vectors, and three new points:
+\begin{eqnarray*}
+k_1(n) &=& p'(p(n))\Delta t\\
+p_2(n) &=& p(n) + \frac{1}{2}k_1(n)\\
+k_2(n) &=& p'(p_2(n))\Delta t\\
+p_3(n) &=& p(n) + \frac{1}{2}k_2(n)\\
+k_3(n) &=& p'(p_3(n))\Delta t\\
+p_4(n) &=& p(n) + k_3(n)\\
+k_4(n) &=& p'(p_4(n))\Delta t
+\end{eqnarray*}
+We can now start to fill in our table, with $\Delta t = \frac{1}{2}$
+and $a = -2x$.\\
+\centerline{\begin{tabular}{c|c|c|c|c}
+         &  N &   x &   v &   a   \\\hline
+  $p(0)$ &  0 &   8 &   0 & -16   \\
+$k_1(0)$ &  0 &   0\dt & -16\dt & ? \\
+$k_1(0)$ &  0 &   0 & -8 & ? \\
+$p_2(0)$ &  0 &  $8+\frac{1}{2}0$ & $0+\frac{1}{2}(-8)$& ?\\
+$p_2(0)$ &  0 &  8 & -4 & -16
+\end{tabular}}\\
+At this point we can see why we didn't need the derivative of
+acceleration.  When we calculate a new point, we get it just from
+$a=-2x$.  Continuing:\\
+\centerline{\begin{tabular}{c|c|c|c|c}
+         &  N &   x &   v &   a   \\\hline
+  $p(0)$ &  0 &   8 &   0 & $-16$   \\
+$k_1(0)$ &  0 &   0\dt & $-16$\dt & ? \\
+$k_1(0)$ &  0 &   0 & $-8$ & ? \\
+$p_2(0)$ &  0 &  $8+\frac{1}{2}0$ & $0+\frac{1}{2}(-8)$ & ?\\
+$p_2(0)$ &  0 &  8 & $-4$ & $-16$\\
+$k_2(0)$ &  0 & $-4$\dt & $-16$\dt & ?\\
+$k_2(0)$ &  0 & $-2$ & $-8$ & ?\\
+$p_3(0)$ &  0 & $8+\frac{1}{2}(-2)$ & $0+\frac{1}{2}(-8)$ & ?\\
+$p_3(0)$ &  0 & 7 & $-4$  & $-14$\\
+$k_3(0)$ &  0 & $-4$\dt & $-14$\dt & ? \\
+$k_3(0)$ &  0 & $-2$ & $-7$ & ? \\
+$p_4(0)$ &  0 & $8+(-2)$ & $0+(-7)$ & ? \\
+$p_4(0)$ &  0 & 6 & $-7$ & $-12$\\
+$k_4(0)$ &  0 & $-7$\dt & $-12$\dt & ? \\
+$k_4(0)$ &  0 & $-\frac{7}{2}$ & $-6$ & ? 
+\end{tabular}}\\
+Summarizing:\\
+\centerline{\begin{tabular}{c|c|c|c|c}
+         &  N &   x &   v &   a   \\\hline
+  $p(0)$ &  0 &   8 &   0 & $-16$   \\
+$k_1(0)$ &  0 &   0 & $-8$ & ? \\
+$k_2(0)$ &  0 & $-2$ & $-8$ & ?\\
+$k_3(0)$ &  0 & $-2$ & $-7$ & ? \\
+$k_4(0)$ &  0 & $-\frac{7}{2}$ & $-6$ & ? 
+\end{tabular}}\\
+Now we can use the update rule for Runge-Kutta:
+\begin{eqnarray*}
+p(1) &=& p(0) + \frac{k_1(0)}{6} + \frac{k_2(0)}{3} + \frac{k_3(0)}{3} +
+\frac{k_4(0)}{6}\\
+x(1) &=& x(0) + \frac06 + \frac{-2}{3} + \frac{-2}{3} +
+\frac{7}{(2)(6)}\\
+&=& 8 + \frac{-4}{3} + \frac{7}{12}\\
+&=& 8 + \frac{-9}{12}\\
+&=& 7 + \frac{1}{4}\\
+v(1) &=& v(0) + \frac{-8}{6} + \frac{-8}{3} + \frac{-7}{3} +
+\frac{-6}{6}\\
+&=& \frac{-44}{6}\\
+&=& -(7 + \frac{1}{3})\\
+a(1) &=& -2(7 + \frac{1}{4})\\
+&=& -(14 + \frac{1}{2})
+\end{eqnarray*}
+So now we have the next row in our table:\\
+\centerline{\begin{tabular}{c|c|c|c|c}
+         &  N &   x &   v &   a   \\\hline
+  $p(0)$ &  0 &   8 &   0 & $-16$   \\
+  $p(1)$ &  1 & $7 + \frac{1}{4}$ & $-(7 + \frac{1}{3})$ & $-(14 +
+  \frac{1}{2})$
+\end{tabular}}\\
+and we can start on $p(2)$!
+\end{document}
+
+

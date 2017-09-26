@@ -1,0 +1,448 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\PathPlannerApp.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\PathPlannerApp.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP  MOVEABLE PURE   "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR DISCARDABLE  16, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_SETTINGS
+    SEPARATOR
+    BUTTON      ID_PLANNER_INITIALIZE
+    BUTTON      ID_PLANNER_DESTROY
+    SEPARATOR
+    BUTTON      ID_RUN_START
+    BUTTON      ID_RUN_PAUSE
+    BUTTON      ID_RUN_STOP
+    BUTTON      ID_RUN_RESTART
+    SEPARATOR
+    BUTTON      ID_PLANNER_SETTINGS
+    BUTTON      ID_PLANNER_INFO
+    SEPARATOR
+    BUTTON      ID_DRAW_PROGRESS
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU PRELOAD DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "Open...",                     ID_FILE_OPEN
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "Options"
+    BEGIN
+        MENUITEM "Application Settings...",     ID_SETTINGS
+        MENUITEM "Planner Settings...",         ID_PLANNER_SETTINGS
+    END
+    POPUP "&View"
+    BEGIN
+        POPUP "Zoom"
+        BEGIN
+            MENUITEM "2 x",                         ID_VIEW_ZOOM_2X
+            MENUITEM "4 x",                         ID_VIEW_ZOOM_4X
+            MENUITEM "8 x",                         ID_VIEW_ZOOM_8X
+        END
+        MENUITEM "Resize",                      ID_VIEW_RESIZE
+        MENUITEM SEPARATOR
+        MENUITEM "Planner Information...",      ID_PLANNER_INFO
+    END
+    POPUP "Run"
+    BEGIN
+        MENUITEM "Start",                       ID_RUN_START
+        MENUITEM "Stop",                        ID_RUN_STOP
+        MENUITEM "Restart",                     ID_RUN_RESTART
+        MENUITEM "Pause",                       ID_RUN_PAUSE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About PathPlannerApp...",    ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS PRELOAD MOVEABLE PURE 
+BEGIN
+    "A",            ID_SETTINGS,            VIRTKEY, NOINVERT
+    "C",            ID_PLANNER_INITIALIZE,  VIRTKEY, NOINVERT
+    "D",            ID_PLANNER_DESTROY,     VIRTKEY, NOINVERT
+    "I",            ID_PLANNER_INFO,        VIRTKEY, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, NOINVERT
+    "P",            ID_RUN_PAUSE,           VIRTKEY, NOINVERT
+    "Q",            ID_APP_EXIT,            VIRTKEY, NOINVERT
+    "R",            ID_RUN_START,           VIRTKEY, NOINVERT
+    "S",            ID_PLANNER_SETTINGS,    VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 229, 170
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About PathPlannerApp Application"
+FONT 8, "MS Sans Serif"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,17,21,20
+    LTEXT           "Path Planner App Version 0.6",IDC_STATIC,43,18,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Application by Syrus Mesdaghi \nCourse Director of Artificial Intelligence \nsyrusm@fullsail.com \n\nFull Sail Real World Education \nGame Design and Development \nwww.fullsail.com ",
+                    IDC_STATIC,43,97,147,60
+    LTEXT           "This application is designed to allow convenient creation, demonstration, and analysis of different path planning algorithms",
+                    IDC_STATIC,43,35,163,29
+    LTEXT           "For information on the implementation of different algorithms and their authors, see the corresponding files",
+                    IDC_STATIC,44,66,163,26
+    DEFPUSHBUTTON   "OK",IDOK,172,16,50,14,WS_GROUP
+END
+
+IDD_DIALOG_SETTINGS DIALOG DISCARDABLE  0, 0, 183, 137
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Application Settings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    COMBOBOX        IDC_ALGORITHM,91,14,84,77,CBS_DROPDOWNLIST | 
+                    CBS_AUTOHSCROLL | CBS_DISABLENOSCROLL | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_IX,91,31,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_IY,135,31,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GX,91,47,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_GY,135,47,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_TIME_SLICE,91,63,84,14,ES_AUTOHSCROLL
+    CONTROL         "Draw Progress",IDC_DRAW_PROGRESS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,100,62,10
+    DEFPUSHBUTTON   "OK",IDOK,31,116,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,102,116,50,14
+    LTEXT           "Algorithm :",IDC_STATIC,7,18,34,8
+    LTEXT           "Initial Point (x, y) :",IDC_STATIC,7,34,56,8
+    LTEXT           "Goal Point (x, y) :",IDC_STATIC,7,51,54,8
+    LTEXT           "Time Slice (millisec) :",IDC_STATIC,7,68,66,8
+    LTEXT           "Nodes (+, -) :",IDC_STATIC,7,83,42,8
+    EDITTEXT        IDC_NODES_DESTRUCTED,135,79,40,14,ES_AUTOHSCROLL | 
+                    ES_READONLY | ES_NUMBER
+    EDITTEXT        IDC_NODES_CONSTRUCTED,91,79,40,14,ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_PLANNER_SETTINGS DIALOG DISCARDABLE  0, 0, 186, 95
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Planner Serrings"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_HEURISTIC_WIGHT,91,13,20,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_CLOSED_HASHTABLE_SIZE,91,30,47,12,ES_AUTOHSCROLL
+    CONTROL         "Diagonal Penalty",IDC_DIAGONAL_PENALTY,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,7,58,69,10
+    DEFPUSHBUTTON   "OK",IDOK,39,74,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,105,74,50,14
+    CONTROL         "Heuristic Weight :",IDC_STATIC,"Static",
+                    SS_LEFTNOWORDWRAP | WS_GROUP,7,16,57,8
+    LTEXT           "Closed HashTable Size :",IDC_STATIC,7,33,78,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "PathPlannerApp MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "PathPlannerApp\0"
+            VALUE "LegalCopyright", "Copyright (C) 2002\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "PathPlannerApp.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "PathPlannerApp\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 162
+    END
+
+    IDD_DIALOG_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 176
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_PLANNER_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_SETTINGS DLGINIT
+BEGIN
+    IDC_ALGORITHM, 0x403, 3, 0
+0x2a41, "\000" 
+    IDC_ALGORITHM, 0x403, 13, 0
+0x2a41, 0x4f20, 0x7470, 0x6d69, 0x7a69, 0x6465, "\000" 
+    IDC_ALGORITHM, 0x403, 12, 0
+0x2a41, 0x4e20, 0x646f, 0x4d65, 0x7365, 0x0068, 
+    IDC_ALGORITHM, 0x403, 11, 0
+0x6542, 0x7473, 0x4620, 0x7269, 0x7473, "\000" 
+    IDC_ALGORITHM, 0x403, 14, 0
+0x7242, 0x6165, 0x7464, 0x2068, 0x6946, 0x7372, 0x0074, 
+    IDC_ALGORITHM, 0x403, 9, 0
+0x6944, 0x6b6a, 0x7473, 0x6172, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR1             CURSOR  DISCARDABLE     "res\\cursor1.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    IDR_MAINFRAME           "PathPlannerApp"
+END
+
+STRINGTABLE PRELOAD DISCARDABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Path Planner"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_APP_ABOUT            "Display application information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_SETTINGS             "Application settings that are independent of the planner being used\nApplication Settings"
+    ID_PLANNER_INFO         "The information and statistics of the active planner\nPlanner Information"
+    ID_RUN_START            "Start planning using the current planner specified in the Apllication Settings Dialog\nStart"
+    ID_RUN_PAUSE            "Pause the active planner\nPause"
+    ID_RUN_STOP             "Stops the active planner\nStop"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_FILE_OPEN            "Open CollisionMap\nOpen collision map"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLANNER_SETTINGS     "Settings specific to the current planner specified in the Application Settings Dialog\nPlanner Settings"
+    ID_DRAW_PROGRESS        "Toggle Drawing\nToggle Draw Progress"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_PLANNER_DESTROY      "Destroy the instance of the current planner\nDestroy planner"
+    ID_PLANNER_INITIALIZE   "Create an instance of the planner specified in the Application Settings Dialog\nCreate planner"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\PathPlannerApp.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

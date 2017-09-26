@@ -1,0 +1,49 @@
+To be done for next versions:
+ -Add scrolling to the menus
+ -Fix collision detection related bugs and annoyances, especially related to flipping
+ -Possibly make spiders able to cling to the edges of the screen
+ -Add background animation
+ -Add spider moving animation
+ -Add animation scripting
+ -Add more levels
+ -Add more usable level changing command and a victory event for the scripts
+ -Add fading in and out effects
+ -Add umbrella?
+
+Changes from Beta 0.5.0 to Beta 0.5.5:
+ -Added joystick/gamepad support
+ -Added lever animation
+ -Added levels 5 and 6
+ -Added score display after loss and victory
+ -Fixed projectiles leaking off the top of the screen
+ -Projectiles now stay on screen after flipping
+
+Changes from Alpha 0.3.0 to Beta 0.5.0:
+ -Made the player a bit smaller to make it easier to get through narrow passages while jumping
+ -Increased player health
+ -Added on screen game over messages and player hp changes on game over and victory
+
+Changes from Alpha 0.2.0 to Alpha 0.3.0:
+ -Fixed "woosh" sound (the sound that the flip levers make)
+ -Improved dialogue
+ -Adjusted scoring
+ -Adjusted player jump height when hitting spikes - it's possible to jump out of a spike pit two tiles deep now
+ -Added third and fourth levels
+ -Added documentation about creating levels
+ -Added -l command line parameter for starting from a different level (debugging)
+ -Fixed collision detection "jitter" bug when colliding with a wall on the left
+ -Fixed top attached spider bug
+ -Replaced jumping sound effect
+ -Player's health now stays the same over the levels
+ -Added unlocked levels saving
+ -Added main menu with dialogue and sound toggling
+
+Changes from Alpha 0.1.0 to Alpha 0.2.0:
+ -Added basic script & dialogue support
+ -Added dialogue to the first level
+ -Added code for level change & victory / loss to the main class
+ -Added second level
+ -Lowered the spikes so that they can be jumped over more easily
+
+Alpha 0.1.0:
+ -First available test build

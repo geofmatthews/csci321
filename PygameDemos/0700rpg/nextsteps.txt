@@ -1,0 +1,1 @@
+Lots of things could share images, like tiles.  Would it help that much?

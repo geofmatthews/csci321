@@ -1,0 +1,136 @@
+\documentclass[slidestop,compress]{beamer}
+\usetheme{Singapore}
+
+\sloppy
+%\usepackage[scaled]{helvet}
+%\usepackage{eulervm}
+
+\usepackage{fp-eval}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{pstricks,pst-node,pst-tree,multido}
+\usepackage{graphicx}
+
+\usepackage{alltt}
+
+
+\newcommand{\bframe}[1]{\begin{frame}[fragile]{#1}}
+
+\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
+\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
+\newcommand{\ebnf}{\end{tabular}\end{center}}
+
+\newcommand{\myskip}{\vspace{-1em}\hrulefill}
+\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
+\newcommand{\myline}[1]{\centerline{#1}}
+\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
+\newcommand{\br}{\mbox{~}|\mbox{~}}
+
+\definecolor{orange}{rgb}{1,.5,0}
+\definecolor{pink}{rgb}{1,.75,.75}
+\definecolor{ltblue}{rgb}{.75,.75,1}
+
+\newcommand{\be}{\begin{eqnarray*}}
+\newcommand{\ee}{\end{eqnarray*}}
+
+\AtBeginSection[]
+{
+\bframe{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\title{Autonomous Motion}
+\author{CSCI 321\\
+based on {\em Programming Game AI by Example,} Mat Buckland, 2005}
+\institute{WWU}
+
+\begin{document}\small
+
+\bframe{~}
+\titlepage
+\end{frame}
+
+\bframe{
+
+
+\bframe{Combining Steering Behaviors}
+
+\begin{itemize}
+\item Weighted Truncated Sum
+\item Weighted Truncated Running Sum with Prioritization
+\item Prioritized Dithering
+\end{itemize}
+
+\end{frame}
+
+\bframe{Weighted Truncated Sum}
+
+\begin{verbatim}
+SteeringForce.Zero()
+
+SteeringForce.Add( Wander() * dWanderAmount )
+SteeringForce.Add( WallAvoid() * dWallAvoidAmount )
+SteeringForce.Add( Separation() * dSeparationAmount )
+
+return SteeringForce.Truncate(MAX_STEERING_FORCE)
+\end{verbatim}
+
+\begin{itemize}
+\item
+Problems:
+\begin{itemize}
+\item Costly:  all behaviors computed every step
+\item Weights difficult to tweak
+\item Conflicting forces: backed into a corner by several others
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\bframe{Weighted Truncated Running Sum with Prioritization}
+
+\begin{verbatim}
+SteeringForce.Zero()
+
+SteeringForce.Add( WallAvoid() * dWallAvoidAmount )
+if (SteeringForce.Greater(MAX_STEERING_FORCE)):
+  return SteeringForce.Truncate(MAX_STEERING_FORCE)
+
+SteeringForce.Add( Separation() * dSeparationAmount )
+if (SteeringForce.Greater(MAX_STEERING_FORCE)):
+  return SteeringForce.Truncate(MAX_STEERING_FORCE)
+
+SteeringForce.Add( Wander() * dWanderAmount )
+if (SteeringForce.Greater(MAX_STEERING_FORCE)):
+  return SteeringForce.Truncate(MAX_STEERING_FORCE)
+
+return SteeringForce.Truncate(MAX_STEERING_FORCE)
+\end{verbatim}
+
+\end{frame}
+
+\bframe{Prioritized Dithering}
+\begin{verbatim}
+prWallAvoid = 0.9
+prSeparation = 0.8
+prWander = 0.5
+
+if random.uniform() > prWallAvoid:
+  SteeringForce.Add( WallAvoid() * dWallAvoid / prWallAvoid )
+  return SteeringForce.Truncate(MAX_STEERING_FORCE)
+
+if random.uniform() > prSeparation:
+  SteeringForce.Add( Separation() * dSeparation / prSeparation )
+  return SteeringForce.Truncate(MAX_STEERING_FORCE)
+
+if random.uniform() > prWander:
+  SteeringForce.Add( Wander() * dWander / prWander )
+  return SteeringForce.Truncate(MAX_STEERING_FORCE)
+\end{verbatim}
+
+\end{frame}
+
+
+
+\end{document}

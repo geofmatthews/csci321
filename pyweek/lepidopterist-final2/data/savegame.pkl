@@ -1,0 +1,49 @@
+((dp1
+S'nab'
+p2
+I3
+sS'turn'
+p3
+I1
+sS'leap'
+p4
+I4
+sS'twirl'
+p5
+I1
+s(I5
+I7
+(dp6
+S'bbutterfly'
+p7
+I9
+sS'pbutterfly'
+p8
+I1
+sS'ybutterfly'
+p9
+I21
+sS'wbutterfly'
+p10
+I2
+sI4
+(dp11
+I1
+I13
+sI2
+I2
+c__builtin__
+set
+p12
+((lp13
+S'Tip:|The bars in the corner tell|you how many times you can|perform an action.\n'
+p14
+aS'Tip:|Keys used to perform actions|are shown in the corner.|Up, left, right and space bar.\n'
+p15
+aS"Tip:|If you have enough bars, you|can double jump. Just jump|when you're already in the air.\n"
+p16
+aS'Tip:|Control using the arrow keys|and space bar\n'
+p17
+atRp18
+ttp19
+.

@@ -1,0 +1,523 @@
+\documentclass{beamer}
+%\documentclass[handout]{beamer}
+
+\usepackage{rotating}
+
+\title{How to Evaluate Games}
+\subtitle{Some Ideas from\\ {\em The Art of Game Design, a
+  Book of Lenses}\\ Jesse Schell}
+%\author{}
+%\author[R. Rostamian]{Rouben Rostamian}
+%\institute[WWU]{
+%  Department of Computer Science \\
+%  Western Washington University \\
+%  Bellingham, WA 98225
+%}
+
+\begin{document}
+
+%----------- titlepage ----------------------------------------------%
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Playing a Game is an {\em Experience}}
+
+\begin{itemize}
+\item The experience is the most important part of a game.
+\item To evaluate a game, evaluate your experience of it.\pause
+  \item How does it feel to play the game?
+  \item Exciting, frustrating, intriguing, frightening, ...
+  \item Why do you keep playing?  Why did you start?
+\item What could be improved to make the experience richer?
+\item What games give you similar experiences?
+\item What games are completely different?
+\item What experiences would you like to see in this game?
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Looking at Experience}
+
+\begin{itemize}
+
+\item How can you analyze your feelings while you're still having
+  them?\pause
+\item Look at your memories\pause
+\item Play the same game twice\pause
+\item Sneak glances\pause
+\item Observe silently, like a Zen master
+
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{What is Play?}
+
+\begin{itemize}
+  \item Play is the aimless expenditure of exuberant energy.\pause
+\item Play refers to those activities which are accompanied by a state
+  of comparative pleasure, exhilaration, power, and the feeling of
+  self-initiative.\pause
+\item Play is free movement within a more rigid structure.\pause
+\item Play is whatever is done spontaneously and for its own sake.\pause
+\item Play is manipulation that indulges curiosity.
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Curiosity:  Play Answers Questions}
+
+\begin{itemize}
+  \item What happens when I click this?
+\item Can I beat this team?
+\item What can I make with this clay?
+\item How many freethrows can I make in a row?
+\item How do I finish this level?
+\item What new monsters will I find next?
+\item How do I use this weapon?
+\end{itemize}
+
+When evaluating a game, ask yourself what questions it raises, and how
+satisfactorily it answers them.
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{What is a Game?}
+
+\begin{itemize}
+  \item Games are an exercise of voluntary control systems, in which
+    there is an contest between powers, confined by rules in order to
+    produce a disequilibrial outcome.\pause
+\item A game is an interactive structure of endogenous meaning that
+  requires players to struggle toward a goal.\pause
+\item A game is a closed, formal system, that engages players in
+  structured conflict, and resolves in an unequal outcome.\pause
+\item A game is a problem-solving activity, approached with a playful
+  attitude. 
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Game Qualities}
+
+\begin{itemize}
+  \item Games are entered willfully
+\item Games have goals
+\item Games have conflict
+\item Games have rules
+\item Games can be won and lost
+\item Games are interactive
+\item Games have challenge
+\item Games can create their own internal value
+\item Games engage players
+\item Games are closed, formal systems.
+
+\end{itemize}
+
+When you evaluate a game, look at how well or poorly it achieves these
+qualities.  What could be done to improve them?
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Games Pose Problems}
+
+\begin{itemize}
+  \item Find a way to get more points than the other guys
+\item Find a way to defeat a monster
+\item Find a way through a maze
+\item Find a way to complete this level
+\item Find a way to destroy the other player.
+\end{itemize}
+
+When evaluating a game:  What problems does the game give the player?
+Are there hidden problems that arise?  How does the game generate new
+problems each time, so players come back?
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{The Four Elements of Games}
+
+\begin{picture}(200,120)
+\put(100,100){\makebox(0,0){\it More visible}}
+\put(100,0){\makebox(0,0){\it Less visible}}
+\put(100,75){\oval(60,20)}
+\put(100,75){\makebox(0,0){Aesthetics}}
+\put(100,25){\oval(60,20)}
+\put(100,25){\makebox(0,0){Technology}}
+\put(50,50){\oval(60,20)}
+\put(50,50){\makebox(0,0){Mechanics}}
+\put(150,50){\oval(60,20)}
+\put(150,50){\makebox(0,0){Story}}
+\put(100,50){\vector(1,0){20}}
+\put(100,50){\vector(0,1){10}}
+\put(100,50){\vector(-1,0){20}}
+\put(100,50){\vector(0,-1){10}}
+\end{picture}
+
+\bigskip
+\begin{itemize}
+\item Which areas are best?  Worst? 
+\item  How could
+they be bettered? 
+\item Is there {\em balance} and {\em blend} between all
+four?
+\end{itemize}
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Theme}
+
+\begin{itemize}
+  \item What is the game {\em about?}\pause
+\item {\em Titanic}:  Love is stronger than death.\pause
+\item {\em Hercules}:  Virtue can defeat death.\pause
+\item {\em Toontown online}:  Play can defeat work.\pause
+  \item Does every element of the game support the theme?
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{The Players}
+
+\begin{itemize}
+  \item What is the target audience for the game?
+\item Age, sex, occupation, politics, personality,...\pause
+\begin{columns}[c]
+\column{0.45\textwidth}
+\item Males prefer:
+\begin{itemize}
+\item Mastery \item Competition \item Destruction \item Spatial
+  Puzzles \item Trial and Error \end{itemize}\pause
+\column{0.45\textwidth}
+\item Females prefer:
+\begin{itemize}
+\item Emotion \item Real world \item Nurturing \item Dialog and Verbal
+  Puzzles \item Learning by Example
+\end{itemize}
+\end{columns}
+\end{itemize}
+
+
+
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Game Pleasures}
+
+\begin{itemize}
+  \item Sensation
+\item Fantasy
+\item Narrative
+\item Challenge
+\item Fellowship
+\item Discovery
+\item Expression
+\item Submission
+\end{itemize}
+
+
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Taxonomy of Player Types}
+
+\begin{picture}(200,100)
+\put(100,100){\makebox(0,0){\bf Acting}}
+\put(100,0){\makebox(0,0){\bf Interacting}}
+\put(0,50){\makebox(0,0){\bf Players}}
+\put(200,50){\makebox(0,0){\bf World}}
+\put(100,50){\vector(1,0){75}}
+\put(100,50){\vector(-1,0){75}}
+\put(100,50){\vector(0,1){40}}
+\put(100,50){\vector(0,-1){40}}
+\pause
+\put(175,75){\makebox(0,0){\it Achievers}}\pause
+\put(175,25){\makebox(0,0){\it Explorers}}\pause
+\put(25,25){\makebox(0,0){\it Socializers}}\pause
+\put(25,75){\makebox(0,0){\it Killers}}
+\end{picture}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{More Subtle Pleasures}
+
+\begin{itemize}
+  \item Anticipation
+\item Delight in Another's Misfortune
+\item Gift Giving
+\item Humor
+\item Possibility
+\item Pride in Accomplishment
+\item Purification
+\item Surprise
+\item Thrill
+\item Triumph over Adversity
+\item Wonder
+\end{itemize}
+
+\end{frame}
+
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{The Learning Curve}
+
+\begin{picture}(200,150)
+\put(0,75){\begin{turn}{90}\makebox(0,0)[b]{Skill}\end{turn}}
+\put(100,0){\makebox(0,0)[t]{Time}}
+\put(0,0){\vector(1,0){200}}
+\put(0,0){\vector(0,1){150}}
+
+\qbezier(0,0)(75,0)(100,75)
+\qbezier(100,75)(125,150)(200,150)
+\put(200,150){\vector(1,0){1}}
+\end{picture}
+
+\end{frame}
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Flow}
+
+\begin{picture}(200,150)
+\put(0,75){\begin{turn}{90}\makebox(0,0)[b]{Challenges}\end{turn}}
+\put(100,0){\makebox(0,0)[t]{Skills}}
+\put(0,0){\vector(1,0){200}}
+\put(0,0){\vector(0,1){150}}
+
+\put(150,20){\it Boredom}
+\put(20,100){\it Anxiety}
+%\put(0,0){\vector(3,2){150}}
+\put(80,60){\bf Flow}
+\qbezier(0,0)(40,0)(40,30)
+\qbezier(40,30)(40,60)(80,60)
+\qbezier(80,60)(120,60)(120,90)
+\qbezier(120,90)(120,120)(160,120)
+\put(160,120){\vector(1,0){1}}
+\end{picture}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Factors Affecting Flow}
+\begin{itemize}
+  \item Clear goals
+\item No distractions
+\item Direct feedback
+\item Continuously challenging
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Game Mechanics}
+
+\begin{itemize}
+\item Space
+\item Objects, Attributes, and States
+\item Actions
+\item Rules
+\item Skill
+\item Chance
+
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Space}
+
+\begin{itemize}
+\item Discrete or continuous?
+\item Number of dimensions?
+\item Bounded or infinite?
+\item Nested?
+\item Mental spaces?
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Objects, Attributes, and States}
+
+
+\begin{itemize}
+\item Objects are state machines, their attributes depend on their states.
+\item Secret attributes:  known, shared, etc.
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Actions}
+
+\begin{itemize}
+\item What are the {\em verbs}?
+\item What actions are built in to the rules?
+\item What objects can they act on?
+\item What actions are {\em emergent}?
+\item What side effects are there?
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Rules}
+
+\begin{itemize}
+\item What are the fundamental rules?
+\item Are there ``laws'' or ``house rules''?
+\item Are there modes in the game?
+\item Who enforces the rules?
+\item Are the rules easy to understand?
+
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{The Most Important Rule of All}
+
+\begin{itemize}
+  \item What is the ultimate goal?
+\item Is it clear to the players?
+\item Is there a series of goals?  Do the players realize this?
+\item Are the goals related to each other in a meaningful way?
+\item Are the goals concrete, achievable, and rewarding?
+\item Are short-term and long-term goals balanced?
+\item Do players get to choose between goals?
+
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Skills}
+
+\begin{itemize}
+\item What skills are required?
+\item Are there categories of skill missing?
+\item Which skills dominate?
+\item What experience do the skills create?
+\item Are some players much better at these skills?  Does that make it
+  unfair?  Is there a way to handicap the game?
+\item Can players improve their skills?
+\item Does this game demand the right amount of skill for its target
+  audience? 
+
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Chance}
+
+\begin{itemize}
+\item Are certain events governed by chance?
+\item What is the perceived chance?
+\item What are the rewards?
+\item Are the chance calculations complex?
+\item Estimating chance is a {\em skill}.
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Balance}
+
+\begin{itemize}
+\item Fairness: 
+ symmetrical: checkers, chess {\em vs.}
+ asymmetrical: rock-paper-scissors, fox and geese
+\pause
+\item Challenge {\em vs.} Success: flow and the learning curve\pause
+\item Meaningful Choices:  low risk/low reward {\em vs.} high
+  risk/high reward \pause
+\item Skill {\em vs.} Chance \pause
+\item Head {\em vs.} Hands \pause
+\item Competition {\em vs.} Cooperation \pause
+\item Short {\em vs.} Long\pause
+\item Rewards and Punishments Appropriate \pause
+\item Freedom {\em vs.} Controlled Experience \pause
+\item Simple {\em vs.} Complex: innate {\em vs>} emergent --- {\em elegance} \pause
+\item Detail {\em vs.} Imagination\pause
+\item Beware dynamic balance!
+\end{itemize}
+
+\end{frame}
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Puzzles}
+
+\begin{itemize}
+  \item Goal easily understood
+\item Easy to get started
+\item Give a sense of progress
+\item Give a sense of solvability
+\item Increase difficulty gradually
+\item Parallelism lets the player rest
+\item Pyramid structure extends interest
+\item Hints extend interest
+\item Give the answer!
+\item Perceptual shifts are a double-edged sword
+\end{itemize}
+
+\end{frame}
+
+
+%----------- slide --------------------------------------------------%
+\begin{frame}
+  \frametitle{Interfaces}
+
+\begin{itemize}
+\item Does the game do what is expected when you use the control?
+\item Do you get the experience of being in control?
+\item Is the feedback too busy?
+\item Does the feedback direct your attention correctly?
+\item Is it a joy to use (swiffer {\em vs.} sweeping)?
+\end{itemize}
+
+\end{frame}
+
+
+
+\end{document}

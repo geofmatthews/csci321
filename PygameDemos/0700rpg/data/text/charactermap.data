@@ -1,0 +1,8 @@
+ghost, south,  9, 3
+skel,  south,  7, 7
+skel,  south,  6,15
+bat,   south,  9,10
+bat,   south, 10,13
+blob,  west,   9,17
+blob,  west,   3,12
+gal,   east,  11,15

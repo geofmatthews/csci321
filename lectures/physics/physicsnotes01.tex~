@@ -1,0 +1,1083 @@
+\documentclass[handout,t,compress]{beamer}
+\usetheme{Singapore}
+
+\sloppy
+%\usepackage[scaled]{helvet}
+%\usepackage{eulervm}
+
+\usepackage{fp-eval}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{pstricks,pst-node,pst-tree,pst-plot,pst-3dplot,multido}
+\usepackage{graphicx}
+
+\usepackage{alltt}
+
+
+\newcommand{\bframe}[1]{\begin{frame}[fragile]{#1}}
+
+\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
+\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
+\newcommand{\ebnf}{\end{tabular}\end{center}}
+
+\newcommand{\myskip}{\vspace{-1em}\hrulefill}
+\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
+\newcommand{\myline}[1]{\centerline{#1}}
+\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
+\newcommand{\br}{\mbox{~}|\mbox{~}}
+
+\definecolor{orange}{rgb}{1,.5,0}
+\definecolor{pink}{rgb}{1,.75,.75}
+\definecolor{ltblue}{rgb}{.75,.75,1}
+
+\newcommand{\be}{\begin{eqnarray*}}
+\newcommand{\ee}{\end{eqnarray*}}
+
+\newcommand{\grph}[2]{
+\begin{columns}
+\column{0.01\textwidth}
+\column{0.6\textwidth}
+\begin{pspicture}[showgrid=#1](-2,-2)(5,5)
+#2
+\end{pspicture}
+}
+
+\newcommand{\txt}[1]{
+\column{0.4\textwidth}
+\rput[bl](0,0){\parbox{\textwidth}{
+\footnotesize
+\begin{itemize}
+#1
+\end{itemize}}}
+\end{columns}}
+
+\newcommand{\myvec}[1]{
+\pstThreeDDot[showpoints=true,drawCoor=true](#1)
+\pstThreeDLine[arrows=->,linecolor=blue](0,0,0)(#1)
+}
+
+\AtBeginSection[]
+{
+\bframe{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\title{Game Physics Notes}
+\author{CSCI 321}
+\institute{WWU}
+
+\begin{document}\small
+\psset{arrowscale=2}
+
+\bframe{~}
+\titlepage
+\end{frame}
+
+\bframe{Points in Space}
+
+\grph{false}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\rput[br](-1,1){$A$}
+\rput[br](2,3){$B$}
+\rput[br](1,0){$C$}
+\rput[br](4,2){$D$}
+\rput[br](1,4){$E$}
+}
+
+\txt{
+\item Points exist in space without a coordinate system.
+\item But with only labels it's difficult to compute with them.
+}
+\end{frame}
+
+\bframe{Points in a Coordinate System}
+
+\grph{true}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\rput[br](-1,1){$A$}
+\rput[br](2,3){$B$}
+\rput[br](1,0){$C$}
+\rput[br](4,2){$D$}
+\rput[br](1,4){$E$}
+}
+
+\txt{
+\item A coordinate system gives positions to points.
+\item Relates {\em points} to {\em tuples of numbers}, or {\em
+  mathematical vectors}.  
+\item However, points are {\em not} vectors!
+}
+\end{frame}
+
+\bframe{Different Coordinates}
+\psset{unit=2cm}
+\begin{columns}
+\column{0.01\textwidth}
+\column{0.6\textwidth}
+\begin{pspicture}[showgrid=true](-1,-1)(2.5,2.5)
+\psline[showpoints=true,linestyle=none](-0.5,0.5)(1,1.5)(0.5,0)(2,1)(0.5,2)
+\rput[br](-.5,.5){$A$}
+\rput[br](1,1.5){$B$}
+\rput[br](.5,0){$C$}
+\rput[br](2,1){$D$}
+\rput[br](.5,2){$E$}
+\end{pspicture}
+
+\txt{
+\item Different coordinate systems give different vectors,
+ but the {\em points} are unchanged.
+}
+\psset{unit=1cm}
+\end{frame}
+
+
+\bframe{Physical vectors are differences between points.}
+
+\grph{false}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\rput[br](-1,1){$A$}
+\rput[br](2,3){$B$}
+\rput[br](1,0){$C$}
+\rput[bl](4,2){$D$}
+\rput[br](1,4){$E$}
+\psline[arrows=->](-1,1)(2,3)
+\rput[tl](.5,2){$\vec{v}=\overrightarrow{ab}=b-a$}
+}
+\txt{
+\item Physical vectors are {\em not} mathematical vectors.
+\item But given a coordinate system, you can represent the points as
+  mathematical vectors, and then subtract.
+\item But these mathematical vectors are not the same thing!
+\item Different coordinate systems will give you different
+  mathematical vectors for the {\em same} physical vector.
+}
+\end{frame}
+
+\bframe{Points and vectors are not the same thing!}
+
+\grph{false}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\rput[br](-1,1){$A$}
+\rput[br](2,3){$B$}
+\rput[br](1,0){$C$}
+\rput[bl](4,2){$D$}
+\rput[br](1,4){$E$}
+\psline[arrows=->](-1,1)(2,3)
+\rput[tl](.5,2){$\vec{v}=\overrightarrow{ab}=b-a$}
+}
+\txt{
+\item A point is a position in space.
+\item A vector has a magnitude and a direction.
+\item The vector from $a$ to $b$ is the point difference:
+$\vec{v} = \overrightarrow{ab} = b-a$
+\item  You can add two vectors, but  you {\em cannot} add two points!
+\item You can add points and vectors: $b = a+\vec{v} = a + (b-a)$
+}
+\end{frame}
+
+\bframe{Vector Addition}
+
+\grph{false}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\rput[br](-1,1){$A$}
+\rput[br](2,3){$B$}
+\rput[br](1,0){$C$}
+\rput[bl](4,2){$D$}
+\rput[br](1,4){$E$}
+\psline[arrows=->](-1,1)(2,3)
+\rput[br](.5,2){$B-A$}
+\psline[arrows=->](2,3)(4,2)
+\rput[bl](3,2.5){$D-B$}
+\psline[arrows=->,linecolor=blue](-1,1)(4,2)
+\rput[tl](1.5,1.5){$D-A = (B-A)+(D-B)$}
+}
+\txt{
+\item vector + vector = vector
+\item point + vector = point
+\item point - point = vector
+\item point + point = {\em nonsense}
+}
+\end{frame}
+
+\bframe{Coordinates give mathematical vectors to physical vectors.}
+
+\grph{true}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\psline[arrows=<->](-1,1)(2,3)(4,2)
+\psline[arrows=<->](1,0)(2,3)(1,4)
+}
+\txt{
+\item Subtract the components.
+\item $(1,4) - (2,3) = (-1, 1)$
+\item $(-1,1) - (2,3) = (-1, -2)$
+\item $(1,0) - (2,3) = (-1, -3)$
+\item $(4,2) - (2,3) = (2,-1)$
+\item Note: we subtract two {\em points} to get a
+  {\em vector}. 
+}
+\end{frame}
+
+\bframe{Vectors do not have positions}
+\grph{true}{
+\psline[arrows=->](-1,-1)(2,3)
+\psline[arrows=->](1,-1)(4,3)
+\psline[arrows=->](-1,1)(2,5)
+\psline[arrows=->](0,0)(3,4)
+}
+\txt{
+\item Each of these vectors is the {\em same} vector.
+}
+
+\end{frame}
+
+\bframe{Vectors can be multiplied by scalars}
+\grph{true}{
+\psline[arrows=->](-1,2)(2,4)
+\rput[ul](1,3){$\vec{v}$}
+\psline[arrows=->](-1,0)(5,4)
+\rput[ul](2.5,2){$2\vec{v}$}
+\psline[arrows=->](4,1)(1,-1)
+\rput[ul](3,0){$-\vec{v}$}
+}
+\txt{
+\item Multiplication is repeated addition.
+}
+\end{frame}
+
+\bframe{Lines}
+\grph{false}{
+\psline[linestyle=dotted](-2,-1)(5,2.5)
+\psline[showpoints=true,linestyle=none](0,0)(4,2)
+\psline[arrows=->,linecolor=blue](0,0)(2,1)
+\rput[tl](0,0){$P$}
+\rput[tl](1,.5){$\vec{v}$}
+\rput[tl](4,2){$P + \alpha\vec{v}$}
+}
+\txt{
+\item The line through $P$ in the direction $v$ is the set of all
+  points $P+\alpha v$ for some $\alpha \in \mathbb{R}$
+}
+\end{frame}
+
+\bframe{Planes (in 3 dimensions)}
+\grph{false}{
+\psline[linestyle=dotted](-2,-1)(5,2.5)
+\psline[linestyle=dotted](0,-2)(0,5)
+\psline[linestyle=dotted](3,1.5)(3,4)
+\psline[linestyle=dotted](0,2.5)(3,4)
+\psline[showpoints=true,linestyle=none](0,0)(3,4)
+\psline[arrows=->,linecolor=blue](0,0)(2,1)
+\psline[arrows=->,linecolor=blue](0,0)(0,2)
+\rput[tl](0,0){$P$}
+\rput[tl](1,.5){$\vec{v}$}
+\rput[tr](0,1){$\vec{w}$}
+\rput[bl](2,4){$P + \alpha\vec{v} + \beta\vec{w}$}
+}
+\txt{
+\item The plane through $P$ spanned by $v$ and $w$ is the set of all
+  points $P+\alpha v + \beta w$ for some $\alpha,\beta \in \mathbb{R}$
+}
+\end{frame}
+
+
+\bframe{Affine sums}
+\grph{false}{
+\psline[linestyle=dotted](-2,-1)(5,2.5)
+\psline[showpoints=true,linestyle=none](0,0)(2,1)(4,2)
+\psline[arrows=->,linecolor=blue](0,0)(2,1)
+\rput[tl](0,0){$P$}
+\rput[tl](2,1){$Q$}
+\rput[br](4,2){$\alpha_1 P + \alpha_2 Q$}
+}
+\txt{
+\item
+$P + \alpha(Q-P)$
+
+$= (1-\alpha)P + \alpha Q$
+
+$= \alpha_1 P + \alpha_2 Q$
+\item $\alpha_1 + \alpha_2 = 1$
+\item Think of each point as 
+  the vector from some arbitrary point:
+
+${P} \equiv P-O$
+
+${Q} \equiv Q-O$
+
+\item If $0 \leq \alpha_i$ then the point is between $P$ and $Q$.
+}
+\end{frame}
+\bframe{Convex hull}
+\grph{false}{
+
+
+\pspolygon[showpoints=true,fillstyle=solid,fillcolor=lightgray](-1,-1)(2,0)(5,2)(4,4)(1,3)(-1,1)
+\psline[showpoints=true,linestyle=none](1,1)(2,1)(3,3)(0,0)(3,2)
+}
+\txt{
+\item $P= \alpha_1P_1 + \alpha_2P_2 + \ldots + \alpha_nP_n$
+\item $\alpha_1 + \alpha_2 + \ldots + \alpha_n = 1$
+\item $0 \leq \alpha_i$
+}
+\end{frame}
+
+\bframe{Frames}
+
+\grph{true}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\psline[linecolor=blue,showpoints=true,arrows=->](0,0)(0,1)
+\psline[linecolor=red,showpoints=true,arrows=->](0,0)(1,0)
+}
+\txt{
+\item A coordinate system can be thought of as a single point, the
+  {\em origin}, and a set of {\em basis vectors}.
+\item Such a set is called a {\em frame}.
+}
+\end{frame}
+
+\bframe{Frames}
+\grph{true}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\psline[linecolor=red,showpoints=true,arrows=->](0,0)(1,0)
+\psline[arrows=->,linecolor=red](1,0)(2,0)
+\psline[arrows=->,linecolor=blue](2,0)(2,1)
+\psline[arrows=->,linecolor=blue](2,1)(2,2)
+\psline[arrows=->,linecolor=blue](2,2)(2,3)
+\rput[bl](2,3){$(2,3)$}
+}
+\txt{
+\item The coordinates of a point are how many copies of the basis
+  vectors you have to add to the origin.
+}
+\end{frame}
+
+\bframe{Frames}
+\grph{false}{
+\psline[showpoints=true,linestyle=none](-1,1)(2,3)(1,0)(4,2)(1,4)
+\psline[linecolor=red,showpoints=true,arrows=->](0,0)(1,0)
+\psline[arrows=->,linecolor=red](1,0)(2,0)
+\psline[arrows=->,linecolor=blue](2,0)(2,1)
+\psline[arrows=->,linecolor=blue](2,1)(2,2)
+\psline[arrows=->,linecolor=blue](2,2)(2,3)
+\rput[bl](2,3){$(2,3)$}
+}
+\txt{
+\item Note that a frame gives sense to coordinates without anything
+  other than points and vectors.
+\item A coordinate system is nothing more than an origin and a set of
+  basis vectors, a {\em frame}.
+\item An {\em orthonormal} frame is one in which all the vectors are
+  of unit length and perpendicular to each other.
+}
+\end{frame}
+
+
+\bframe{Frames do not have to be orthonormal}
+\grph{false}{
+\psline[linestyle=dotted](-2,-1)(5,2.5)
+\psline[linestyle=dotted](0,-2)(0,5)
+\psline[linestyle=dotted](3,1.5)(3,4)
+\psline[linestyle=dotted](0,2.5)(3,4)
+\psline[showpoints=true,linestyle=none](0,0)(3,4)
+\psline[arrows=->,linecolor=blue](0,0)(2,1)
+\psline[arrows=->,linecolor=blue](0,0)(0,2)
+\rput[tl](0,0){$P$}
+\rput[tl](1,.5){$\vec{v}$}
+\rput[tr](0,1){$\vec{w}$}
+\rput[bl](2,4){$Q = P + \alpha\vec{v} + \beta\vec{w} = (\alpha,\beta)$}
+}
+\txt{
+\item The frame $F = (P,\vec{v},\vec{w})$ gives coordinates to any
+  point in the plane it spans.  }
+\end{frame}
+
+
+\bframe{Trigonometry}
+\grph{false}{
+\psline(0,0)(4,0)(4,3)(0,0)
+\psline[linecolor=.!25](3.5,0)(3.5,.5)(4,.5)
+\psarc(0,0){1}{0}{36.67}
+\rput[tl](2,-.1){$a$}
+\rput[tl](4,1.5){$o$}
+\rput(2,2){$h$}
+\rput(1.2,.5){$\theta$}
+}
+\txt{
+\item $\sin(\theta) = o/h$
+\item $\cos(\theta) = a/h$
+\item $\tan(\theta) = o/a$
+}
+\end{frame}
+
+\bframe{Trigonometry}
+\grph{false}{
+\psline(0,0)(4,0)(4,3)(0,0)
+\psline[linecolor=.!25](3.5,0)(3.5,.5)(4,.5)
+\psarc(0,0){1}{0}{36.67}
+\rput[tl](2,-.1){$h\cos(\theta)$}
+\rput[tl](4,1.5){$h\sin(\theta)$}
+\rput(2,2){$h$}
+\rput(1.2,.5){$\theta$}
+}
+\txt{
+\item $\tan(\theta) = \sin(\theta)/\cos(\theta)$
+}
+\end{frame}
+
+\bframe{Dot product (Inner product)}
+\grph{true}{
+\psline[arrows=<->](5,0)(0,0)(3.2,3.2)
+\psarc(0,0){1}{0}{45}
+\rput[bl](1,.5){$\theta$}
+\rput[bl](5,0){$\vec{u}$}
+\rput[bl](3.2,3.2){$\vec{v}$}
+}
+\txt{
+\item $u\cdot v = \cos(\theta)|u||v|$
+\pause
+\item $|u| = \sqrt{u\cdot u}$
+}
+\end{frame}
+
+\bframe{Projection of one vector on another}
+\grph{true}{
+\psline[arrows=<->](5,0)(0,0)(3.2,3.2)
+\psarc(0,0){1}{0}{45}
+\rput[bl](1,.5){$\theta$}
+\rput[bl](5,0){$\vec{u}$}
+\rput[bl](3.2,3.2){$\vec{v}$}
+
+\rput[t](3.2,-.1){$x$}
+\psline[linestyle=dashed,linecolor=blue](3.2,0)(3.2,3.2)
+}
+\txt{
+\item What is $x$?
+}
+\end{frame}
+
+\bframe{Projection of one vector on another}
+\grph{true}{
+\psline[arrows=<->](5,0)(0,0)(3.2,3.2)
+\psarc(0,0){1}{0}{45}
+\rput[bl](1,.5){$\theta$}
+\rput[bl](5,0){$\vec{u}$}
+\rput[bl](3.2,3.2){$\vec{v}$}
+
+\rput[t](3.2,-.1){$x$}
+\psline[linestyle=dashed,linecolor=blue](3.2,0)(3.2,3.2)
+}
+\txt{
+\item $x = \cos(\theta)|v|$
+\item $x = {u\cdot v}/{|u|}$
+}
+
+\end{frame}
+
+\bframe{Same direction, opposite direction}
+\grph{false}{
+\psline[arrows=<->](-2,2)(0,0)(5,0)
+\psline[arrows=<->](0,3)(0,0)(4,2)
+\psline[linestyle=dotted](0,-2)(0,5)
+\rput[b](-2,2){$\vec{v_3}$}
+\rput[b](0,3){$\vec{v_2}$}
+\rput[b](4,2){$\vec{v_1}$}
+\rput[l](5,0){$\vec{u}$}
+}
+\txt{
+\item What is the sign of $u\cdot v_i$?
+}
+
+\end{frame}
+
+
+\bframe{Same direction, opposite direction}
+\grph{false}{
+\psline[arrows=<->](-2,2)(0,0)(5,0)
+\psline[arrows=<->](0,3)(0,0)(4,2)
+\psline[linestyle=dotted](0,-2)(0,5)
+\rput[b](-2,2){$\vec{v_3}$}
+\rput[b](0,3){$\vec{v_2}$}
+\rput[b](4,2){$\vec{v_1}$}
+\rput[l](5,0){$\vec{u}$}
+\rput[bl](4,3){Positive}
+\rput[b](0,4){Zero}
+\rput[bl](-2,3){Negative}
+}
+\txt{
+\item Sign of $u\cdot v_i$ 
+}
+\end{frame}
+
+\bframe{{\em AMAZING} theorem about the dot product.}
+\begin{itemize}
+\item In any coordinate system whatsoever:
+\begin{eqnarray*}
+u\cdot v &=& (u_x, u_y, u_z)\cdot (v_x, v_y, v_z) \\
+&=& u_xv_x + u_yv_y + u_zv_z\\
+&=& [u_x\  u_y\  u_z]\left[\begin{array}{c}v_x\\v_y\\v_z\end{array}\right]\\
+&=& u^Tv
+\end{eqnarray*}
+\end{itemize}
+
+\end{frame}
+
+\bframe{Cross product (vector product)}
+\grph{false}{
+\psset{Alpha=60,showpoints=true,arrows=->,drawCoor=true}
+\pstThreeDCoor
+\myvec{0.5,2.0,-0.5}
+\myvec{-1.0, 1.5, 0.5}
+\myvec{1.75, 0.25, 2.75}
+\pstThreeDPut(0.6,2.1,-0.7){$u$}
+\pstThreeDPut(-1.1,1.6,0.6){$v$}
+\pstThreeDPut(2,0,3){$u \times v$}
+}
+\txt{
+\item A vector at right angles to $u$ and $v$.
+\item $u \times v = $\\
+$(u_2v_3 - u_3v_2,$\\$ u_3v_1 - u_1v_3,$\\$ u_1v_2 - u_2v_1)$
+
+\item Mnemonic:
+\[u\times v = \left|\begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+                           u_1 & u_2 & u_3 \\
+                           v_1 & v_2 & v_3 \\
+\end{array}\right|\]
+\item $|u\times v| = |u||v|\sin(\theta)$
+}
+\end{frame}
+
+
+\bframe{Forces}
+
+Newton's second law of motion: $F=ma$
+
+\begin{eqnarray*}
+a &=& F/m\\
+v' &=& a\\
+p' &=& v
+\end{eqnarray*}
+\begin{quotation}
+Corpus omne perseverare in statu suo quiescendi vel movendi
+uniformiter in directum, nisi quatenus a viribus impressis cogitur
+statum illum mutare. 
+\end{quotation}
+Or, in English:
+\begin{quotation}
+Every body perseveres in its state of being at
+rest or of moving uniformly straight forward, except insofar as it is
+compelled to change its state by force impressed.
+\end{quotation}
+\end{frame}
+
+
+\bframe{Forces and Motion}
+
+\begin{eqnarray*}
+F &=& ma\\
+a &=& F/m\\
+v' &=& a\\
+p' &=& v
+\end{eqnarray*}
+
+\begin{itemize}
+\item What we really want to know is: ``How do things move?''\pause
+\item If we know the forces and masses, we know the acceleration.\pause
+\item If we can integrate the acceleration we can get the velocity.\pause
+\item If we can integrate the velocity we can get the position.\pause
+\item The problem is integration---generally unsolvable.
+\item So we use approximate integration.
+\end{itemize}
+\end{frame}
+
+\bframe{Euler Integration}
+
+Exact integration would move the point along the blue lines.
+
+\psset{arrowscale=2}
+\psset{unit=0.75cm}
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+%\psline{*->}(1,1)(4.5,3.5)
+%\psline{*->}(4.5,3.5)(8.75,4.25)
+
+
+%\uput[-90](1,1){$\vec{x}_0$}
+%\uput[-90](4.5,3.5){$\vec{x}_1$}
+%\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+
+%\uput[90](2.75,2.25){$\vec{k}(0)$}
+%\uput[90](6.625,3.875){$\vec{k}(1)$}
+\end{pspicture}
+\end{center}
+
+\end{frame}
+
+\bframe{Euler Integration}
+
+\begin{eqnarray*}
+\vec{k}(n) &=& v(t,\vec{x}_n)\Delta t\\
+\vec{x}_{n+1} &=& \vec{x}_n + \vec{k}(n)
+\end{eqnarray*}
+
+\psset{arrowscale=2}
+\psset{unit=0.75cm}
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(1,1)(4.5,3.5)
+\psline{*->}(4.5,3.5)(8.75,4.25)
+
+
+\uput[-90](1,1){$\vec{x}_0$}
+\uput[-90](4.5,3.5){$\vec{x}_1$}
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+
+\uput[90](2.75,2.25){$\vec{k}(0)$}
+\uput[90](6.625,3.875){$\vec{k}(1)$}
+\end{pspicture}
+\end{center}
+
+\end{frame}
+
+\bframe{Euler Integration}
+
+\begin{eqnarray*}
+a &=& F/m\\
+v' &=& a\\
+p' &=& v
+\end{eqnarray*}
+
+\bigskip
+
+\begin{centering}
+\begin{verbatim}
+def update(F, m, dt):
+  a = F / m
+  v += a * dt
+  p += v * dt
+\end{verbatim}
+\end{centering}
+
+\end{frame}
+
+
+\bframe{Sample Calculations}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 1 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}
+\hfill\begin{minipage}{2in}
+
+Euler:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0 & 20 & 0 & -10 \\
+1 & 20 & -10 & -10 \\
+2 & 10 & -20 & -5 \\
+3 & -10 & -25 & 5 \\
+4 & -35 & -20 & 17 \\
+5 & -55 & -3 & 27 \\
+\end{tabular}
+\end{minipage}
+
+\begin{itemize}
+\item
+Run {\tt spring.py}
+\end{itemize}
+\end{frame}
+
+
+\bframe{Online discussions of Midpoint and Runge Kutta}
+
+Readings:
+\begin{itemize}
+\item \url{http://www.pixar.com/companyinfo/research/pbm2001/},
+  Differential equation basics, and Particle dynamics
+\item \url{http://www.nrbook.com/c/}, 16.0, 16.1
+\end{itemize}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+\begin{eqnarray*}
+\vec{k}_1 &=&  v(t, \vec{x}_n)\Delta t\\
+\vec{k}_2 &=& v(t+\frac{1}{2}\Delta t, \vec{x}_n+
+                     \frac{1}{2}\vec{k}_1)\Delta t \\
+\vec{x}_{n+1} &=& \vec{x}_n + \vec{k}_2 
+\end{eqnarray*}
+
+\begin{itemize}
+\item
+Euler method has errors $O(\Delta t^2)$
+\item
+Midpoint method has errors $O(\Delta t^3)$
+\item Can take steps twice as big and get smaller errors:
+\begin{eqnarray*}
+0.05^2 &=& 0.0025\\
+0.10^3 &=& 0.001
+\end{eqnarray*}
+\end{itemize}
+\end{frame}
+
+\bframe{Midpoint Method}
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+
+\psline{*->}(1,1)(8,6)
+
+\rput(0.5,1){$\vec{x}_0$}
+\rput(8.5,6){$\vec{k}_1$}
+\pscurve{->}(3,5)(5,5)(4,4)(4.5,3.5)
+\rput(2,5){\psshadowbox{Halfway point}}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(4.5,3.5)(13,5)
+
+\rput(0.5,1){$\vec{x}_0$}
+\psdot[dotsize=.25cm](1,1)
+
+\rput(13,4.5){$\vec{k}_2$}
+\pscurve{->}(3,5)(5,5)(4,4)(4.5,3.5)
+\rput(2,5){\psshadowbox{Halfway point}}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(4.5,3.5)(13,5)
+\psline{*->}(1,1)(9.5,2.5)
+
+\psline[linestyle=dotted]{-}(4.5,3.5)(1,1)
+\psline[linestyle=dotted]{-}(13,5)(9.5,2.5)
+
+\rput(0.5,1){$\vec{x}_0$}
+
+\rput(13,4.5){$\vec{k}_2$}
+\rput(9.5,1.75){$\vec{k}_2$}
+\pscurve{->}(3,5)(5,5)(4,4)(4.5,3.5)
+\rput(2,5){\psshadowbox{Halfway point}}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+
+\psline{*->}(1,1)(8,6)
+\psline{*->}(1,1)(9.5,2.5)
+
+
+\rput(0.5,1){$\vec{x}_0$}
+\rput(8.5,6){$\vec{k}_1$}
+\rput(10,2.5){$\vec{k}_2$}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+One midpoint method step of size $\Delta t$ 
+is more accurate than two Euler steps
+of size $\Delta t/2$.
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(1,1)(4.5,3.5)
+\psline{*->}(4.5,3.5)(8.75,4.25)
+\psline{*->}(1,1)(9.5,2.5)
+
+
+\rput(0.5,1){$\vec{x}_0$}
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Sample Calculations}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 1 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}\hfill
+\begin{minipage}{2in}
+Midpoint:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0 & \rnode{A1}{20} & \rnode{A2}{0} & \rnode{A3}{-10} \\
+0.5 & \rnode{B1}{20} & \rnode{B2}{-5} & \rnode{B3}{-10} \\
+1.0 & \rnode{C1}{15} & \rnode{C2}{-10} & \rnode{C3}{-7} \\
+1.5 & 10 & -13 & -5 \\
+2.0 & 2 & -15 & -1 \\
+2.5 & -5 & -15 & 2 \\
+3.0 & -13 & -13 & 6 \\
+3.5 & -19 & -10 & 9 \\
+4.0 & -23  & -4 &  11 \\
+4.5 & -25 & 1 & 12 \\
+5.0 & -24 & 8 & 12\\
+\end{tabular}
+\nccurve[ncurv=1,angleA=35,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A1}{B1}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A2}{B1}
+\nccurve[ncurv=1,angleA=35,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A2}{B2}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A3}{B2}
+\end{minipage}
+
+\bigskip \hfill First add half of the derivative.
+\end{frame}
+
+\bframe{Sample Calculations}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 1 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}\hfill
+\begin{minipage}{2in}
+Midpoint:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0 & \rnode{A1}{20} & \rnode{A2}{0} & \rnode{A3}{-10} \\
+0.5 & \rnode{B1}{20} & \rnode{B2}{-5} & \rnode{B3}{-10} \\
+1.0 & \rnode{C1}{15} & \rnode{C2}{-10} & \rnode{C3}{-7} \\
+1.5 & 10 & -13 & -5 \\
+2.0 & 2 & -15 & -1 \\
+2.5 & -5 & -15 & 2 \\
+3.0 & -13 & -13 & 6 \\
+3.5 & -19 & -10 & 9 \\
+4.0 & -23  & -4 &  11 \\
+4.5 & -25 & 1 & 12 \\
+5.0 & -24 & 8 & 12\\
+\end{tabular}
+\nccurve[angleA=0,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A1}{C1}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{B2}{C1}
+\nccurve[angleA=0,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A2}{C2}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{B3}{C2}
+\end{minipage}
+
+\bigskip \hfill Then add all the ``half-derivative.''
+\end{frame}
+
+\bframe{ Fourth Order Runge-Kutta}
+\begin{eqnarray*}
+\vec{k}_1 &=& v(t,\vec{x}_n)\Delta t \\
+\vec{k}_2 &=& v(t + \frac{1}{2}\Delta t, \vec{x}_n +
+\frac{1}{2}\vec{k}_1 )\Delta t \\
+\vec{k}_3 &=& v(t+\frac{1}{2}\Delta t,  \vec{x}_n +
+\frac{1}{2}\vec{k}_2 )\Delta t \\
+\vec{k}_4 &=& v(t+\Delta t,  \vec{x}_n + \vec{k}_3 )\Delta t \\
+\vec{x}_{n+1} &=& \vec{x}_n + \frac{\vec{k}_1}{6}
++ \frac{\vec{k}_2}{3}
++ \frac{\vec{k}_3}{3}
++ \frac{\vec{k}_4}{6}
+\end{eqnarray*}
+\end{frame}
+
+\bframe{Fourth order Runge Kutta}
+Tangents calculated at the dots: $\frac{\vec{k}_1}{6}+\frac{\vec{k}_2}{3}+\frac{\vec{k}_3}{3}+\frac{\vec{k}_4}{6}$
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false,arrowscale=2](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,-1)(5.25,1.625)(10,2.5)
+\pscurve[linecolor=blue!50]{-}(1,3)(5,4.25)(9,4)(10,3.8)
+
+\psline{->}(1,1)(8,6)
+\psline{->}(1,1)(9.5,2.25)
+\psline{->}(1,1)(9,4)
+\psline{->}(1,1)(9.5,.5)
+
+\rput(0.5,1){$\vec{x}_0$}
+
+\rput(8.5,6){$\vec{k}_1$}
+\rput(9.9,2.1){$\vec{k}_2$}
+\rput(9.5,4.5){$\vec{k}_3$}
+\rput(9.9,0.5){$\vec{k}_4$}
+
+\psdot(1,1)
+\psdot(4.5,3.5)
+\psdot(5.25,1.625)
+\psdot(9,4)
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+
+\bframe{ Fourth Order Runge-Kutta}
+\begin{itemize}
+\item
+Euler method has errors $O(\Delta t^2)$
+\item
+Midpoint method has errors $O(\Delta t^3)$
+\item
+Fourth order Runge Kutta has errors $O(\Delta t^5)$
+\item
+\begin{eqnarray*}
+0.05^2 &=& 0.00250\\
+0.10^3 &=& 0.00100\\
+0.20^5 &=& 0.00032
+\end{eqnarray*}
+\end{itemize}
+
+\end{frame}
+\bframe{Adaptive stepsize}
+\begin{itemize}
+\item Change $\Delta t$ as you go along...
+\item ...depending on how much things are changing.
+\end{itemize}
+\end{frame}
+
+\bframe{Differential Equations}
+Reading:
+\begin{itemize}
+\item Strange attractors
+\url{http://en.wikipedia.org/wiki/Attractor}
+\item The Limits to Growth
+\url{http://www.csiro.au/files/files/plje.pdf}
+\item Run: {\tt strange??.py}
+\end{itemize}
+\end{frame}
+
+\bframe{Verlet Integration}
+
+Reading:
+\begin{itemize}
+\item \url{\tiny http://www.gamedev.net/page/resources/_/technical/math-and-physics/a-verlet-based-approach-for-2d-game-physics-r2714}
+\item Can be used as the basis of a collision response system.
+\item Run {\tt VerletPhysicsDemo.py}
+\item True elastic collisions:
+\url{http://en.wikipedia.org/wiki/Elastic_collision}
+\item Run {\tt BouncingBalls.py}
+\end{itemize}
+
+\end{frame}
+
+
+\bframe{Advanced collision techniques}
+
+Reading:
+\begin{itemize}
+\item
+\url{http://www.gamasutra.com/view/feature/3190/advanced_collision_detection_.php}
+\item Very small objects
+\item Fast moving objects
+\item Complex objects
+\end{itemize}
+
+\end{frame}
+
+\bframe{Many objects}
+
+Reading:
+\begin{itemize}
+\item Partitioning
+\item Sweep and prune
+\item \url{http://en.wikipedia.org/wiki/Sweep_and_prune}
+\end{itemize}
+
+\end{frame}
+
+\bframe{Use a Library}
+\begin{itemize}
+\item PyMunk: \url{http://code.google.com/p/pymunk/}
+\end{itemize}
+\end{frame}
+
+\end{document}

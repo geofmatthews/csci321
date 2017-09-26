@@ -1,0 +1,81 @@
+Nelly's Rooftop Garden
+Alex Holkner (rushed/alexkidd), alex@partiallydisassembled.net
+--------------------------------------------------------------
+
+Requirements: 
+ * Python   >= 2.4
+ * pygame   >= 1.6
+ * pyopengl >= 2.0.1
+ * OpenGL accelerated video card
+
+The story so far...  Nelly needs to water her rooftop garden, but the pumps
+have broken.  If only there were some way to transform water into a gas that
+could float up to the rooftop and water the plants!
+
+Your task is to water the plants in each scenario using the steam provided by
+the kettle.  Steam will condense into water when it comes into contact with a
+cold metal bar.  Water may evaporate into steam if it hits a hot object.
+
+Running
+-------
+
+python nelly.py
+
+Controls
+--------
+
+From the menu screen, select "New Game".  The materials you have available are
+shown on the left.  Not all materials will be available in every level.  Click
+on a material to select it, then click where you want to place it.  You can
+move an object by dragging it with the mouse, and rotate it by dragging the
+small rotation handles that appear around an object.  You can return an object
+to the materials panel by dragging it there.
+
+When you complete a level (sufficiently water the plants), you will be given a
+code so you can access the next level directly.  Write it down on some paper.
+You can return to the main menu at any time by pressing Escape.
+
+To start a game from a level you are up to, select "Enter Level Code" from the
+main menu.  Enter the code you wrote down earlier and hit enter.  If the code
+is correct you will be taken to the appropriate level.
+
+You can play in a free-form manner by choosing "Sandpit" from the main menu.
+This gives you unlimited access to all of the materials so you can create your
+own scenarios.
+
+Level Editor
+------------
+
+A level editor is integrated into the game.  Select "Level Editor" from the
+main menu.  The green arrows in the bottom right corner let you select which
+level to edit.  The white page icon creates a new, empty level.  The disk icon
+saves all levels to disk.  The red up/down arrows next to the "level"
+indicator rearrange the order of levels as they appear in the game.  
+
+The red up/down arrows next to each material set the stock levels for the
+player.  A grey icon means the material will be unavailable for the level,
+corresponding to a stock level of 0.  A stock level of -1 (coloured icon with
+no number) indicates an infinte supply of material.
+
+The brick walls are a bit tricky to draw.  Use the blue line material
+(bottom-right), and click and drag to draw the first line (if you just click,
+it will create a wall of no dimension that you won't be able to see).  Click
+and drag on the red vertices of the line to move them, or drag with the right
+mouse button to extend them (and to create a visible brick wall).  Dragging
+any vertex into the materials area will delete the whole line.
+
+Super-Secret Advanced Controls
+------------------------------
+
+F5 in the editor hides the wood-grain frame, making it easier to draw brick
+walls beyond the edge of the playable area.
+
+F4 anywhere will print the filename of the current level to stdout.
+
+Credit
+------
+
+Metal and wood textures by lynnart, from http://lynnart.net/
+Brick texture by Mayang Murni Adnin, from http://www.mayang.com/textures
+Babelfish font by Dale Harris, from http://www.1001fonts.com/
+Created for PyWeek 2, http://www.pyweek.org/

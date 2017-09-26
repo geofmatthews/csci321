@@ -1,0 +1,75 @@
+import os, pygame, re
+
+def _ReinerAnimations(animfolder, datafolder = 'data'):
+    """
+    A function to load animated sprites from Reiner's tilesets.
+    Images are returned in nested dictionaries as
+        animations[action][heading][index]
+    The headings are 'n','ne', etc.
+    The action names are whatever Reiner called them in the folder.
+    Some of them may be in German.  To see what they are just
+    ask for
+        animations.keys()
+
+    This function assumes that file names without headings are 'stills',
+    usually s, sw, w, ... numbered 0..7 without headings.
+    It also assumes there is only one name without headings,
+    like name0000.bmp name0001.bmp, etc., and no 
+    This is not always the case.  For instance, bowstan has
+    no stills, but it does have arrows, numbered 0..32.
+    I just moved these to a different folder.
+    """
+    folder = os.path.join(datafolder, animfolder)    
+    # Find the names Reiner used for his actions
+    # This will find them automatically from his filenames,
+    # and store them under their (stripped) names in the animations
+    # dictionary
+    headings = '|'.join(('s','sw','w','nw','n','ne','e','se'))
+    actionpattern = '(.*?)(' + headings + ')(\d\d\d\d)(.bmp)$'
+    actionpattern = re.compile(actionpattern)
+    animationpattern = '(.*?)(\d\d\d\d)(.bmp)$'
+    animationpattern = re.compile(animationpattern)
+    animations = {}
+    for root, dirs, files in os.walk(folder):
+        for file in files:
+            m = animationpattern.match(file)
+            a = actionpattern.match(file)
+            if m:
+                # Find name, heading, and index from filename:
+                if a:
+                    aname = a.group(1).strip()
+                    heading = a.group(2).strip()
+                    index = int(a.group(3))
+                else:
+                    ## Reiner didn't put the headings on the
+                    ## nonanimated images, but I think they are
+                    ## numbered 0,1,2,... = s,sw,w,...
+                    aname = m.group(1).strip()
+                    index = int(m.group(2))
+                    heading = {0:'s',1:'sw',2:'w',3:'nw',
+                               4:'n',5:'ne',6:'e',7:'se'}[index]
+                    index = 0
+                # If no dictionary entry yet, add it:
+                if not aname in animations:
+                    animations[aname] = {}
+                if not heading in animations[aname]:
+                    animations[aname][heading] = {}
+                # Load the image
+                fullname = os.path.join(root, file)
+                try:
+                    image = pygame.image.load(fullname)
+                except pygame.error, message:
+                    print 'Cannot load image: ', fullname
+                    raise SystemExit, message
+                image.convert()
+                image.set_colorkey(image.get_at((0,0)))
+                animations[aname][heading][index] = image
+    return animations
+
+class ReinerSprite(pygame.sprite.Sprite):
+    def __init__(self, folder, pos=(0.0,0.0)):
+        pygame.sprite.Sprite.__init__(self)
+        self.animations = _ReinerAnimations(folder)
+        self.position = pos
+        self.velocity = (0.0, 0.0)
+        

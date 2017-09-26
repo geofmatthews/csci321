@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry}
+\title{Installing Python, Pygame, and other Packages on Windows}
+\author{Geoffrey Matthews}
+\begin{document}
+\begin{description}
+\item[Python]
+  I like installing python using the Anaconda package, because you get
+tons of important scientific packages automatically loaded.
+
+\url{https://www.continuum.io/downloads}
+
+\item[Packages]
+  For installing packages on Windows, the most reliable method I've
+  found is to use the unofficial binaries found here:
+
+  \url{http://www.lfd.uci.edu/~gohlke/pythonlibs/}
+
+  Packages you may want to consider:
+  \begin{itemize}
+  \item pygame
+  \item pymunk
+  \item box2d
+  \item pyglet
+  \end{itemize}
+\end{description}
+
+\end{document}
+
+  

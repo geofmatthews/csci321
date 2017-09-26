@@ -1,0 +1,743 @@
+\documentclass[t,compress]{beamer}
+\usetheme{Singapore}
+\usepackage{etex}
+
+\sloppy
+%\usepackage[scaled]{helvet}
+%\usepackage{eulervm}
+
+\usepackage{multicol}
+
+\usepackage{fp-eval}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{pstricks,pst-node,pst-tree,multido,pst-plot,pstricks-add}
+\usepackage{graphicx}
+
+\usepackage{alltt}
+
+
+\newcommand{\bframe}[1]{\begin{frame}[fragile]{#1}}
+
+\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
+\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
+\newcommand{\ebnf}{\end{tabular}\end{center}}
+
+\newcommand{\myskip}{\vspace{-1em}\hrulefill}
+\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
+\newcommand{\myline}[1]{\centerline{#1}}
+\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
+\newcommand{\br}{\mbox{~}|\mbox{~}}
+
+\definecolor{orange}{rgb}{1,.5,0}
+\definecolor{pink}{rgb}{1,.75,.75}
+\definecolor{ltblue}{rgb}{.75,.75,1}
+
+\newcommand{\be}{\begin{eqnarray*}}
+\newcommand{\ee}{\end{eqnarray*}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+\newcommand{\grph}[2]{\centerline{\includegraphics[scale=#1]{#2}}}
+
+\AtBeginSection[]
+{
+\bframe{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\title{Raven Notes 2}
+\author{CSCI 321}
+\institute{Based on {\em Programming Game AI by Example}, Buckland}
+
+\begin{document}\small
+\begin{centering}
+\bframe{~}
+\titlepage
+\end{frame}
+
+\bframe{Planning}
+\bi
+\item Involves more than one step at a time.
+\item {\em Simple soccer} planning was absorbed in the logic:
+  \bi 
+  \item ``Move to support position'' 
+    \bi
+    \item not a goal in itself
+    \item part of an underlying plan
+    \ei
+  \ei
+\item {\em Raven} requires plans:
+  \bi
+  \item None of these is a simple action by itself:
+    \bi
+    \item Get health
+    \item Get weapon
+    \item Attack target
+    \ei
+  \ei
+\ei
+\end{frame}
+
+
+\bframe{Hierarchical planning}
+
+ Buy sword
+  \bi
+  \item Get gold
+    \bi 
+    \item Plan path to goldmine
+    \item Follow path
+      \bi
+      \item Follow edge \#1
+      \item Follow edge \#2
+      \item Follow edge \#3
+      \ei
+    \item Pick up nugget
+    \ei
+  \item Go to smithy
+  \ei
+
+\end{frame}
+
+
+\bframe{Raven Goals}
+
+\centerline{\begin{tabular}{|l|l|}\hline
+Composite goals & Atomic Goals \\\hline
+Goal\_Think & Goal\_Wander \\
+Goal\_GetItem   & Goal\_SeekToPosition    \\
+Goal\_MoveToPosition   & Goal\_TraverseEdge    \\
+Goal\_FollowPath   & Goal\_DodgeSideToSide    \\
+Goal\_AttackTarget   & \\
+Goal\_Explore   & \\
+Goal\_HuntTarget   &\\\hline
+\end{tabular}}
+\end{frame}
+
+\bframe{Atomic Steering Behavior Goals}
+
+\bi
+\item Goal\_Wander
+\item Goal\_SeekToPosition
+\item Goal\_TraverseEdge
+\ei
+
+\end{frame}
+
+\bframe{Goal\_FollowPath}
+\bi
+\item Iterate through edges.
+\item Edge type determines subgoal:
+\bi
+\item Goal\_TraverseEdge
+\item Goal\_NegotiateDoor
+\item Goal\_Jump
+\item Goal\_Swim
+\item {\em etc.}
+\ei
+\ei
+\end{frame}
+
+\bframe{Goal\_MoveToPosition}
+
+\bi
+\item Activate:
+  \bi
+  \item RequestPathToTarget
+  \item SeekToPosition
+  \ei
+\item HandleMessage:
+  \bi
+  \item FollowPath
+  \ei
+\ei
+\end{frame}
+
+\bframe{Goal\_AttackTarget}
+\bi
+\item If target gone:
+  \bi \item Quit \ei
+\item If target is shootable:
+  \bi 
+  \item If room:
+    \bi
+    \item Add subgoal: dodge side to side
+    \ei
+  \item else:
+    \bi
+    \item Add subgoal: seek to target position
+    \ei
+  \ei
+\ei
+
+\end{frame}
+
+\bframe{Goal\_Think}
+\bi
+\item Top level goal
+\item Decides between:
+  \bi
+  \item Explore
+  \item Get Health
+  \item Get Weapon
+    \bi
+    \item Rocket Launcher
+    \item Shotgun
+    \item Railgun
+    \ei
+  \item Attack Target
+  \ei
+  \item Uses four feature functions:
+    \bi
+    \item Health
+    \item Distance to item
+    \item Individual weapon strength
+    \item Total weapon strength
+    \ei
+\ei
+\end{frame}
+
+\bframe{Calculate Desirability and Choose Best}
+\begin{eqnarray*}
+Desirability(Health) &=& k\left(\frac{1-Health}{DistToHealth}\right)\\
+Desirability(Weapon) &=& k\left(\frac{Health(1-WeaponStrength)}{DistToWeapon}\right)\\
+Desirability_2(Weapon) &=& k\left(\frac{Health(1-WeaponStrength)}{DistToWeapon^2}\right)\\
+Desirability(Attack) &=& k(TotalWeaponStrength)(Health)\\
+Desirability(Explore) &=& 0.05
+\end{eqnarray*}
+\end{frame}
+
+\bframe{Using Empathy}
+\bi
+\item You observe a player low on health break off a battle and run
+\item You run your Goal\_Think algorithm on the player's data
+\item The player's best option is to find health
+\item You plan a path to the health to intercept the player
+\ei
+\end{frame}
+
+\bframe{Personalities}
+\bi
+\item Desirability scores can be weighted.
+\item Conservative player weighs health and weapons heavier than attack
+\item Aggressive player weighs attack heavier
+\item In a full RTS game you could:
+  \bi
+  \item Create opponent that favors exploration and research
+  \item Create opponent that favors massive armies quickly
+  \item Create opponent that favors city defenses
+  \ei
+\ei
+\end{frame}
+
+\bframe{State Memory}
+\bi
+\item Use a goal stack to resume interrupted goals.
+\item Goal FollowPath could be interrupted by DefendAgainstAttacker
+  and then resumed.
+\item Goal FollowPath interrupted by NegotiateDoor and then resumed.
+\ei
+\end{frame}
+
+\bframe{Command Queuing}
+\bi
+\item Used in modern RTS games
+\item Can click many waypoints, Bot navigates to each in turn
+\item Can establish patrols by making waypoints into a loop
+\item Can queue multiple commands of any sort:
+  \bi
+  \item Build a barracks {\em and then}
+  \item Move to this spot {\em and then}
+  \item Build a turret
+  \ei
+\item Only change needed is adding subgoals to the back of the queue
+  instead of the front.
+\ei
+\end{frame}
+
+\bframe{Fuzzy Logic}
+\bi
+\item A more intuitive alternative to mathematical formulas for making
+  decisions.  
+\item Examples of fuzzy quantities:
+\bi
+\item A large piece of pie
+\item A fairly strong wind
+\item Low health
+\item Hit the ball very hard
+\item Far away
+\ei
+\ei
+
+
+\end{frame}
+
+
+\bframe{Crisp sets}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=red]{70 0 70 1 90 1 90 0}
+\listplot[linecolor=green]{90 0 90 1 110 1 110 0}
+\listplot[linecolor=blue]{110 0 110 1 130 1 130 0}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\end{frame}
+\bframe{Fuzzy sets}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=red]{60 0 75 1 85 1 95 0}
+\listplot[linecolor=green]{85 0 95 1 105 1 115 0}
+\listplot[linecolor=blue]{105 0 115 1 125 1 140 0}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\end{frame}
+
+\bframe{Fuzzy sets}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=red]{60 0 80 1 100 0}
+\listplot[linecolor=green]{ 80 0 100 1 120 0}
+\listplot[linecolor=blue]{ 100 0 120 1 140 0}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\end{frame}
+\bframe{Average AND Clever}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=lightgray]{60 0 80 1 100 0 80 0 100 1 120 0 100 0 120
+  1 140 0}
+\listplot{60 0 140 0}
+\listplot{100 0 110 0.5 120 0}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\end{frame}
+
+\bframe{Average OR Clever}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=lightgray]{60 0 80 1 100 0 80 0 100 1 120 0 100 0 120
+  1 140 0}
+\listplot{60 0 140 0}
+\listplot{80 0 100 1 110 0.5 120 1 140 0}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\end{frame}
+
+\bframe{NOT Clever}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=lightgray]{60 0 80 1 100 0 80 0 100 1 120 0 100 0 120
+  1 140 0}
+\listplot{60 0 140 0}
+\listplot{60 1 100 1 120 0 140 1 145 1}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\end{frame}
+
+
+\bframe{Hedges}
+
+\psset{xunit=1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](-3,0)(3,1.25)
+\psaxes[ticks=none,labels=none]{->}(-3,0)(3,1.25)
+\rput[b]{90}(-3,0.5){Membership}
+\rput(0.5,0.1){Very}
+\rput(2,0.4){Fairly}
+\listplot{-2.5 0.00193045413622771  -2.25 0.00632971542748575  -2 0.0183156388887342  -1.75 0.046770622383959  -1.5 0.105399224561864  -1.25 0.209611387151098  -1 0.367879441171442  -0.75 0.569782824730923  -0.5 0.778800783071405  -0.25 0.939413062813476  0 1  0.25 0.939413062813476  0.5 0.778800783071405  0.75 0.569782824730923  1 0.367879441171442  1.25 0.209611387151098  1.5 0.105399224561864  1.75 0.046770622383959  2 0.0183156388887342  2.25 0.00632971542748575  2.5 0.00193045413622771  }
+\listplot[linestyle=dotted]{-2.5 0.0439369336234074  -2.25 0.0795595087182277  -2 0.135335283236613  -1.75 0.216265166829887  -1.5 0.32465246735835  -1.25 0.457833361771614  -1 0.606530659712633  -0.75 0.754839601989007  -0.5 0.882496902584595  -0.25 0.969233234476344  0 1  0.25 0.969233234476344  0.5 0.882496902584595  0.75 0.754839601989007  1 0.606530659712633  1.25 0.457833361771614  1.5 0.32465246735835  1.75 0.216265166829887  2 0.135335283236613  2.25 0.0795595087182277  2.5 0.0439369336234074  }
+\listplot[linestyle=dotted]{-2.5 3.72665317207867e-06  -2.25 4.00652973929511e-05  -2 0.000335462627902512  -1.75 0.00218749111818288  -1.5 0.0111089965382423  -1.25 0.0439369336234074  -1 0.135335283236613  -0.75 0.32465246735835  -0.5 0.606530659712633  -0.25 0.882496902584595  0 1  0.25 0.882496902584595  0.5 0.606530659712633  0.75 0.32465246735835  1 0.135335283236613  1.25 0.0439369336234074  1.5 0.0111089965382423  1.75 0.00218749111818288  2 0.000335462627902512  2.25 4.00652973929511e-05  2.5 3.72665317207867e-06  }
+\end{pspicture}
+
+\vfill
+
+Fairly = square root
+
+Very = square
+\vfill
+
+\end{frame}
+
+\bframe{Fuzzy Linguistic Variable}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](60,0)(140,1.25)
+\psaxes[Dx=10,Ox=60]{->}(60,0)(140,1.25)
+\listplot[linecolor=red]{60 0 80 1 100 0}
+\listplot[linecolor=green]{ 80 0 100 1 120 0}
+\listplot[linecolor=blue]{ 100 0 120 1 140 0}
+\rput[b]{90}(60,0.5){Membership}
+\rput[tl](140,0){IQ}
+\rput[b](80,1.1){Dumb}
+\rput[b](100,1.1){Average}
+\rput[b](120,1.1){Clever}
+\end{pspicture}
+
+\vfill
+
+IQ = \{Dumb, Average, Clever\}
+
+A set of fuzzy sets.
+
+\vfill
+
+\end{frame}
+
+\bframe{Reasoning with FLV's}
+\bi
+\item Define FLV's for all quantities of interest:
+  \bi
+  \item Distance: close, medium, far
+  \item Ammo: low, okay, loads
+  \item Desirability: undesirable, desirable, very desirable
+  \ei
+\item Define fuzzy rules ({\em e.g} desirability of using rocket launcher):
+  \bi
+  \item If target is far and ammo is loads then desirable
+  \item If target is close then undesirable
+  \item {\em etc.}
+  \ei
+\item Start with crisp values (measurements) of distance and ammo
+\item Fuzzify crisp values to fuzzy values
+\item Reason with fuzzy values
+\item Come to fuzzy conclusion
+\item Defuzzify conclusion
+\ei
+\end{frame}
+
+\bframe{Fuzzy Desirability}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(100,1.25)
+\psaxes[Dx=10]{->}(0,0)(105,1.25)
+\listplot{0 1 20 1 50 0 80 1 100 1}
+\listplot{20 0 50 1 80 0}
+\rput[b]{90}(0,0.5){Membership}
+\rput[t](50,-0.25){Desirability}
+\rput[b](10,1.1){Undesirable}
+\rput[b](50,1.1){Desirable}
+\rput[b](90,1.1){Very Desirable}
+\end{pspicture}
+
+\end{frame}
+
+
+\bframe{Fuzzy Distance to Target}
+
+\psset{xunit=0.025cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(400,1.25)
+\psaxes[Dx=50]{->}(0,0)(400,1.25)
+\listplot{0 1 10 1 150 0 300 1 400 1}
+\listplot{10 0 150 1 300 0}
+\rput[b]{90}(0,0.5){Membership}
+\rput[t](200,-0.25){Distance to Target}
+\rput[bl](10,1.1){Close}
+\rput[b](150,1.1){Medium}
+\rput[b](350,1.1){Far}
+\end{pspicture}
+
+\end{frame}
+
+
+\bframe{Fuzzy Ammo Status}
+
+\psset{xunit=0.2cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(50,1.25)
+\psaxes[Dx=10]{->}(0,0)(50,1.25)
+\listplot{0 1 15 0 40 1 50 1}
+\listplot{0 0 15 1 40 0}
+\rput[b]{90}(0,0.5){Membership}
+\rput[t](15,-0.25){Ammo}
+\rput[bl](0,1.1){Low}
+\rput[b](15,1.1){Okay}
+\rput[b](45,1.1){Loads}
+\end{pspicture}
+
+\end{frame}
+
+
+\bframe{Fuzzy Rules for Desirability of Rocket Launcher}
+
+
+\vfill
+
+\begin{enumerate}
+\item If target is far and ammo is loads then desirable
+\item If target is far and ammo is okay then undesirable
+\item If target is far and ammo is low then undesirable
+\item If target is medium and ammo is loads then very desirable
+\item If target is medium and ammo is okay then very desirable
+\item If target is medium and ammo is low then desirable
+\item If target is close and ammo is loads then undesirable
+\item If target is close and ammo is okay then undesirable
+\item If target is close and ammo is low then undesirable
+\end{enumerate}
+\vfill
+
+\end{frame}
+
+\bframe{Fuzzy Inference}
+\begin{enumerate}
+\item For each rule,
+  \begin{enumerate}
+  \item For each antecedant, calculate the degree of membership of the
+    input data
+  \item Calculate the rule's inferred conclusion based on these values
+  \end{enumerate}
+\item Combine all the inferred conclusions into a single fuzzy
+  conclusion
+\item Defuzzify the conclusion
+\end{enumerate}
+\end{frame}
+
+\bframe{Example}
+\bi
+\item
+Suppose target is at distance 200 and ammo is 8 rockets remaining.
+\item
+{\bf Rule one:}  If target is far and ammo is loads then desirable
+\bi\item Distance 200 means target far has DOM 0.33
+\item Ammo 8 means ammo loads has DOM 0.0
+\item ANDing these together means desirable is 0.0
+\ei\item
+{\bf Rule two:} If target is far and ammo is okay then undesirable
+\bi\item Distance 200 means target far has DOM 0.33
+\item Ammo 8 means ammo okay has DOM 0.78
+\item ANDing these together means undesirable is 0.33
+\ei\item
+{\bf Rule three:} If target is far and ammo is low then undesirable
+\bi\item Distance 200 means target far has DOM 0.33
+\item Ammo 8 means ammo low has DOM 0.2
+\item ANDing these together means undesirable is 0.2
+\ei\ei
+
+\end{frame}
+
+\bframe{FAM:  Fuzzy Associative Matrix}
+
+\vfill
+
+\begin{tabular}{c|c|c|c|}
+ & Target close & Target medium & Target far \\\hline
+Ammo low &\color{lightgray} Undesirable 0 & Desirable 0.2 & Undesirable 0.2 \\\hline
+Ammo okay &\color{lightgray}  Undesirable 0 & VeryDesirable 0.67 & Undesirable 0.33 \\\hline
+Ammo loads &\color{lightgray}  Undesirable 0 &\color{lightgray}  VeryDesirable 0 &\color{lightgray}  Desirable 0 \\\hline
+\end{tabular}
+
+\vfill
+\begin{tabular}{c|c|}
+Consequent & Confidence \\\hline
+Undesirable & 0.33 \\\hline
+Desirable & 0.2 \\\hline
+VeryDesirable & 0.67 \\\hline
+\end{tabular}
+\vfill
+
+\end{frame}
+
+\bframe{Fuzzy Conclusion: Truncate each set}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(100,1.25)
+\psaxes[Dx=10]{->}(0,0)(105,1.25)
+\listplot[linecolor=red]{0 1 20 1 50 0}
+\listplot[linecolor=red,linestyle=dashed]{0 0.33 45 0.33}
+\listplot[linecolor=blue]{50 0 80 1 100 1}
+\listplot[linecolor=blue,linestyle=dashed]{66 0.67 100 0.67}
+\listplot[linecolor=green]{20 0 50 1 80 0}
+\listplot[linecolor=green,linestyle=dashed]{20 0.2 80 0.2}
+\color{black}
+\rput[b]{90}(0,0.5){Membership}
+\rput[t](50,-0.25){Desirability}
+\rput[b](10,1.1){Undesirable}
+\rput[b](50,1.1){Desirable}
+\rput[b](90,1.1){Very Desirable}
+\end{pspicture}
+
+\end{frame}
+
+\bframe{Fuzzy Conclusion: Truncate each set}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(100,1.25)
+\psaxes[Dx=10]{->}(0,0)(105,1.25)
+\listplot[linecolor=red]{0 0.33 40 0.33 50 0}
+\listplot[linecolor=green]{20 0 25 0.2 75 0.2 80 0}
+\listplot[linecolor=blue]{50 0 70 0.67 100 0.67}
+\color{black}
+\rput[b]{90}(0,0.5){Membership}
+\rput[t](50,-0.25){Desirability}
+\rput[b](10,1.1){Undesirable}
+\rput[b](50,1.1){Desirable}
+\rput[b](90,1.1){Very Desirable}
+\end{pspicture}
+
+\end{frame}
+
+\bframe{Defuzzify:  Mean of Maximum}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(100,1.25)
+\psaxes[Dx=10]{->}(0,0)(105,1.25)
+\listplot[linecolor=red]{0 0.33 40 0.33 50 0}
+\listplot[linecolor=green]{20 0 25 0.2 75 0.2 80 0}
+\listplot[linecolor=blue]{50 0 70 0.67 100 0.67}
+\color{black}
+\rput[b]{90}(0,0.5){Membership}
+\rput[t](50,-0.25){Desirability}
+\rput[b](10,1.1){Undesirable}
+\rput[b](50,1.1){Desirable}
+\rput[b](90,1.1){Very Desirable}
+\psline[arrows=->,arrowscale=2](85,0.75)(85,0)
+\end{pspicture}
+
+\end{frame}
+
+\bframe{Defuzzify:  Centroid}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(100,1.25)
+\psaxes[Dx=10]{->}(0,0)(105,1.25)
+\listplot[linecolor=red]{0 0.33 40 0.33 50 0}
+\listplot[linecolor=green]{20 0 25 0.2 75 0.2 80 0}
+\listplot[linecolor=blue]{50 0 70 0.67 100 0.67}
+\color{black}
+\rput[b]{90}(0,0.5){Membership}
+%\rput[t](50,-0.25){Desirability}
+\rput[b](10,1.1){Undesirable}
+\rput[b](50,1.1){Desirable}
+\rput[b](90,1.1){Very Desirable}
+\psline[arrows=->,arrowscale=2](62,0.75)(62,0)
+\end{pspicture}
+
+\vfill
+\[ \sum_i\frac{i(membership_i)}{\sum_i membership_i}\]
+
+\end{frame}
+
+\bframe{Defuzzify: Average of Maxima}
+
+\psset{xunit=0.1cm,yunit=4cm}
+\begin{pspicture}[showgrid=false](0,0)(100,1.25)
+\psaxes[Dx=10]{->}(0,0)(105,1.25)
+\listplot[linecolor=red]{0 1 20 1 50 0}
+\listplot[linecolor=red,linestyle=dashed]{0 0.33 45 0.33}
+\psline[linecolor=red,arrows=->,arrowscale=2](10,1.05)(10,0)
+\listplot[linecolor=green]{20 0 50 1 80 0}
+\listplot[linecolor=green,linestyle=dashed]{20 0.2 80 0.2}
+\psline[linecolor=green,arrows=->,arrowscale=2](50,1.05)(50,0)
+\listplot[linecolor=blue]{50 0 80 1 100 1}
+\listplot[linecolor=blue,linestyle=dashed]{66 0.67 100 0.67}
+\psline[linecolor=blue,arrows=->,arrowscale=2](90,1.05)(90,0)
+\color{black}
+\rput[b]{90}(0,0.5){Membership}
+%\rput[t](50,-0.25){Desirability}
+\rput[b](10,1.1){Undesirable}
+\rput[b](50,1.1){Desirable}
+\rput[b](90,1.1){Very Desirable}
+\end{pspicture}
+
+\vfill
+
+\[ \frac{\sum_i (value_i)(confidence_i)}{(\sum_i confidence_i)}\]
+
+\end{frame}
+
+\bframe{Combinatorial explosion of rules}
+
+\vfill
+
+If $A_i$ and $B_i$ and $C_i$ and $D_i$ then Consequent
+
+\vfill
+
+If each FLV has 5 possible values, then we have $5^4 = 625$ rules.
+
+\vfill
+
+If we had 6 LFV's instead of 4, there would be $5^6 = 15625$ rules.
+\vfill
+
+
+\end{frame}
+
+
+\bframe{Rewrite rules for ease of computation}
+
+If $A_i$ and $B_i$ and $C_i$ and $D_i$ then Consequent
+
+\vfill
+
+is equivalent to 
+
+\vfill
+
+If $A_i$ then Consequent\\OR\\
+If $B_i$ then Consequent\\OR\\
+If $C_i$ then Consequent\\OR\\
+If $D_i$ then Consequent
+
+\vfill
+
+Using equivalences like this we can usually greatly reduce the number
+of rules.  For example, the three rules for desirability of using the
+rocket launcher when the target is close can all be reduced to one:
+\vfill
+
+If target is close then undesirable
+\vfill
+
+ This simplification can be done automatically.
+
+\vfill
+
+\end{frame}
+
+
+
+\end{centering}
+
+\end{document}

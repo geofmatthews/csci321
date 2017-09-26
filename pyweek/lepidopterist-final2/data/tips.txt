@@ -1,0 +1,15 @@
+1|1|Tip:|Control using the arrow keys|and space bar
+1|2|Tip:|Keys used to perform actions|are shown in the corner.|Up, left, right and space bar.
+1|2|Tip:|The bars in the corner tell|you how many times you can|perform an action.
+1|2|Tip:|If you have enough bars, you|can double jump. Just jump|when you're already in the air.
+1|8|Tip:|Your game is automatically|saved whenever you finish|a level.
+1|8|Tip:|The more different species you|collect, the more actions you|learn.
+2|8|Tip:|Sometimes it's a good idea to|revisit stages, to get more|money or catch species you|missed.
+2|8|Tip:|If you stay in the air long|enough, your bars will refill.|They also refill when you|touch the ground.
+2|8|Tip:|Bars on the right refill more|quickly than bars on the left.|Keep the levels high to maximise|efficiency.
+2|4|Tip:|Some actions require you to|press two keys at the same|time.
+2|4|Tip:|To perform a combo, perform|more than one action in a row|without touching the ground.
+3|4|Tip:|You get bonuses for setting|combo and height records. They|don't add to your level score,|but you can spend them to|upgrade abilities.
+3|8|Tip:|Any action involving the space|bar will catch butterflies.
+3|8|Tip:|Press Tab to hide the ability|names in the corner.
+3|8|Tip:|If the time expires while you're|still in the air, you can|continue until you touch the|ground.

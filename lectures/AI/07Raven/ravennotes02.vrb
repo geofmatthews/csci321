@@ -1,0 +1,29 @@
+\frametitle{Rewrite rules for ease of computation}
+
+If $A_i$ and $B_i$ and $C_i$ and $D_i$ then Consequent
+
+\vfill
+
+is equivalent to
+
+\vfill
+
+If $A_i$ then Consequent\\OR\\
+If $B_i$ then Consequent\\OR\\
+If $C_i$ then Consequent\\OR\\
+If $D_i$ then Consequent
+
+\vfill
+
+Using equivalences like this we can usually greatly reduce the number
+of rules.  For example, the three rules for desirability of using the
+rocket launcher when the target is close can all be reduced to one:
+\vfill
+
+If target is close then undesirable
+\vfill
+
+ This simplification can be done automatically.
+
+\vfill
+

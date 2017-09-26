@@ -1,0 +1,23 @@
+
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[colsep=3,rowsep=1]
+  \ovalnode{WS}{Walk South} &
+      & \ovalnode{WN}{Walk North} \\
+& \rnode{Start}{Start} \\
+& \ovalnode{S}{Looking} \\\\
+& \ovalnode{Sh}{Shooting} \\\\  \ovalnode{D}{Die}
+\ncline{Start}{S}
+\nccurve[angleA=0,angleB=-135]{S}{WN} \ncput*{\fbox{\large~$\uparrow$~}}
+\nccurve[angleA=180,angleB=-45]{S}{WS} \ncput*{\fbox{\large~$\downarrow$~}}
+\nccurve[angleA=-145,angleB=145]{S}{Sh} \ncput*{\fbox{space}}
+\nccurve[angleA=35,angleB=-35]{Sh}{S}\ncput*{\fbox{anim end}}
+
+\nccurve[angleA=195,angleB=45]{WN}{S}\ncput*{\fbox{no key}}
+\nccurve[angleA=-15,angleB=135]{WS}{S}\ncput*{\fbox{no key}}
+
+\nccurve[angleA=-135,angleB=135]{WS}{D} \ncput*{\fbox{skeleton}}
+\nccurve[angleA=195,angleB=90]{S}{D} \ncput*{\fbox{skeleton}}
+\nccurve[angleA=195,angleB=45]{Sh}{D} \ncput*{\fbox{skeleton}}
+\nccurve[angleA=-45,angleB=0]{WN}{D} \ncput*{\fbox{skeleton}}
+
+\end{psmatrix}

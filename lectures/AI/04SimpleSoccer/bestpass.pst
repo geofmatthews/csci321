@@ -1,0 +1,10 @@
+\begin{pspicture}[showgrid=false](10,5)
+\pscircle*[linecolor=blue](1,4){0.1}
+\pscircle*[linecolor=blue](8,2){0.1}
+\psline[arrowscale=2,linestyle=dashed]{->}(1,4)(8.2,3)
+\psline[arrowscale=2,linestyle=dashed]{->}(1,4)(8,2)
+\psline[arrowscale=2,linestyle=dashed]{->}(1,4)(7.7,1.05)
+\pscircle[linestyle=dashed](8,2){3}
+\pscircle[linestyle=dashed](8,2){1}
+\rput(9,5){Max receiver range}
+\end{pspicture}

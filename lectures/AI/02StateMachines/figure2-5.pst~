@@ -1,0 +1,12 @@
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}
+& \ovalnode{EM}{EnterMineAndDigForNugget} \\
+\ovalnode{VB}{VisitBankAndDepositGold}&&\ovalnode{QT}{QuenchThirst}\\
+&\ovalnode{GH}{GoHomeAndSleepTilRested}
+\nccurve[angleA=180,angleB=90]{EM}{VB} \ncput*[nrot=:D]{Pockets full}
+\nccurve[angleA=0,angleB=-120]{VB}{EM} \ncput*[nrot=:U]{Not wealthy}
+\nccurve[angleA=-90,angleB=180]{VB}{GH} \ncput*[nrot=:U]{Wealthy enough}
+\nccurve[angleA=90,angleB=-90]{GH}{EM} \ncput*[nrot=:U]{Rested}
+\nccurve[angleA=180,angleB=-60]{QT}{EM} \ncput*[nrot=:D]{Not thirsty}
+\nccurve[angleA=0,angleB=90]{EM}{QT} \ncput*[nrot=:U]{Thirsty}
+\end{psmatrix}

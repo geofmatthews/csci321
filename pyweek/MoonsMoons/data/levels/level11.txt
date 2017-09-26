@@ -1,0 +1,73 @@
+update_all
+#player 1520 760
+#player 1470 500
+player 2470 630
+planet 1600 1600 500 400 1400 1 jupiter
+platform r jupiter 345 300 600 90
+platform r jupiter 352 350 30 0
+platform r jupiter 358 400 30 0
+platform r jupiter 352 450 30 0
+platform r jupiter 358 500 30 0
+platform r jupiter 352 550 30 0
+platform r jupiter 358 600 30 0
+platform r jupiter 5 600 30 0
+platform r jupiter 17 600 30 0
+platform r jupiter 30 600 30 0
+platform r jupiter 42 600 30 0 hvezdova
+platform r jupiter 54 600 30 0
+platform r jupiter 42 400 300 0 icka
+I p icka 0
+I p icka 50
+I p icka 100
+
+platform r jupiter 42 600 30 0 hvezdova
+platform r jupiter 42 600 30 0 hvezdova
+checkpoint p hvezdova 50
+star 2570 890
+Q jupiter 350 42 42
+
+
+Q jupiter 650 345 30
+platform r jupiter 355 300 100 0
+platform r jupiter 5 270 50 0 p1
+platform r jupiter 15 240 50 0 p2
+platform r jupiter 25 210 50 0 p3
+platform r jupiter 35 180 50 0 p4
+platform r jupiter 45 150 150 0 p5
+
+platform r jupiter 65 150 150 0
+platform r jupiter 75 180 50 0 p6
+platform r jupiter 85 210 50 0 p7
+platform r jupiter 95 240 50 0 p8
+platform r jupiter 105 270 50 0 p9
+#platform r jupiter 115 150 300 0
+eye a jupiter 5
+eye a jupiter 10
+eye a jupiter 15
+eye a jupiter 20
+eye a jupiter 25
+eye a jupiter 30
+eye a jupiter 35
+
+O a jupiter 50 30
+O a jupiter 80 40
+O a jupiter 40 80
+C a jupiter 55 20
+C a jupiter 50 60
+C a jupiter 60 30
+C a jupiter 60 50 
+I p p1 80
+I p p1 20
+I p p2 80
+I p p2 20
+I p p3 80
+I p p3 20
+I p p4 80
+I p p4 20
+
+I p p6 80
+I p p7 20
+I p p8 80
+I p p9 20
+checkpoint p p5 50
+#platform r planet_id planet_angle altitude width angle(relative, 0 means the horizontal position to planet) [id]

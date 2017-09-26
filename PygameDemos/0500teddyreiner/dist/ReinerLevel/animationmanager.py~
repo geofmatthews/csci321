@@ -1,0 +1,58 @@
+import os, pygame, re
+
+class _AnimationManager(object):
+    def __init__(self):
+        self.animations = {}
+        self.static = {}
+
+    def getAnimations(self, name):
+        return self.animations[name]
+    
+    def getStatic(self, name):
+        return self.static[name]
+
+    def loadAnimations(self, folder, name,
+                       actions=('looking', 'walking'),
+                       directions=('n','ne','e','se','s','sw','w','nw')
+                       colorkey = True):
+        if self.animations.has_key(name):
+            return
+        saveddir = os.curdir
+        os.chdir(folder)
+        self.animations[name] = {}
+        for d in directions:
+            self.animations[name][d] = {}
+            for a in actions:
+                self.animations[name][d][a] = []
+                pattern = re.compile(action + ' ' + direction + '\d\d\d\d.bmp')
+                for f in os.listdir(os.curdir):
+                    if pattern.match(f):
+                        try:
+                            image = pygame.image.load(f)
+                        except pygame.error, message:
+                            print 'Cannot load image:', f
+                            raise SystemExit, message
+                        image.convert()
+                        if colorkey:
+                            image.set_colorkey(image.get_at((0,0)))
+                        self.animations[name][d][a].append(image)
+        os.chdir(saveddir)
+        
+    def loadStatic(self, filename, name, region=None, colorkey=True):
+        try:
+            image = pygame.image.load(filename)
+        except pygame.error, message:
+            print 'Cannot load image:', filename
+            raise SystemExit, message
+        if region == None:
+            image.convert()
+            if colorkey:
+                image.set_colorkey(image.get_at((0,0)))
+            self.static[name] = image
+
+# Singleton interface:
+_animationmanager = _AnimationManager()
+def AnimationManager(): return _animationmanager
+        
+                       
+        

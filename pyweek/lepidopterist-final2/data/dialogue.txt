@@ -1,0 +1,100 @@
+1|m|Do you know what it's like to know your|purpose in life?
+1|m|To know that you were born for one thing|and one thing only?
+1|m|I know my purpose. My name is Mortimer,|and I...
+1|m|am a butterfly collector.
+
+2|e|My goodness, young man! That was|impressive butterfly collecting!
+2|e|You remind me of myself as a lad.
+2|m|You were watching me? Who are you?
+2|e|Major General Elmer Wrightscoptch (Ret.),|at your service.
+2|e|I am the President of the Royal|Lepidopteral Society.
+2|e|I need someone for an extremely important|and dangerous butterfly-collecting quest.
+2|e|What say you?
+2|m|Yes at last my dreams have come true!
+2|e|Brilliant! You can begin by training at our|dojo. Come with me.
+2|s|Greetings, Mortimer. I am the master of|this dojo. Let's see what you can do.
+
+3|s|Excellent work. I declare you ready.
+3|e|I can now reveal to you the nature of|this quest.
+3|e|We are embarking on a journey to find a map|to the greatest treasure in all of lepidoptery...
+3|e|The Lost Butterfly Garden of Verdania!
+3|m|The what now?
+3|e|An enchanted realm where every type of|butterfly roams freely, ripe for the collecting!
+3|e|It's been lost for ages, but with the map,|we can revisit it!
+3|e|We have reason to believe that half of the|map is located...
+3|e|in the Bucolic Meadow of Doom, a few miles|from here in Northamptonfordshire.
+3|e|Your mission is to go there, and retrieve|the piece of the map.
+3|e|And collect some butterflies while you're|at it.
+3|m|I won't let you down!
+
+4|m|I'm back from the Bucolic Meadow of Doom!
+4|m|I got that half of the legendary map!
+4|s|Mortimer, thank goodness you've returned!|Terrible news!
+4|s|President Wrightscoptch has been kidnapped|by a rival organisation...
+4|s|The Royal Society of Lepidopterists!
+4|m|Wait... isn't that us?
+4|s|No you fool! We're the Royal Lepidopteral|Society!
+4|s|There rages an ancient and bitter rivalry|between us the Royal Society of Lepidopterists.
+4|s|Born of a dispute over who invented the|greatest advance in butterfly collecting ever.
+4|m|What advance?
+4|s|The idea of sticking butterflies onto|poster board with a pin!
+4|m|That's it?
+4|s|That's a big deal!
+4|s|Before that, everyone just threw their|butterflies into a desk drawer.
+4|s|It was a huge mess.
+4|s|First they claim credit for that, and|now they kidnap our president!
+4|m|I'm going after him! Where can I find|them?
+4|s|Their palace is on the other side of a|field you'll have to cross.
+4|m|A field, you say? Might this field|have any butterflies on it?
+4|s|Probably. But you don't have to catch|the butterflies just to cross the...
+4|m|I'll do it! And I'll catch a bunch of|butterflies on my way!
+4|s|Sure, whatever.
+
+5|m|I'm Mortimer, from the Royal Lepidopteral|Society. Unhand our president!
+5|v|Certainly... on one condition.
+5|v|Give us your half of the map to the|Lost Butterfly Garden of Verdania!
+5|e|Don't do it Mortimer! They have the|other half of the map!
+5|v|What do you care anyway?
+5|v|According to legend, only the Chosen|One may enter the Lost Garden.
+5|m|The Chosen One?
+5|v|He who would unite the clans of|lepidoptery,
+5|v|and usher in a golden age of butterfly|collecting!
+5|m|Oh, that Chosen One.
+5|e|Mortimer! Get out of here! Save|yourself!
+5|m|Nothing doing. I'm here to rescue|you!
+5|v|And how do you plan to do that?
+5|m|The only way I know how to do|anything....
+5|m|by catching butterflies!
+
+6|v|My word.... Young man, that was|some fine netmanship.
+6|v|Perhaps... we resorted to drastic|measures prematurely.
+6|v|Very well. We will release Elmer.
+6|e|You know, Victoria, we needn't|feud so.
+6|v|You mean we should join forces?
+6|e|You have half the map, and so do we.
+6|e|Working together, we could at last|locate the Lost Garden.
+6|v|We have a deal.
+6|v|Mortimer, thank you dearly for bringing|us back together after so long.
+6|e|I think I speak for both of us when|I say,
+6|e|Will you do us the honour of visiting|the Lost Garden?
+6|m|Yes!
+
+7|m|What splendor! What beauty!
+7|m|I could live my whole life here|collecting and collecting!
+7|m|What's that sound?
+7|m|Why are all the butterflies flying away?!
+7|m|Oh no, the cliff wall is collapsing!
+7|m|I've got to get out of here!
+7|e|Mortimer! You've returned! What did|you see in the Lost Garden?
+7|m|Well.... it was nice while it lasted.
+7|e|...
+7|m|Yeah, it's under like 100 feet of|rock now.
+7|m|It was probably all that jumping|around I was doing. Sorry about that.
+7|e|...
+7|e|You... imbecile!
+7|e|I hereby banish you for life from the|Royal Lepidopteral Society!
+7|e|Get out!
+7|v|And don't come to us either.
+7|m|Oh well. I was getting sick of|butterflies anyway.
+7|m|I think I'll take up collecting|seashells. Now that's a fun hobby!
+

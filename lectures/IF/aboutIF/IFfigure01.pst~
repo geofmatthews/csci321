@@ -1,0 +1,27 @@
+
+\begin{pspicture}(0,0)(10,7)
+\psset{arrows=->}
+\rput(5,7){\rnode{A}{\psframebox{Hallucinate and enter structure}}}
+\rput(2,6){\rnode{B}{\psframebox{Push lamp}}}
+\rput(8,6){\rnode{C}{\psframebox{Hatch eggsac}}}
+\rput(5,5){\rnode{D}{\psframebox{Enter shrine}}}
+\rput(2,4){\rnode{E}{\psframebox{Wear mask}}}
+\rput(8,4){\rnode{F}{\psframebox{Become {\em wayhel}}}}
+\rput(2,3){\rnode{G}{\psframebox{Xibalba}}}
+\rput(8,3){\rnode{H}{\psframebox{Pass Wormcast}}}
+\rput(2,2){\rnode{I}{\psframebox{Block chasm}}}
+\rput(8,2){\rnode{J}{\psframebox{Collapse burial}}}
+\rput(5,1){\rnode{K}{\psframebox{Photograph and deposit artifacts}}}
+\ncline AB
+\ncline AC
+\ncline BD
+\ncline CD
+\ncline DE
+\ncline DF
+\ncline EG
+\ncline FH
+\ncline GI
+\ncline HJ
+\ncline IK
+\ncline JK
+\end{pspicture}

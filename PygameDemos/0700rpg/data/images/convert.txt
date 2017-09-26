@@ -1,0 +1,1 @@
+convert -flatten -background White originals/characters.png characters.png 

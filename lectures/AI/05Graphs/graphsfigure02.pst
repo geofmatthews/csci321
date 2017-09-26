@@ -1,0 +1,8 @@
+
+\psset{arrows=->,arrowscale=2}
+\begin{psmatrix}[colsep=3cm]
+Suspicious & Angry\\
+Greedy 
+\ncline{1,1}{1,2}^{threaten}
+\ncline{1,1}{2,1}>{bribe}
+\end{psmatrix}

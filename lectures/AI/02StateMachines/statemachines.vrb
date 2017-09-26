@@ -1,0 +1,18 @@
+\frametitle{Summing Up}
+
+\bi
+\li FSMs a good way to manage complex behavior.
+\li Can use two FSMs in parallel, {\em e.g.}:
+  \bi
+  \li One for movement
+  \li One for weapon selection, aiming, firing
+  \ei
+\li Can use hierarchical FSMs:
+ one state machine inside the state of another, {\em e.g.}:
+  \bi
+  \li High level states:  {\bf Explore}, {\bf Combat}, {\bf Patrol}
+  \li Low level states inside Combat:
+  \bi \li Dodge \li ChaseEnemy \li Shoot \ei
+  \ei
+\ei
+

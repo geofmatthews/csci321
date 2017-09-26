@@ -1,0 +1,47 @@
+
+import Numeric as N
+
+class PositionVelocity(object):
+    """
+    """
+    def __init__(self, pos, vel = (0.0,0.0)):
+        self.position = N.array(pos)
+        self.velocity = N.array(vel)
+
+    def tick(self, deltaT=0.1):
+        self.position += deltaT*self.velocity
+
+    def getX(self):
+        return self.position[0]
+    def setX(self, x):
+        self.position[0] = x
+    x = property(getX, setX)
+
+    def getY(self):
+        return self.position[1]
+    def setY(self, y):
+        self.position[1] = y
+    y = property(getY, setY)
+
+    def getHspeed(self):
+        return self.velocity[0]
+    def setHspeed(self, hspeed):
+        self.velocity[0] = hspeed
+    hspeed = property(getHspeed, setHspeed)
+
+    def getVspeed(self):
+        return self.velocity[1]
+    def setVspeed(self, vspeed):
+        self.velocity[1] = vspeed
+    vspeed = property(getVspeed, setHspeed
+
+if __name__ == "__main__":
+    p = point((0,0))
+    p.x += 3.0
+    p.y += 1.0
+    p.hspeed = 1.0
+    p.vspeed = 3.0
+    print p.pos, p.speed, p.angle*180.0/N.pi
+    
+
+        

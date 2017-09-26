@@ -1,0 +1,8 @@
+\psset{arrows=->,linewidth=0.05,linecolor=white}
+\begin{psmatrix}
+{\rnode{B}{\psframebox{Aliens}}} \\
+{\rnode{A}{\psframebox{Spaceship}}} \\
+{\rnode{C}{\psframebox{Weapons}}}
+\ncline{B}{A}>{Where did they come from?}
+\ncline{A}{C}>{What could you find there?}
+\end{psmatrix}

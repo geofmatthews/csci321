@@ -1,0 +1,13 @@
+# Options for Beyond the Horizon
+
+# Vertical window resolution (e.g. 720)
+resolution: 480
+
+# Change to true to begin in fullscreen mode (can also press F11 in game)
+fullscreen: false
+
+# Whether to automatically save the game when you exit.
+saveonquit: true
+
+# Filename of the file to save to and load from.
+savefile: savegame.pkl

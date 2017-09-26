@@ -1,0 +1,15 @@
+\frametitle {Making Estimates and Assumptions}
+\begin{itemize}
+\item Artificial stupidity
+\item It's more realistic
+\item Two ways:
+\begin{itemize}
+\item Make it perfect and then dumb it down
+\item Design it using simplifying assumptions
+\end{itemize}
+\item Examples:
+\begin{itemize}
+\item Adding random noise to a perfect kick
+\item Using one-third size circles to estimate a receiver's range
+\end{itemize}
+\end{itemize}

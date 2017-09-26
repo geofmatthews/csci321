@@ -1,0 +1,81 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: PathPlannerApp - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Release/PathPlannerApp.res" /d "NDEBUG" /d "_AFXDLL" "C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerApp.rc"" 
+Creating temporary file "C:\DOCUME~1\syrusm\LOCALS~1\Temp\RSP4D.tmp" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Release/" /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\ChildView.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\HighResolutionTimer.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\MainFrm.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\MeshNode.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerApp.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerAStar.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerAStarNodeMesh.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerAStarOptimized.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerBase.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerBestFirst.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerBreadthFirst.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PathPlannerDijkstra.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PlannerNode.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\PlannerSettingsDialog.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\SettingsDialog.cpp"
+"C:\Main\AI\Class\Projects\PathPlannerApp.base\Src\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\syrusm\LOCALS~1\Temp\RSP4D.tmp" 
+Creating temporary file "C:\DOCUME~1\syrusm\LOCALS~1\Temp\RSP4E.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:no /pdb:"Release/PathPlannerApp_Release.pdb" /machine:I386 /out:"../PathPlannerApp_Release.exe" 
+.\Release\ChildView.obj
+.\Release\HighResolutionTimer.obj
+.\Release\MainFrm.obj
+.\Release\MeshNode.obj
+.\Release\PathPlannerApp.obj
+.\Release\PathPlannerAStar.obj
+.\Release\PathPlannerAStarNodeMesh.obj
+.\Release\PathPlannerAStarOptimized.obj
+.\Release\PathPlannerBase.obj
+.\Release\PathPlannerBestFirst.obj
+.\Release\PathPlannerBreadthFirst.obj
+.\Release\PathPlannerDijkstra.obj
+.\Release\PlannerNode.obj
+.\Release\PlannerSettingsDialog.obj
+.\Release\SettingsDialog.obj
+.\Release\StdAfx.obj
+.\Release\PathPlannerApp.res
+]
+Creating command line "link.exe @C:\DOCUME~1\syrusm\LOCALS~1\Temp\RSP4E.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+ChildView.cpp
+HighResolutionTimer.cpp
+MainFrm.cpp
+MeshNode.cpp
+PathPlannerApp.cpp
+PathPlannerAStar.cpp
+PathPlannerAStarNodeMesh.cpp
+PathPlannerAStarOptimized.cpp
+PathPlannerBase.cpp
+PathPlannerBestFirst.cpp
+PathPlannerBreadthFirst.cpp
+PathPlannerDijkstra.cpp
+PlannerNode.cpp
+PlannerSettingsDialog.cpp
+SettingsDialog.cpp
+StdAfx.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+PathPlannerApp_Release.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

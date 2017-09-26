@@ -1,0 +1,285 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=latex 2012.3.5)  5 MAR 2013 17:10
+entering extended mode
+**foo.tex
+(C:\Users\matthews\Documents\csci321\lectures\AI\05Graphs\foo.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\latex\pst-eps\pst-eps.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pstricks\pstricks.sty"
+Package: pstricks 2011/10/31 v0.52 LaTeX wrapper for `PSTricks' (RN,HV)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pstricks\base\pstricks.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\pst-xkey.tex"
+File: pst-xkey.tex 2005/11/25 v1.6 PSTricks specialization of xkeyval (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2008/08/13 v2.6a package option processing (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+\XKV@depth=\count87
+File: xkeyval.tex 2008/08/13 v2.6a key=value parser (HA)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex"))))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pstricks\base\pst-fp.tex"
+`pst-fp' v0.05, 2010/01/17 (hv)
+\pstFP@xs=\count88
+\pstFP@xia=\count89
+\pstFP@xib=\count90
+\pstFP@xfa=\count91
+\pstFP@xfb=\count92
+\pstFP@rega=\count93
+\pstFP@regb=\count94
+\pstFP@regs=\count95
+\pstFP@times=\count96
+)
+\psLoopIndex=\count97
+
+`PSTricks' v2.23  <2011/09/04> (tvz)
+\pst@dima=\dimen103
+\pst@dimb=\dimen104
+\pst@dimc=\dimen105
+\pst@dimd=\dimen106
+\pst@dimg=\dimen107
+\pst@dimh=\dimen108
+\pst@dimm=\dimen109
+\pst@dimn=\dimen110
+\pst@dimo=\dimen111
+\pst@dimp=\dimen112
+\pst@hbox=\box26
+\pst@ibox=\box27
+\pst@boxg=\box28
+\pst@cnta=\count98
+\pst@cntb=\count99
+\pst@cntc=\count100
+\pst@cntd=\count101
+\pst@cntg=\count102
+\pst@cnth=\count103
+\pst@cntm=\count104
+\pst@cntn=\count105
+\pst@cnto=\count106
+\pst@cntp=\count107
+\@zero=\count108
+\pst@toks=\toks16
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pstricks\base\pstricks.con")
+\psunit=\dimen113
+\psxunit=\dimen114
+\psyunit=\dimen115
+\pst@C@@rType=\count109
+\pslinewidth=\dimen116
+\psk@startLW=\dimen117
+\psk@endLW=\dimen118
+\pst@customdefs=\toks17
+\pslinearc=\dimen119
+\pst@symbolStep=\dimen120
+\pst@symbolWidth=\dimen121
+\everypsbox=\toks18
+\psframesep=\dimen122
+\pslabelsep=\dimen123
+\pst@shift=\dimen124
+\theoverlaybox=\box29
+)
+File: pstricks.tex 2011/09/04 v2.23 `PSTricks' (tvz,hv)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pstricks\base\pst-fp.tex")
+File: pst-fp.tex 2011/09/04 v2.23 `PST-fp' (hv)
+
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: dvips.def on input line 225.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvips.def"
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+))
+Package: pst-eps 2005/05/20 package wrapper for pst-eps.tex (hv)
+
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\generic\pst-eps\pst-eps.tex
+ v1.00, 2006/11/04
+\pst@epsout=\write3
+\pst@tempout=\write4
+)
+File: pst-eps.tex 2006/11/04 1.00 `pst-eps' (tvz)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pst-tree\pst-tree.sty"
+Package: pst-tree 2009/01/25 package wrapper for pst-tree.tex
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-tree\pst-tree.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-node\pst-node.tex"
+ v1.22, 2012/02/12
+\psrow=\count110
+\pscol=\count111
+\psmatrixcnt=\count112
+\psrowsep=\skip43
+\pscolsep=\skip44
+\pst@args=\count113
+\num@pts=\count114
+\pst@argcnt=\count115
+)  v1.12, 2011/02/28(tvz,dg,hv)
+\pstree@rootbox=\box30
+\pstree@box=\box31
+\psnodecnt=\count116
+\pstreelevel=\count117
+\pstreecnt=\count118
+\pstree@cnt=\count119
+\pstree@stop=\count120
+)
+File: pst-tree.tex 2011/02/28 1.12 `pst-tree' (tvz,hv)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pst-node\pst-node.sty"
+Package: pst-node 2011/06/05 v1.00 LaTeX wrapper for `pst-node' (HV)
+Package: pst-node 2010/04/22 package wrapper for pst-node.tex
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-node\pst-node.tex")
+File: pst-node.tex 2011/02/28 1.12 `pst-node' (tvz)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pst-plot\pst-plot.sty"
+Package: pst-plot 2011/06/05 v1.00 LaTeX wrapper for `pst-plot' (HV)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\pst-xkey.sty"
+Package: pst-xkey 2005/11/25 v1.6 package wrapper for pst-xkey.tex (HA)
+)
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\latex\multido\multido.sty
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\generic\multido\multido.tex
+ v1.42, 2010/05/14 <tvz>
+\multido@count=\count121
+\multidocount=\count122
+\multido@stuff=\toks19
+)
+File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
+)
+Package: pst-plot 2011/04/13 package wrapper for pst-plot.tex (hv)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-plot\pst-plot.tex"
+ v1.42, 2012/05/03 (tvz,hv)
+\pstRadUnit=\dimen125
+\pstRadUnitInv=\dimen126
+\pst@linecnt=\count123
+\psxlabelsep=\dimen127
+\psylabelsep=\dimen128
+\psk@subticksize=\dimen129
+\pst@xticksizeA=\dimen130
+\pst@xticksizeB=\dimen131
+\pst@xticksizeC=\dimen132
+\pst@yticksizeA=\dimen133
+\pst@yticksizeB=\dimen134
+\pst@yticksizeC=\dimen135
+\@digitcounter=\count124
+\psk@llx=\dimen136
+\psk@lly=\dimen137
+\psk@urx=\dimen138
+\psk@ury=\dimen139
+\pst@xunit=\dimen140
+\pst@yunit=\dimen141
+)
+File: pst-plot.tex 2012/05/03 1.42 `pst-plot' (tvz,hv)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pst-3dplot\pst-3dplot.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pst-3d\pst-3d.sty"
+Package: pst-3d 2009/07/28 package wrapper for pst-3d.tex (hv)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-3d\pst-3d.tex"
+`PST-3d' v1.11, 2010/02/14 (tvz))
+File: pst-3d.tex 2010/02/14 v1.11 `PST-3d' (hv)
+)
+Package: pst-3dplot 2010/01/01 package wrapper for pst-3dplot.tex (hv)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-3dplot\pst-3dplot.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pst-node\pst-node.tex")
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\generic\multido\multido.tex
+ v1.42, 2010/05/14 <tvz>) `PST-3dplot' v1.97, 2012/06/07 (HV,DL)
+\pst@dimf=\dimen142
+\pst@cntx=\count125
+\pst@cnty=\count126
+\pst@cntz=\count127
+\pst@dimx=\dimen143
+\pst@dimy=\dimen144
+\pst@dimz=\dimen145
+\pst@dx=\dimen146
+\pst@dy=\dimen147
+\pszunit=\dimen148
+)
+File: pst-3dplot.tex 2012/06/07 v1.97 `PST-3dplot' (hv)
+)
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\latex\pst-text\pst-text.sty
+Package: pst-text 2006/01/01 package wrapper for pst-text.tex (hv)
+
+(C:\Users\matthews\AppData\Roaming\MiKTeX\2.9\tex\generic\pst-text\pst-text.tex
+ v1.00, 2006/11/05(tvz,hv))
+File: pst-text.tex 2006/11/05 1.00 `pst-text' (tvz)
+)
+(C:\Users\matthews\Documents\csci321\lectures\AI\05Graphs\foo.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 11.
+ [1
+
+]
+PSTricks: Converting TeX box to EPS.
+          With dvips, use -E option.
+(C:\Users\matthews\Documents\csci321\lectures\AI\05Graphs\foo.aux) ) 
+Here is how much of TeX's memory you used:
+ 4388 strings out of 494046
+ 67092 string characters out of 3145984
+ 184320 words of memory out of 3000000
+ 7659 multiletter control sequences out of 15000+200000
+ 3945 words of font info for 15 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 39i,12n,51p,622b,260s stack positions out of 5000i,500n,10000p,200000b,50000s
+
+Output written on foo.dvi (1 page, 8352 bytes).

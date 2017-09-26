@@ -1,0 +1,2 @@
+convert explosion.gif explosion%05d.png
+montage explosion*.png -tile 9x1 -geometry +0+0 explosion.png

@@ -1,0 +1,24 @@
+\frametitle{Cross product (vector product)}
+\grph{false}{
+\psset{Alpha=60,showpoints=true,arrows=->,drawCoor=true}
+\pstThreeDCoor
+\myvec{0.5,2.0,-0.5}
+\myvec{-1.0, 1.5, 0.5}
+\myvec{1.75, 0.25, 2.75}
+\pstThreeDPut(0.6,2.1,-0.7){$u$}
+\pstThreeDPut(-1.1,1.6,0.6){$v$}
+\pstThreeDPut(2,0,3){$u \times v$}
+}
+\txt{
+\item A vector at right angles to $u$ and $v$.
+\item $u \times v = $\\
+$(u_2v_3 - u_3v_2,$\\$ u_3v_1 - u_1v_3,$\\$ u_1v_2 - u_2v_1)$
+
+\item Mnemonic:
+\[u\times v = \left|\begin{array}{ccc}
+ \vec{i} & \vec{j} & \vec{k} \\
+                           u_1 & u_2 & u_3 \\
+                           v_1 & v_2 & v_3 \\
+\end{array}\right|\]
+\item $|u\times v| = |u||v|\sin(\theta)$
+}

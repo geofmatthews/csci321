@@ -1,0 +1,461 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.6.12)  30 MAR 2016 16:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**gamejournalspec
+(./gamejournalspec.tex
+LaTeX2e <2014/05/01>
+Babel <3.9l> and hyphenation patterns for 4 languages loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2014/10/28 v1.8i multicolumn formatting (FMi)
+\c@tracingmulticols=\count87
+\mult@box=\box26
+\multicol@leftmargin=\dimen103
+\c@unbalance=\count88
+\c@collectmore=\count89
+\doublecol@number=\count90
+\multicoltolerance=\count91
+\multicolpretolerance=\count92
+\full@width=\dimen104
+\page@free=\dimen105
+\premulticols=\dimen106
+\postmulticols=\dimen107
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box27
+\last@line=\box28
+\maxbalancingoverflow=\dimen108
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count93
+\c@finalcolumnbadness=\count94
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+\mc@col@check@num=\count95
+)
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count96
+\Gm@cntv=\count97
+\c@Gm@tempcnt=\count98
+\Gm@bindingoffset=\dimen112
+\Gm@wd@mp=\dimen113
+\Gm@odd@mp=\dimen114
+\Gm@even@mp=\dimen115
+\Gm@layoutwidth=\dimen116
+\Gm@layoutheight=\dimen117
+\Gm@layouthoffset=\dimen118
+\Gm@layoutvoffset=\dimen119
+\Gm@dimlist=\toks15
+)
+(./gamejournalspec.aux)
+\openout1 = `gamejournalspec.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 9.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 9.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--66
+[]\OT1/cmtt/m/n/10 Got a new smartphone last week, and so I spent some time ove
+r the weekend playing some
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+[]\OT1/cmtt/m/n/10 BEJEWELED 2: Casual game. Played 30 minutes, approximately 1
+:00-1:30pm Saturday.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 Demo version comes with phone, small price for full version (p
+robably not worth it).
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 This game has a very relaxed feel, searching for three-in-a-ro
+w patterns with no time
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 pressure (standard version), is very relaxing. The glowing, sp
+arkling, jewels give the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 game a rich, luxurious feeling, which goes well with the relax
+ing feel. The music is
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 particularly annoying--it is some kind of funky, disco-feel tr
+ash, completely jarring
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 with the rich and relaxed look and feel of the game. One featu
+re I found annoying, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 again clashing with the "relaxation" feel, is the "hint" that 
+pops up if you take too
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 long looking for a match without doing anything. I resent the 
+pressure to find a match
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 before the hint comes up, and after the hint comes up I feel i
+nsulted--"Look you idiot,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 move THIS one." It's the same feeling you get if someone comes
+ up to your crossword
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 puzzle or sudoku and tells you where to fill something in--you
+'re not grateful for the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 help, you resent it. I suppose you could turn off the hint som
+ewhere in the preferences,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 but given that the game is supposed to be a casual game you sh
+ould not have to spend
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 time configuring it. Perhaps if it was more obvious how to tur
+n the feature off. Casual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--89
+\OT1/cmtt/m/n/10 games like this should not warrant reading anything to figure 
+out. You open it, you play
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+[]\OT1/cmtt/m/n/10 ANGRY BIRDS: Free download. Played 2 hours or more, maybe 2:
+00-4:00pm or so. Free
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 download version has annoying popup ads, but they are mostly i
+gnorable. This game
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 is genuinely addicting--why? For one thing, the pure joy in th
+e random destruction
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 is excellent. For another, the "odds" of winning with only mod
+erate skill seem to be
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 about what they are in Solitaire--maybe 1 one 5 tries? This se
+ems to be about right to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 keep you playing, not too frustrating, not too easy. For anoth
+er thing, the theme and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 aesthetics are charming. The birds and the pigs make cute nois
+es as a constant running
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 commentary and don't get annoying in the first hour or two (I 
+particularly like the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 way the pigs laugh at you when you lose). Another thing is the
+ many different ways to
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 win--the physics is such that very unpredictable things happen
+ (kind of an anti-tetris),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 and you can struggle to win a level for some time, and then wh
+en you finally win on a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 fluke you have two or three birds left over. This gives it a c
+onstant surprise factor,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 wanting to see what happens next. The skill component is somew
+hat disappointing. The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 slightest deviation in firing the birds makes for radically di
+fferent outcomes, and so
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 there is a large degree of chance in the game which can get fr
+ustrating in some levels.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 I finally gave up on a level in which (it seemed) the only way
+ to win was to fire birds
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 with great precision over and over. This seemed to make the le
+vel "too hard", and made
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 me resent the fact that all other levels beyond (possibly some
+ very enjoyable ones) were
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 blocked until I played this one over and over, doing essential
+ly the same thing every
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 time, until I got the aiming "just exactly right". I quit afte
+r trying this level for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 a while. When I came back to play it again the next day, I tri
+ed this level a couple of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 times, but gave up again and went back to replay some of the s
+olved levels. That was way
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 more fun than the frustrating "skill" level. This is NOT a gam
+e of skill--but it could
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 be if there was a better way of getting feedback on your aimin
+g. Perhaps they could add
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 a "predictor" arc that showed you where the bird would go when
+ you let go. Right now its
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 mostly a guess. That does enhance the level of surprise and jo
+y in random destruction,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 but then they should not put in levels with required skill com
+ponents. All levels should
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--127
+\OT1/cmtt/m/n/10 be defeatable by "luck" and moderate skill after a few dozen t
+ries. The levels before
+ []
+
+[2] (./gamejournalspec.aux) ) 
+Here is how much of TeX's memory you used:
+ 879 strings out of 494977
+ 12213 string characters out of 6180183
+ 73821 words of memory out of 5000000
+ 4149 multiletter control sequences out of 15000+600000
+ 7151 words of font info for 26 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 24i,6n,32p,159b,189s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on gamejournalspec.pdf (2 pages, 78953 bytes).
+PDF statistics:
+ 35 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

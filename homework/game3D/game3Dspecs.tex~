@@ -1,0 +1,47 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{multicol}
+\setlength{\parindent}{0in}
+\setlength{\parskip}{1em}
+\begin{document}
+
+\centerline{\bf CSCI 321, 3D Game Specs, Winter 2013}
+
+{\bf Due date: Friday, February 22, 10:00am}
+
+Reread the general game specifications for general things I'll look for in
+your game.  However, since 3D is generally {\em much} harder than 2D,
+much less is expected of your game.  Splash screens, scoreboards,
+health bars, and most of the other non-diegetic material does not have
+to be implemented.  One interesting level is plenty.  
+
+If you've used images, sounds, or other resources, make sure you pack
+them into your blend file with the
+\verb+File->External Data->Pack into .blend file+ menu item.
+
+Set up a new screen layout, called {\bf PlayGame}, by pressing the
+$+$-key on the drop-down menu that has the builtin screen layouts
+(Default, Animation, {\em etc.}), renaming it, and then setting it up
+with just one large 3D window on the left, and a narrow text window on
+the right, as in this figure:
+
+\includegraphics[width=\textwidth]{blendergameplaysetup.png}
+
+Set up the 3D window so it is ready to play with a single press of the
+P-key:  textured mode, camera view, {\em etc.}
+You can provide the name, in-game help, {\em etc.} in the text window,
+so that the manual does not have to be consulted.  
+
+Also produce a user's manual, as before, nicely formatted.
+Please let me know here all the special features
+and glorious whatnots you put in your game; tell me what you spent
+your time on, so I won't miss it when I'm deciding your grade.
+A programmer's guide is not necessary unless you wrote a lot of code
+for your game. 
+
+
+
+\end{document}
+\end

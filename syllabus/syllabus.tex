@@ -1,0 +1,216 @@
+\documentclass{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{xcolor}
+
+\newcommand{\nop}[1]{}
+
+\begin{document}
+
+
+\centerline{\Large \bf CSCI 321: Introduction to Computer Game Development}
+
+\centerline{\bf Syllabus, Fall, 2017}
+
+\begin{description}
+
+\item[Instructor:] Geoffrey Matthews, x3797,
+ geoffrey dot matthews at wwu dot edu
+
+\item[Office hours:] MTWF 11:00-10:50, CF 469
+
+\item[Lectures:] MTWF 9:00-9:50am, AH 018
+
+
+\item [Webpages:] \mbox{}\begin{itemize}
+\item\url{https://wwu.instructure.com} Grades, turn in homework.
+\item\url{https://github.com/geofmatthews/csci321} Handouts.
+\end{itemize}
+
+
+\item
+[Content:]
+This class is an introduction to the design, programming, ethics,
+and business
+of computer games.  Topics include:
+\begin{multicols}{2}
+  \begin{itemize}
+\item Game design
+  \item
+ Game architecture
+  \item
+ Graphics
+  \item
+ Physics and simulations
+  \item
+ Game AI (artificial intelligence)
+  \item
+ Game Story
+ \item Game Mechanics
+  \item
+ Social aspects of games
+  \end{itemize}
+\end{multicols}
+\item
+[Course objectives:]
+At the end of this class the student should be able to:
+%\begin{multicols}{2}
+  \begin{itemize}
+  \item Understand basic game architecture:
+\\
+-- Game loop\hfill
+-- Game timing\hfill
+-- Event oriented programming\hfill\mbox{}
+  \item Understand basic nonplayer character AI:
+\\
+-- State oriented behavior\hfill
+-- Autonomous motion\hfill
+-- $A^*$ search\hfill
+-- Goal driven behavior\hfill\mbox{}
+  \item Understand the basics of 2D and 3D physics necessary for games:
+\begin{itemize}
+  \item Understand tradeoffs in numerical integration techniques
+  \item Collision detection, resolution, and response
+\end{itemize}
+  \item Understand blitting and 2D graphics, transparency, animated sprites
+  \item Understand the basics of 3D computer graphics
+  \item Understand the basics of 3D animation, character modeling,
+rigging and skinning
+  \item Use Python and Pygame to produce a 2D game
+  \item Use Blender gamekit to produce a 3D game, including 3D content
+  \item Understand the elements of storytelling and drama:
+character, conflict, and plot.
+  \item Use Inform 7 to produce an interactive fiction game
+  \item Understand the basics of the game industry today, job titles,
+responsibilities, {\em etc.}
+  \item Understand the social issues of games, such as
+     game violence, addiction, griefing, and hacking.
+  \end{itemize}
+%\end{multicols}
+
+
+\item [Exams:] One midterm and one final.  Closed book, but two
+  double-sided sheets of paper may be used during the exams.
+
+\item [Reading:] All students are expected to do the 
+  reading assigned throughout the quarter in order to be prepared for
+  the weekly quizzes and the exams.
+
+\item [Games:] There will be three game programming
+  assignments:  a 2D game in python and pygame, a 3D game in Blender3D,
+  and an IF (interactive fiction) game in Inform 7.
+
+\item [Game Journal:] All students are required to play at least 2
+  hours of games every week.  You must keep a journal on games, hours,
+  etc.  More detailed instructions will be handed out in class. Game
+  journals are due every week except the last week (dead week) by
+  midnight on Sunday
+
+\item[Late work:] Submissions are due before midnight of the due
+date.  Work turned in up to 48 hours late will be accepted with no
+penalty.  This 48 hour extension is provided for emergencies.  Do not
+abuse it:  there will be no further extensions.
+
+\item[Pop quizzes:]  Pop quizzes will be given out in class at
+  unannounced times.  After attempting to solve the quiz on your own
+  or in small groups, we will solve it together in class before
+  turning it in at the end of class.
+
+\item[Absences:] If you have a well documented emergency (illness,
+  military service, school sponsored athletic events, {\em etc.})
+  notify your instructor as soon as possible and present documentation
+  (a note from your mother is not sufficient) in advance.  The
+  instructor may, at his discretion, extend the due date for the
+  assignment, schedule a make-up exam, or simply adjust your remaining
+  scores to determine your grade.
+
+\begin{multicols}{2}
+\item [Grading:] Grades will be based on pop quizzes, the three games
+  you produce, your game journal, a midterm, and a final
+  exam.  There are no extra credit opportunities for this class.
+  Relative weighting of the various assessments and assignment of plus
+  and minus is at the discretion of the instructor.
+
+$A \ge 90 > B \ge 80 > C \ge 70 > D \ge 60 > F$
+
+\columnbreak
+
+\begin{centering}
+\begin{tabular}{|rr|}\hline
+ Game journal &    5\%\\
+ Pop Quizzes &     5\%\\
+ Midterm &         15\%\\
+ Final &           25\%\\
+ 2D Pygame game &  20\%\\
+ 3D Blender game & 20\%\\
+ Inform7 game &        10\%\\
+\hline
+\end{tabular}
+
+\end{centering}
+\end{multicols}
+
+
+\item[Texts and Readings:] 
+
+
+\href{http://www.ai-junkie.com/books/toc_pgaibe.html}
+{\em Programming Game AI by Example} (in bookstore).
+Other readings from online materials will be assigned as they come up.
+
+
+\item [Schedule:]\mbox{}
+
+  \begin{tabular}{r|ccccccc|lll}
+     &Su& Mo& Tu& We& Th& Fr& Sa&Topic & Deadlines \\\hline  
+Sept 
+ & 24  & 25  & 26  & 27  & 28  & 29  & 30  & Pygame\\
+Oct
+&  1  &  2  &  3  &  4  &  5  &  6  &  7  & Pygame\\
+ &  8  &  9  & 10  & 11  & 12  & 13  & 14  & Pygame, Physics\\
+ & 15  & 16  & 17  & 18  & 19  & 20  & 21  & Physics\\
+ & 22  & 23  & 24  & 25  & 26  & 27  & 28  & Blender3D\\
+Nov
+& 29  & 30  & 31  &  1  &  2  &  3  &  4  & Physics & 2D game due Wednesday\\
+ &  5  &  6  &  7  &  8  &  9  & 10  & 11  & AI & Midterm Wednesday\\
+ & 12  & 13  & 14  & 15  & 16  & 17  & 18  & Inform7, Story\\
+ & 19  & 20  & 21  & 22  & 23  & 24  & 25  & AI & 3D game due Wednesday\\
+Dec
+& 26  & 27  & 28  & 29  & 30  &  1  &  2  & AI\\
+ &  3  &  4  &  5  &  6  &  7  &  8  &  9  &   Social issues &IF game due Wednesday\\\hline
+ & 10  & 11  & 12  & 13  & 14  & 15  & 16  & \multicolumn{2}{l}{Final Exam Monday 8:00am }\\
+\end{tabular}
+
+\item [Academic dishonesty:] Academic dishonesty policy and
+  procedure is discussed in the University Catalog, Appendix D.  All
+  students should read this section of the catalog.  Academic
+  dishonesty consists of misrepresentation by deception or other
+  fraudulent means.  In computer science courses this frequently takes
+  the form of copying another's program, either a fellow student's
+  program, or copying one from the web.  Due diligence should be
+  exercised in the labs at all times, since both copying and letting
+  someone else copy your program are equally culpable.  Do not walk
+  away from your computer in the lab without logging out or locking
+  the screen.  Do not print out code and then throw it away in the lab
+  trash cans. Do not share files, even if it is just to ``show them
+  something.''  Describe it in words, or talk to them in person, never
+  share code.
+
+\item [Collaboration:] Collaboration with your fellow students is
+  a good way to learn.  Feel free to share ideas, solve problems, and
+  discuss your programs with other students.  However, collaboration
+  is {\em not} copying.  All code should be original.  Remember the
+  \fbox{\bf Long Term Memory Rule}: After discussing homework with
+  another student, each of you must destroy all written notes,
+  pictures, files that you shared, erase the board, {\em
+    etc.}.  After that, you must watch a rerun of {\em the Simpson's},
+  play a round of ping-pong, go for a walk, or do something else
+  unrelated, for half an hour.  Then you can take the knowledge you
+  gained from another student and put it to work, since it is now not
+  copying, but learning.  You have made it your own.
+
+\end{description}
+
+\end{document}

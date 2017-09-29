@@ -15,8 +15,8 @@ class Line:
         self.screen = screen
         self.start = numpy.array(randpoint(screen))
         self.stop = numpy.array(randpoint(screen))
-        self.start_speed = numpy.array((5,5))
-        self.stop_speed = numpy.array((5,5))
+        self.start_speed = numpy.array((randint(3,8),randint(3,8)))
+        self.stop_speed = numpy.array((randint(3,8),randint(3,8)))
         
     def draw(self):
         pygame.draw.line(self.screen, (255,0,0), self.start, self.stop, 1)

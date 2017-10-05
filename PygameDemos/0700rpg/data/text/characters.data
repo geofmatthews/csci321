@@ -1,4 +1,5 @@
 guy ,  characters.png, 16,16, 0,3, 3, west, 11,17
+gal,   characters.png, 16,16, 0,6, 3, east, 11,14
 ghost, characters.png, 16,16, 4,6, 3, south,  9, 3
 skel,  characters.png, 16,16, 0,9, 3, south,  7, 7
 skel,  characters.png, 16,16, 0,9, 3, south,  6,15

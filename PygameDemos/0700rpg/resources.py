@@ -1,8 +1,9 @@
 import os, pygame
 from pygame.locals import *
 
+scale = 1
 imagePixels = 16
-scaledPixels = 64
+scaledPixels = imagePixels*scale
 
 def _loadSound(name, folder=os.path.join("data", "sounds")):
     class NoneSound:
@@ -46,7 +47,9 @@ def _loadSpritesheet(name,
         y = start[1]
         image.blit(spritesheet, (0,0), ((x,y),imagesize))
         image.set_colorkey(image.get_at((0,0)))
-        images.append(pygame.transform.scale(image, (scaledPixels,scaledPixels)))
+        images.append(
+            pygame.transform.scale(image,
+                                   (scaledPixels,scaledPixels)))
     return images
 
 def _loadTileset(name,
@@ -66,7 +69,9 @@ def _loadTileset(name,
                        ((col*imagesize[0], row*imagesize[1]),
                         imagesize))
             #im.set_colorkey(im.get_at((0,0)))
-            images[row][col] = pygame.transform.scale(im, (scaledPixels,scaledPixels))
+            images[row][col] = pygame.transform.scale(im,
+                                                      (scaledPixels,
+                                                       scaledPixels))
     return images
 
 class _ResourceManager:
@@ -111,6 +116,7 @@ def ResourceManager():
 
 #### Some tests:
 if __name__ == "__main__":
+    scale = 3
     try:
         pygame.init()
         screen = pygame.display.set_mode((1280, 960))
@@ -131,7 +137,8 @@ if __name__ == "__main__":
                 for direction in range(4):
                     for pose in range(3):
                         screen.blit(rm.char[char][direction][pose],
-                                    (300 + char*3*scaledPixels + pose*scaledPixels, direction*scaledPixels))
+                                    (300 + direction*scaledPixels, char*3*scaledPixels + pose*scaledPixels)
+                                    )
                 
             pygame.display.flip()
             for event in pygame.event.get():

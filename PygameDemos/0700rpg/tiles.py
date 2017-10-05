@@ -2,7 +2,6 @@ import os, pygame
 from pygame.locals import *
 from utilities import loadImage
 
-
 class Tile(pygame.sprite.Sprite):
     def __init__(self, image, position, wall):
         pygame.sprite.Sprite.__init__(self)
@@ -98,7 +97,7 @@ if __name__ == "__main__":
     try:
         pygame.init()
         screen = pygame.display.set_mode((scale*400, scale*240))
-        # now we can initialize the resource manager:
+        # now we can initialize the tile manager:
         tm = TileManager().initialize()
         done = False
         while not(done):

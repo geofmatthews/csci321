@@ -17,6 +17,7 @@ class Char(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         sheet = loadImage(sheetfile, folder)
         self.name = name
+        self.scale = scale
         self.images = {}
         for d,direction in enumerate(['south','west','east','north']):
             self.images[direction] = []
@@ -63,9 +64,9 @@ class Char(pygame.sprite.Sprite):
     def move(self, direction):
         if self.speed == 0:
             self.direction = direction
-            self.speed = 1*scale # must divide cell size
+            self.speed = 1*self.scale # must divide cell size
 
-class CharManager():
+class _CharManager():
     def __init__(self,
                  charfile = 'characters.data',
                  charfolder = os.path.join('data','text'),
@@ -112,6 +113,10 @@ class CharManager():
 
         return self
 
+_charmanager = _CharManager()
+def CharManager():
+    return _charmanager
+
 #### Some tests:
 if __name__ == "__main__":
     scale = 3
@@ -121,7 +126,7 @@ if __name__ == "__main__":
         world = pygame.Surface((400*scale, 240*scale))
         screensize = (320*scale, 240*scale)
         screen = pygame.display.set_mode(screensize)
-        # now we can initialize the resource manager:
+        # now we can initialize the resource managers:
         tm = TileManager().initialize(scale=scale)
         thm = ThingManager().initialize(scale=scale)
         cm = CharManager().initialize(scale=scale)

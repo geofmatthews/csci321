@@ -1,1 +1,3 @@
 Lots of things could share images, like tiles.  Would it help that much?
+World manager for multiple worlds, levels, etc.
+Allow realtime rescaling, window resizing.

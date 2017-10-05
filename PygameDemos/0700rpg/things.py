@@ -55,7 +55,7 @@ class Thing(pygame.sprite.Sprite):
                 self.frame = len(self.images)-1
         self.image = self.images[int(self.frame)]
 
-class ThingManager():
+class _ThingManager():
     def __init__(self,
                  thingmap = 'thingmap.data',
                  thingfolder = os.path.join('data','text'),
@@ -112,6 +112,10 @@ class ThingManager():
             self.dict[name].add(newthing)
         return self
 
+_thingmanager = _ThingManager()
+def ThingManager():
+    return _thingmanager
+
 #### Some tests:
 if __name__ == "__main__":
     scale = 3
@@ -120,12 +124,12 @@ if __name__ == "__main__":
         pygame.init()
         screen = pygame.display.set_mode((400*scale,240*scale))
         # now we can initialize the resource manager:
-        tm = TileManager().initialize()
-        thm = ThingManager().initialize()
+        tm = TileManager().initialize(scale=scale)
+        thm = ThingManager().initialize(scale=scale)
 
         clock = pygame.time.Clock()               
         done = False
-        while not(done):
+        while not(done): 
             clock.tick(30)
             screen.fill((0,0,0))
             

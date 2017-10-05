@@ -1,72 +1,93 @@
 #/usr/bin/env python
-"""
-Cloned from a GameMaker game, which I cloned from a pygame game, Astrocrash
-Geoffrey Matthews
-2017
-"""
+# Geoffrey Matthews
+# 2017
+# simple demo of rpg style game
+# demo how to load maps from text files
+# resources from opengameart.org, Tiny16:Basic
 
-import os, pygame
+import pygame, math, random,os
+from resources import ResourceManager
 from pygame.locals import *
 
-if not pygame.font: print ('Warning, fonts disabled')
-if not pygame.mixer: print ('Warning, sound disabled')
+from utilities import loadImage
+from tiles import TileManager
+from things import ThingManager
+from characters import CharManager
 
-from objects import ObjectManager
-from resources import ResourceManager
-    
+scale = 3
+size = scale*16
 def main():
-        
-    screensize = (640,480)
     pygame.init()
+    world = pygame.Surface((500*scale, 500*scale))
+    screensize = (320*scale, 240*scale)
     screen = pygame.display.set_mode(screensize)
-    pygame.mixer.music.load(os.path.join("data","music","theme.mid"))
-    pygame.mixer.music.play(-1)
-  
-    # initialize resources before objects
-    rm = ResourceManager().initialize()
-    om = ObjectManager().initialize()
-    ship = om.ships.sprites()[0]
+    # now we can initialize the resource managers:
+    tm = TileManager().initialize(scale=scale)
+    thm = ThingManager().initialize(scale=scale)
+    cm = CharManager().initialize(scale=scale)
 
-    # start the game loop
-    clock = pygame.time.Clock()
+
+    visiblerect = pygame.Rect(((0,0), screensize))
+    avatarIndex = 0
+    avatar = cm.chars.sprites()[avatarIndex]
+
+    clock = pygame.time.Clock()               
     done = False
     while not(done):
         clock.tick(30)
-
-        # check user events
-        keys = pygame.key.get_pressed()
-        if keys[K_LEFT]:
-            ship.left()
-        if keys[K_RIGHT]:
-            ship.right()
-        if keys[K_UP]:
-            ship.accelerate()
-        if not keys[K_UP]:
-            ship.coast()
-        if keys[K_SPACE]:
-            ship.fire()
-
-        # update objects
-        om.objects.update()
-
-        # draw everything
-        screen.blit(ResourceManager().nebula, (0,0))
-        om.objects.draw(screen)
-        pygame.display.flip()  
-              
-        # poll keyboard
+        # handle user events
         for event in pygame.event.get():
             if event.type == QUIT:
                 done = True
-            elif event.type == KEYDOWN and event.key == K_ESCAPE:
-                done = True
-            elif event.type == USEREVENT: # game over
-                done = True
+            elif event.type == KEYDOWN:
+                if event.key == K_ESCAPE:
+                    done = True
+                elif event.key == K_SPACE:
+                    for thing in thm.things.sprites():
+                        crect = avatar.rect.inflate(2,2)
+                        if crect.colliderect(thing.rect):
+                            thing.activate()
+                elif event.key == K_c:
+                    avatarIndex += 1
+                    avatarIndex %= len(cm.chars.sprites())
+                    avatar = cm.chars.sprites()[avatarIndex]
 
+        pressed = pygame.key.get_pressed()
+        if pressed[K_LEFT]:
+            avatar.move('west')
+        elif pressed[K_RIGHT]:
+            avatar.move('east')
+        elif pressed[K_UP]:
+            avatar.move('north')
+        elif pressed[K_DOWN]:
+            avatar.move('south')
+        # update world
+        thm.things.update()
+        cm.chars.update()
 
-#this calls the 'main' function when this script is executed
-if __name__ == '__main__':
+        # draw everything
+        world.fill((0,0,0))
+        pygame.draw.rect(world,
+                         pygame.Color(0,0,255,255),
+                         world.get_rect(),
+                         16)
+        tm.tiles.draw(world)
+        thm.things.draw(world)
+        cm.chars.draw(world)
+
+        visiblerect.center = avatar.rect.center
+        worldrect = world.get_rect()
+        visiblerect.top = max(visiblerect.top, worldrect.top)
+        visiblerect.bottom = min(visiblerect.bottom, worldrect.bottom)
+        visiblerect.left = max(visiblerect.left, worldrect.left)
+        visiblerect.right = min(visiblerect.right, worldrect.right)
+        screen.blit(world, (0,0), visiblerect)
+      
+        pygame.display.flip()
+
+if __name__ == "__main__":
     try:
         main()
     finally:
         pygame.quit()
+        

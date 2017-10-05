@@ -2,6 +2,15 @@ import os, pygame
 from pygame.locals import *
 from utilities import loadImage
 
+
+class InvisibleBlock(pygame.sprite.Sprite):
+    def __init__(self, rect):
+        pygame.sprite.Sprite.__init__(self)
+        self.rect = rect
+
+    def draw(surface):
+        pass
+
 class Tile(pygame.sprite.Sprite):
     def __init__(self, image, position, wall):
         pygame.sprite.Sprite.__init__(self)
@@ -30,6 +39,7 @@ class _TileManager():
         self.tilemap = tilemap
         self.datafolder = datafolder
         self.imagefolder = imagefolder
+        self.invisibleBlocks = []
         self.initialized = False
         
     def initialize(self, scale = 3):
@@ -45,17 +55,20 @@ class _TileManager():
             mapping = [s.strip() for s in x.split(',')]
             key = mapping[6]
             self.dict[key] = {}
+            w,h = int(mapping[2]), int(mapping[3])
+            row, col = int(mapping[4]), int(mapping[5])
             self.dict[key]['name'] = mapping[0]
             self.dict[key]['file'] = mapping[1]
-            self.dict[key]['width'] = int(mapping[2])
-            self.dict[key]['height'] = int(mapping[3])
-            self.dict[key]['row'] = int(mapping[4])
-            self.dict[key]['col'] = int(mapping[5])
+            self.dict[key]['width'] = w
+            self.dict[key]['height'] = h
+            self.dict[key]['row'] =  row
+            self.dict[key]['col'] = col
             self.dict[key]['roomkey'] = mapping[6]
             self.dict[key]['wall'] = mapping[7] == 'wall'
+                
             # find image for this tile
-            w, h = self.dict[key]['width'], self.dict[key]['height']
-            row, col = self.dict[key]['row'], self.dict[key]['col']
+            #w, h = self.dict[key]['width'], self.dict[key]['height']
+            #row, col = self.dict[key]['row'], self.dict[key]['col']
             image = pygame.Surface((w,h))
             image.blit(self.tilefile, (0,0),
                        ((col*w, row*h), (w,h)))
@@ -82,7 +95,12 @@ class _TileManager():
                     data = self.dict[letter]
                     newTile = Tile(data['image'],
                                    (roomcol*scale*w, roomrow*scale*h),
-                                   data['wall'] == 'wall')
+                                   data['wall'])
+                    if data['wall']:
+                        newBlock = InvisibleBlock(
+                            pygame.Rect(roomcol*scale*w, roomrow*scale*h,
+                                        scale*w, scale*h))
+                        self.invisibleBlocks.append(newBlock)
                     self.tiles.add(newTile)
                 self.tileArray[roomrow][roomcol] = newTile
         return self

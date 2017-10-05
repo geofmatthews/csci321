@@ -5,6 +5,11 @@
 # demo how to load maps from text files
 # resources from opengameart.org, Tiny16:Basic
 
+# Note, motion must be in steps that divide the cell size
+# so that each character moves to the exact next cell on some
+# step.  If the remainder of cell size divided by char speed
+# is nonzero, chars may not stop on cells.
+
 import pygame, math, random,os
 from resources import ResourceManager
 from pygame.locals import *
@@ -35,6 +40,7 @@ def main():
     done = False
     while not(done):
         clock.tick(30)
+        
         # handle user events
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -61,6 +67,7 @@ def main():
             avatar.move('north')
         elif pressed[K_DOWN]:
             avatar.move('south')
+            
         # update world
         thm.things.update()
         cm.chars.update()

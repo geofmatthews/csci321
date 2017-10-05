@@ -11,7 +11,7 @@ class Char(pygame.sprite.Sprite):
                  width, height,
                  row, col,
                  nframes=3,
-                 scale=3,
+                 scale=2,
                  sheetfile='characters.png',
                  folder=os.path.join('data','images')):
         pygame.sprite.Sprite.__init__(self)
@@ -36,6 +36,26 @@ class Char(pygame.sprite.Sprite):
         self.aspeed = 0.25
         self.name = name
         self.cellsize = (width*scale, height*scale)
+
+    def collide(self):
+        if self.speed > 0:
+            things = TileManager().invisibleBlocks
+            newrect = self.rect.inflate(5,5)
+            if self.direction == 'south':
+                point = newrect.midbottom
+            elif self.direction == 'north':
+                point = newrect.midtop
+            elif self.direction == 'east':
+                point = newrect.midright
+            elif self.direction == 'west':
+                point = newrect.midleft
+            for thing in TileManager().invisibleBlocks:
+                if thing.rect.collidepoint(point):
+                    return True
+            for thing in [a for a in ThingManager().things if a.solid]:
+                if thing.rect.collidepoint(point):
+                    return True
+        return False          
         
     def update(self):
         if self.speed == 0:
@@ -64,7 +84,9 @@ class Char(pygame.sprite.Sprite):
     def move(self, direction):
         if self.speed == 0:
             self.direction = direction
-            self.speed = 1*self.scale # must divide cell size
+            self.speed = 1*self.scale
+            if self.collide():
+                self.speed = 0
 
 class _CharManager():
     def __init__(self,
@@ -78,7 +100,7 @@ class _CharManager():
         self.imagefolder = imagefolder
         self.initialized = False
 
-    def initialize(self, scale=3):
+    def initialize(self, scale=2):
         if self.initialized:
             return self
         self.initialized = True
@@ -119,7 +141,7 @@ def CharManager():
 
 #### Some tests:
 if __name__ == "__main__":
-    scale = 3
+    scale = 2
     size = scale*16
     try:
         pygame.init()

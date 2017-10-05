@@ -5,8 +5,9 @@ from pygame.locals import *
 from utilities import loadImage
 from tiles import TileManager
 
+
 class Thing(pygame.sprite.Sprite):
-    def __init__(self, name,
+    def __init__(self, name, solid,
                  width, height,
                  row, col,
                  nframes=1,
@@ -16,6 +17,7 @@ class Thing(pygame.sprite.Sprite):
                  sheetfile='things.png',
                  folder = os.path.join('data','images')):
         pygame.sprite.Sprite.__init__(self)
+        self.solid = solid
         sheet = loadImage(sheetfile, folder)
         self.images = []
         for frame in range(nframes):
@@ -42,6 +44,7 @@ class Thing(pygame.sprite.Sprite):
     def activate(self):
         if not self.animated:
             self.opening = True
+            self.solid = False
     
     def update(self):
         if self.animated:
@@ -76,7 +79,7 @@ class _ThingManager():
         self.things = pygame.sprite.RenderPlain()
         for x in thinglines:
             mapping = [s.strip() for s in x.split(',')]
-            name,f,w,h,row,col,nframes,horiz,exf,roomrow,roomcol,anim = mapping
+            name,f,w,h,row,col,nframes,horiz,exf,roomrow,roomcol,anim,solid = mapping
             width = int(w)
             height = int(h)
             row = int(row)
@@ -87,10 +90,12 @@ class _ThingManager():
             roomrow = int(roomrow)
             roomcol = int(roomcol)
             animate = anim == 'animate'
+            solid = solid == 'solid'
 
             if not self.dict.has_key(name):
                 self.dict[name] = pygame.sprite.RenderPlain()
-            newthing = Thing(name, width, height,
+            newthing = Thing(name, solid,
+                             width, height,
                              row, col,
                              nframes,
                              horizontal,

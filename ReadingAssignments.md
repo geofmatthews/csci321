@@ -11,7 +11,13 @@
 ## Game Design
 * [Review of The Art of Game Design](http://www.gamasutra.com/view/feature/132326/book_review_the_art_of_game_design.php)  If you can, buy the book!
 
+## Hex Math
+* [Hex Math](https://www.redblobgames.com/grids/hexagons/)
+
 ## Game Physics
+
+### Pymunk
+* [Pymunk tutorial](http://www.pymunk.org/en/latest/tutorials/SlideAndPinJoint.html)
 
 ### Vectors
 * [Tutorial on vector math](http://chortle.ccsu.edu/vectorlessons/vectorIndex.html)  Gives a good intuitive understanding of vectors.

@@ -36,29 +36,29 @@ class Char(pygame.sprite.Sprite):
         self.aspeed = 0.25
         self.name = name
         self.cellsize = (width*scale, height*scale)
+        self.timer = 0
 
     def collide(self):
-        if self.speed > 0:
-            things = TileManager().invisibleBlocks
-            newrect = self.rect.inflate(5,5)
-            if self.direction == 'south':
-                point = newrect.midbottom
-            elif self.direction == 'north':
-                point = newrect.midtop
-            elif self.direction == 'east':
-                point = newrect.midright
-            elif self.direction == 'west':
-                point = newrect.midleft
-            for thing in TileManager().invisibleBlocks:
-                if thing.rect.collidepoint(point):
-                    return True
-            for thing in [a for a in ThingManager().things if a.solid]:
-                if thing.rect.collidepoint(point):
-                    return True
+        things = TileManager().invisibleBlocks
+        newrect = self.rect.inflate(5,5)
+        if self.direction == 'south':
+            point = newrect.midbottom
+        elif self.direction == 'north':
+            point = newrect.midtop
+        elif self.direction == 'east':
+            point = newrect.midright
+        elif self.direction == 'west':
+            point = newrect.midleft
+        for thing in TileManager().invisibleBlocks:
+            if thing.rect.collidepoint(point):
+                return True
+        for thing in [a for a in ThingManager().things if a.solid]:
+            if thing.rect.collidepoint(point):
+                return True
         return False          
         
     def update(self):
-        if self.speed == 0:
+        if self.timer == 0:
             self.frame = 1
             self.image = self.images[self.direction][int(self.frame)]
         else:
@@ -74,19 +74,22 @@ class Char(pygame.sprite.Sprite):
                 self.rect.left -= self.speed
             elif self.direction == 'east':
                 self.rect.left += self.speed
-            cellx, celly = self.cellsize
-            if self.rect.left % cellx == 0 and self.rect.top % celly == 0:
-                self.speed = 0
+        if self.timer > 0:
+            self.timer -= 1
+
+            #cellx, celly = self.cellsize
+            #if self.rect.left % cellx == 0 and self.rect.top % celly == 0:
+            #    self.speed = 0
             
     def face(self, direction):
         self.direction = direction
 
     def move(self, direction):
-        if self.speed == 0:
+        if self.timer == 0:
             self.direction = direction
-            self.speed = 1*self.scale
-            if self.collide():
-                self.speed = 0
+            if not(self.collide()):
+                self.speed = 1*self.scale
+                self.timer = self.cellsize[0]/self.scale
 
 class _CharManager():
     def __init__(self,

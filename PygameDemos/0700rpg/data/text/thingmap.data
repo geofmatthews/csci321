@@ -5,10 +5,10 @@ yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,    9, 5, animat
 yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,   11, 8, animate,   solid
 yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,    8,21, animate,   solid
 yellowtorch,things.png,     16,16, 4,0, 3,horizontal,extraframe,   10,21, animate,   solid
-jaildoor,   things.png,     16,16, 0,3, 4,vertical,  noextraframe,  8, 7, animate,   solid
+jaildoor,   things.png,     16,16, 0,3, 4,vertical,  noextraframe,  8, 7, noanimate, solid
 fireplace,  things.png,     16,16, 4,9, 3,horizontal,extraframe,    5, 7, animate,   solid
 upstairs,   basictiles.png, 16,16, 7,0, 1,horizontal,noextraframe,  6, 4, noanimate, notsolid
 downstairs, basictiles.png, 16,16, 7,1, 1,horizontal,noextraframe, 11, 3, noanimate, notsolid
 pot,        things.png,     16,16, 0,9, 4,vertical,  noextraframe,  6, 6, noanimate, solid
 map,        basictiles.png, 16,16, 6,4, 1,vertical,  noextraframe,  6, 8, noanimate, notsolid
-chest,      things.png,     16,16, 0,6, 4,vertical,  noextraframe,  3,13, animate,   solid
+chest,      things.png,     16,16, 0,6, 4,vertical,  noextraframe,  3,13, noanimate, solid

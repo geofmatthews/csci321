@@ -9,6 +9,8 @@
 # so that each character moves to the exact next cell on some
 # step.  If the remainder of cell size divided by char speed
 # is nonzero, chars may not stop on cells.
+# This mechanism appears to have a bug in it, and characters
+# don't stop sometimes.  Have to think of a more robust method.
 
 import pygame, math, random,os
 from resources import ResourceManager

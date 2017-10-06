@@ -110,8 +110,9 @@ class _ThingManager():
                 for img in newthing.images:
                     w,h = img.get_size()
                     img.set_colorkey(newthing.images[3].get_at((w-1,h-1)))
-            if name == 'yellowtorch' or name == 'fireplace':
-                newthing.animated = True
+            #if name == 'yellowtorch' or name == 'fireplace':
+             #   newthing.animated = True
+            newthing.animated = animate
                     
             self.things.add(newthing)
             self.dict[name].add(newthing)

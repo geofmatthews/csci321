@@ -1,0 +1,849 @@
+\documentclass[handout,t,compress]{beamer}
+\usepackage{etex}
+\usetheme{Singapore}
+
+\sloppy
+%\usepackage[scaled]{helvet}
+%\usepackage{eulervm}
+
+\usepackage{fp-eval}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+\usepackage{pstricks,pst-node,pst-tree,pst-plot,pst-3dplot,multido}
+\usepackage{graphicx}
+
+\usepackage{alltt}
+
+
+\newcommand{\bframe}[1]{\begin{frame}[fragile]{#1}}
+
+\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
+\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
+\newcommand{\ebnf}{\end{tabular}\end{center}}
+
+\newcommand{\myskip}{\vspace{-1em}\hrulefill}
+\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
+\newcommand{\myline}[1]{\centerline{#1}}
+\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
+\newcommand{\br}{\mbox{~}|\mbox{~}}
+
+\definecolor{orange}{rgb}{1,.5,0}
+\definecolor{pink}{rgb}{1,.75,.75}
+\definecolor{ltblue}{rgb}{.75,.75,1}
+
+\newcommand{\be}{\begin{eqnarray*}}
+\newcommand{\ee}{\end{eqnarray*}}
+
+\newcommand{\grph}[2]{
+\begin{columns}
+\column{0.01\textwidth}
+\column{0.6\textwidth}
+\begin{pspicture}[showgrid=#1](-2,-2)(5,5)
+#2
+\end{pspicture}
+}
+
+\newcommand{\txt}[1]{
+\column{0.4\textwidth}
+\rput[bl](0,0){\parbox{\textwidth}{
+\footnotesize
+\begin{itemize}
+#1
+\end{itemize}}}
+\end{columns}}
+
+\newcommand{\myvec}[1]{
+\pstThreeDDot[showpoints=true,drawCoor=true](#1)
+\pstThreeDLine[arrows=->,linecolor=blue](0,0,0)(#1)
+}
+
+\AtBeginSection[]
+{
+\bframe{Outline}
+\tableofcontents[currentsection]
+\end{frame}
+}
+
+\title{Game Physics Notes 02}
+\author{CSCI 321}
+\institute{WWU}
+
+\begin{document}\small
+\psset{arrowscale=2}
+
+\bframe{~}
+\titlepage
+\end{frame}
+
+\bframe{Forces}
+
+Newton's second law of motion: $F=ma$
+
+\begin{eqnarray*}
+a &=& F/m\\
+v' &=& a\\
+p' &=& v
+\end{eqnarray*}
+\begin{quotation}
+Corpus omne perseverare in statu suo quiescendi vel movendi
+uniformiter in directum, nisi quatenus a viribus impressis cogitur
+statum illum mutare. 
+\end{quotation}
+Or, in English:
+\begin{quotation}
+Every body perseveres in its state of being at
+rest or of moving uniformly straight forward, except insofar as it is
+compelled to change its state by force impressed.
+\end{quotation}
+\end{frame}
+
+
+\bframe{Forces and Motion}
+
+\begin{eqnarray*}
+F &=& ma\\
+a &=& F/m\\
+v' &=& a\\
+p' &=& v
+\end{eqnarray*}
+
+\begin{itemize}
+\item What we really want to know is: ``How do things move?''\pause
+\item If we know the forces and masses, we know the acceleration.\pause
+\item If we can integrate the acceleration we can get the velocity.\pause
+\item If we can integrate the velocity we can get the position.\pause
+\item The problem is integration---generally unsolvable.
+\item So we use approximate integration.
+\end{itemize}
+\end{frame}
+
+\bframe{Euler Integration}
+
+Exact integration would move the point along the blue lines.
+
+\psset{arrowscale=2}
+\psset{unit=0.75cm}
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+%\psline{*->}(1,1)(4.5,3.5)
+%\psline{*->}(4.5,3.5)(8.75,4.25)
+
+
+%\uput[-90](1,1){$\vec{x}_0$}
+%\uput[-90](4.5,3.5){$\vec{x}_1$}
+%\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+
+%\uput[90](2.75,2.25){$\vec{k}(0)$}
+%\uput[90](6.625,3.875){$\vec{k}(1)$}
+\end{pspicture}
+\end{center}
+
+\end{frame}
+
+\bframe{Euler Integration}
+
+\begin{eqnarray*}
+\vec{k}(n) &=& v(t,\vec{x}_n)\Delta t\\
+\vec{x}_{n+1} &=& \vec{x}_n + \vec{k}(n)
+\end{eqnarray*}
+
+\psset{arrowscale=2}
+\psset{unit=0.75cm}
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(1,1)(4.5,3.5)
+\psline{*->}(4.5,3.5)(8.75,4.25)
+
+
+\uput[-90](1,1){$\vec{x}_0$}
+\uput[-90](4.5,3.5){$\vec{x}_1$}
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+
+\uput[90](2.75,2.25){$\vec{k}(0)$}
+\uput[90](6.625,3.875){$\vec{k}(1)$}
+\end{pspicture}
+\end{center}
+
+\end{frame}
+
+\bframe{Euler Integration}
+
+\begin{eqnarray*}
+a &=& F/m\\
+v' &=& a\\
+p' &=& v
+\end{eqnarray*}
+
+\bigskip
+
+\begin{centering}
+\begin{verbatim}
+def update(F, m, dt):
+  a = F / m
+  v += a * dt
+  p += v * dt
+\end{verbatim}
+\end{centering}
+
+\end{frame}
+
+
+\bframe{Sample Calculations}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 1 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}
+\hfill\begin{minipage}{2in}
+
+Euler:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0 & 20.0 & 0.0 & -10.0 & \\
+1.0 & 20.0 & -10.0 & -10.0 & \\
+2.0 & 10.0 & -20.0 & -5.0 & \\
+3.0 & -10.0 & -25.0 & 5.0 & \\
+4.0 & -35.0 & -20.0 & 17.5 & \\
+5.0 & -55.0 & -2.5 & 27.5 & \\
+\end{tabular}
+\end{minipage}
+
+\begin{itemize}
+\item
+Run {\tt spring.py}
+\end{itemize}
+\end{frame}
+
+\bframe{Sample Calculations with smaller timestep}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 0.5 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}
+\hfill\begin{minipage}{2in}
+
+Euler:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0 & 20.0 & 0.0 & -10.0 & \\
+0.5 & 20.0 & -5.0 & -10.0 & \\
+1.0 & 17.5 & -10.0 & -8.8 & \\
+1.5 & 12.5 & -14.4 & -6.3 & \\
+2.0 & 5.3 & -17.5 & -2.7 & \\
+2.5 & -3.4 & -18.8 & 1.7 & \\
+3.0 & -12.9 & -18.0 & 6.4 & \\
+3.5 & -21.8 & -14.8 & 10.9 & \\
+4.0 & -29.2 & -9.3 & 14.6 & \\
+4.5 & -33.9 & -2.0 & 16.9 & \\
+5.0 & -34.9 & 6.5 & 17.4 & \\
+\end{tabular}
+\end{minipage}
+
+\begin{itemize}
+\item
+Run {\tt spring.py}
+\end{itemize}
+\end{frame}
+
+
+\bframe{Online discussions of Midpoint and Runge Kutta}
+
+Readings:
+\begin{itemize}
+\item \url{http://www.pixar.com/companyinfo/research/pbm2001/},
+  Differential equation basics, and Particle dynamics
+\item \url{http://www.nrbook.com/c/}, 16.0, 16.1
+\end{itemize}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+%\begin{eqnarray*}
+%\vec{k}_1 &=&  v(t, \vec{x}_n)\Delta t\\
+%\vec{k}_2 &=& v(t+\frac{1}{2}\Delta t, \vec{x}_n+
+%                     \frac{1}{2}\vec{k}_1)\Delta t \\
+%\vec{x}_{n+1} &=& \vec{x}_n + \vec{k}_2 
+%\end{eqnarray*}
+\begin{eqnarray*}
+\vec{k}_1 &=&  d(\vec{x}_n)\Delta t\\
+\vec{k}_2 &=& d(\vec{x}_n+\frac{1}{2}\vec{k}_1)\Delta t \\
+\vec{x}_{n+1} &=& \vec{x}_n + \vec{k}_2 
+\end{eqnarray*}
+
+\begin{itemize}
+\item
+Euler method has errors $O(\Delta t^2)$
+\item
+Midpoint method has errors $O(\Delta t^3)$
+\item Can take steps twice as big and get smaller errors:
+\begin{eqnarray*}
+0.05^2 &=& 0.0025\\
+0.10^3 &=& 0.001
+\end{eqnarray*}
+\end{itemize}
+\end{frame}
+
+\bframe{Midpoint Method}
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+
+\psline{*->}(1,1)(8,6)
+
+\rput(0.5,1){$\vec{x}_0$}
+\rput(8.5,6){$\vec{k}_1$}
+\pscurve{->}(3,5)(5,5)(4,4)(4.5,3.5)
+\rput(2,5){\psshadowbox{Halfway point}}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(4.5,3.5)(13,5)
+
+\rput(0.5,1){$\vec{x}_0$}
+\psdot[dotsize=.25cm](1,1)
+
+\rput(13,4.5){$\vec{k}_2$}
+\pscurve{->}(3,5)(5,5)(4,4)(4.5,3.5)
+\rput(2,5){\psshadowbox{Halfway point}}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(4.5,3.5)(13,5)
+\psline{*->}(1,1)(9.5,2.5)
+
+\psline[linestyle=dotted]{-}(4.5,3.5)(1,1)
+\psline[linestyle=dotted]{-}(13,5)(9.5,2.5)
+
+\rput(0.5,1){$\vec{x}_0$}
+
+\rput(13,4.5){$\vec{k}_2$}
+\rput(9.5,1.75){$\vec{k}_2$}
+\pscurve{->}(3,5)(5,5)(4,4)(4.5,3.5)
+\rput(2,5){\psshadowbox{Halfway point}}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+
+\psline{*->}(1,1)(8,6)
+\psline{*->}(1,1)(9.5,2.5)
+
+
+\rput(0.5,1){$\vec{x}_0$}
+\rput(8.5,6){$\vec{k}_1$}
+\rput(10,2.5){$\vec{k}_2$}
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Midpoint Method}
+
+One midpoint method step of size $\Delta t$ 
+is more accurate than two Euler steps
+of size $\Delta t/2$.
+
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+
+\psline{*->}(1,1)(4.5,3.5)
+\psline{*->}(4.5,3.5)(8.75,4.25)
+\psline{*->}(1,1)(9.5,2.5)
+
+
+\rput(0.5,1){$\vec{x}_0$}
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+\bframe{Sample Calculations}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 1 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}\hfill
+\begin{minipage}{2in}
+Midpoint:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0 & \rnode{A1}{20.0} & \rnode{A2}{0.0} & \rnode{A3}{-10.0} \\
+0.5 & \rnode{B1}{20.0} & \rnode{B2}{-5.0} & \rnode{B3}{-10.0} \\
+1.0 & \rnode{C1}{15.0} & \rnode{C2}{-10.0} & \rnode{C3}{-7.5} \\
+1.5 & 10.0 & -13.8 & -5.0 & \\
+2.0 & 1.3 & -15.0 & -0.6 & \\
+2.5 & -6.3 & -15.3 & 3.1 & \\
+3.0 & -14.1 & -11.9 & 7.0 & \\
+3.5 & -20.0 & -8.4 & 10.0 & \\
+4.0 & -22.4 & -1.9 & 11.2 & \\
+4.5 & -23.4 & 3.7 & 11.7 & \\
+5.0 & -18.7 & 9.8 & 9.3 & \\
+\end{tabular}
+\nccurve[ncurv=1,angleA=35,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A1}{B1}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A2}{B1}
+\nccurve[ncurv=1,angleA=35,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A2}{B2}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A3}{B2}
+\end{minipage}
+
+\bigskip \hfill First add half of the derivative.
+\end{frame}
+
+\bframe{Sample Calculations}
+\begin{minipage}{2in}
+\begin{eqnarray*}
+dt &=& 1 \\
+m &=& 10  \\
+k &=& 5   \\
+f &=& -kx \\
+a &=& f/m = -kx/m = -x/2 \\
+x' &=& v \\
+v' &=& a \\
+x_{t+1} &=& x_{t} + x'_{t} = x_{t} + v_{t} \\
+v_{t+1} &=& v_{t} + v'_{t} = v_{t} + a_{t} 
+\end{eqnarray*}
+\end{minipage}\hfill
+\begin{minipage}{2in}
+Midpoint:\\
+\begin{tabular}{r|rrr|rr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0 & \rnode{A1}{20.0} & \rnode{A2}{0.0} & \rnode{A3}{-10.0} \\
+0.5 & \rnode{B1}{20.0} & \rnode{B2}{-5.0} & \rnode{B3}{-10.0} \\
+1.0 & \rnode{C1}{15.0} & \rnode{C2}{-10.0} & \rnode{C3}{-7.5} \\
+1.5 & 10.0 & -13.8 & -5.0 & \\
+2.0 & 1.3 & -15.0 & -0.6 & \\
+2.5 & -6.3 & -15.3 & 3.1 & \\
+3.0 & -14.1 & -11.9 & 7.0 & \\
+3.5 & -20.0 & -8.4 & 10.0 & \\
+4.0 & -22.4 & -1.9 & 11.2 & \\
+4.5 & -23.4 & 3.7 & 11.7 & \\
+5.0 & -18.7 & 9.8 & 9.3 & \\
+\end{tabular}
+\nccurve[angleA=0,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A1}{C1}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{B2}{C1}
+\nccurve[angleA=0,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{A2}{C2}
+\nccurve[angleA=180,angleB=45,arrows=->,arrowscale=2,linecolor=blue]{B3}{C2}
+\end{minipage}
+
+\bigskip \hfill Then add all the ``half-derivative.''
+
+\bigskip
+Note that this is far more accurate than Euler with half step size.
+\end{frame}
+
+%\bframe{ Fourth Order Runge-Kutta}
+%\begin{eqnarray*}
+%\vec{k}_1 &=& v(t,\vec{x}_n)\Delta t \\
+%\vec{k}_2 &=& v(t + \frac{1}{2}\Delta t, \vec{x}_n +
+%\frac{1}{2}\vec{k}_1 )\Delta t \\
+%\vec{k}_3 &=& v(t+\frac{1}{2}\Delta t,  \vec{x}_n +
+%\frac{1}{2}\vec{k}_2 )\Delta t \\
+%\vec{k}_4 &=& v(t+\Delta t,  \vec{x}_n + \vec{k}_3 )\Delta t \\
+%\vec{x}_{n+1} &=& \vec{x}_n + \frac{\vec{k}_1}{6}
+%+ \frac{\vec{k}_2}{3}
+%+ \frac{\vec{k}_3}{3}
+%+ \frac{\vec{k}_4}{6}
+%\end{eqnarray*}
+%\end{frame}
+
+\bframe{ Fourth Order Runge-Kutta}
+\begin{eqnarray*}
+\vec{k}_1 &=& d(\vec{x}_n)\Delta t \\
+\vec{k}_2 &=& d(\vec{x}_n + \frac{1}{2}\vec{k}_1 )\Delta t \\
+\vec{k}_3 &=& d(\vec{x}_n + \frac{1}{2}\vec{k}_2 )\Delta t \\
+\vec{k}_4 &=& d(\vec{x}_n + \vec{k}_3 )\Delta t \\
+\vec{x}_{n+1} &=& \vec{x}_n + \frac{\vec{k}_1}{6}
++ \frac{\vec{k}_2}{3}
++ \frac{\vec{k}_3}{3}
++ \frac{\vec{k}_4}{6}
+\end{eqnarray*}
+\end{frame}
+
+\bframe{Fourth order Runge Kutta}
+Tangents calculated at the dots: $\frac{\vec{k}_1}{6}+\frac{\vec{k}_2}{3}+\frac{\vec{k}_3}{3}+\frac{\vec{k}_4}{6}$
+\begin{center}
+\begin{pspicture}[unit=0.75cm,showgrid=false,arrowscale=2](-1,-1)(10,6)
+%axes
+\psline{->}(-1,0)(10,0)
+\psline{->}(0,-1)(0,6)
+
+\pscurve[linecolor=blue!50]{-}(1,2)(4.5,3.5)(10,3.5)
+\pscurve[linecolor=blue]{-}(1,1)(5,3)(10,3)
+\pscurve[linecolor=blue!50]{-}(1,-1)(5.25,1.625)(10,2.5)
+\pscurve[linecolor=blue!50]{-}(1,3)(5,4.25)(9,4)(10,3.8)
+
+\psline{->}(1,1)(8,6)
+\psline{->}(1,1)(9.5,2.25)
+\psline{->}(1,1)(9,4)
+\psline{->}(1,1)(9.5,.5)
+
+\rput(0.5,1){$\vec{x}_0$}
+
+\rput(8.5,6){$\vec{k}_1$}
+\rput(9.9,2.1){$\vec{k}_2$}
+\rput(9.5,4.5){$\vec{k}_3$}
+\rput(9.9,0.5){$\vec{k}_4$}
+
+\psdot(1,1)
+\psdot(4.5,3.5)
+\psdot(5.25,1.625)
+\psdot(9,4)
+
+\psdot[dotstyle=BoldMul,dotsize=0.4cm](9,3.1)
+\end{pspicture}
+\end{center}
+\end{frame}
+
+
+\bframe{ Fourth Order Runge-Kutta}
+\begin{itemize}
+\item
+Euler method has errors $O(\Delta t^2)$
+\item
+Midpoint method has errors $O(\Delta t^3)$
+\item
+Fourth order Runge Kutta has errors $O(\Delta t^5)$
+\item
+\begin{eqnarray*}
+0.05^2 &=& 0.00250\\
+0.10^3 &=& 0.00100\\
+0.20^5 &=& 0.00032
+\end{eqnarray*}
+\end{itemize}
+
+\end{frame}
+
+\bframe{Stepsize Matching Refresh Rate}
+\begin{itemize}
+\item The simplest approach to stepsize is to use the framerate:
+  \begin{Verbatim}[frame=single]
+framerate = 30.0
+t = 0.0
+dt = 1.0/framerate
+while !quitting:
+  clock.tick(framerate)
+  handle.input()
+  integrate(state, t, dt)
+  t += dt
+  display()
+\end{Verbatim}
+
+\item This may be OK for simple games, but if more accuracy is
+  needed the physics should use as small a timestep as possible.
+\item Also, the game refresh rate may not keep up with the nominal
+  clock rate.
+\end{itemize}
+\end{frame}
+
+
+\bframe{Stepsize Matching Refresh Rate $\times n$}
+\begin{itemize}
+\item Can also match $n$ steps to each frame:
+  \begin{Verbatim}[frame=single]
+framerate = 30.0
+t = 0.0
+dt = 1.0/framerate
+while !quitting:
+  clock.tick(framerate)
+  handle.input()
+  for i in range(n):
+     integrate(state, t, dt/n)
+  t += dt
+  display()
+\end{Verbatim}
+
+\end{itemize}
+\end{frame}
+
+\bframe{Use actual timestep}
+\begin{itemize}
+\item {\tt clock.tick} returns milliseconds since last call.
+  \begin{Verbatim}[frame=single]
+framerate = 30.0
+t = 0.0
+while !quitting:
+  dt = clock.tick(framerate) * 0.001
+  handle.input()
+  integrate(state, t, dt)
+  t += dt       
+  display()
+  \end{Verbatim}
+  \item Physics will be ``same'' regardless of computer's speed.
+\item But again physics update should be as fast as possible
+  for most realism.
+  \item We could increase the framerate, but then we'd be doing
+    unnecessary rendering.
+\end{itemize}
+\end{frame}
+
+\bframe{Use smaller time step}
+\begin{itemize}
+  \begin{Verbatim}[frame=single]
+framerate = 30.0
+t = 0.0
+dt = 0.01
+while !quitting:
+  timespan = clock.tick(framerate) * 0.001
+  handle.input()
+  while (timespan > 0):
+    integrate(state, t, dt)
+    timespan -= dt
+  display()
+\end{Verbatim}
+\item Problem with the fractional part of {\tt dt}?
+  \begin{itemize}  \item Can interpolate for fractional {\tt dt}.
+    \end{itemize}
+\item What if the physics gets behind?  Spiral of death!
+  \begin{itemize}
+  \item Make sure your physics can keep up with {\tt dt}.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\bframe{Use separate time for display and physics}
+\begin{itemize}
+  \begin{Verbatim}[frame=single]
+framerate = 30.0
+rendertime, physicstime = 0.0, 0.0
+dt = 0.01
+while !quitting:
+  rendertime += clock.tick(framerate) * 0.001
+  handle.input()
+  while (physicstime < rendertime):
+    integrate(state, physicstime, dt)
+    physicstime += dt
+  display()
+\end{Verbatim}
+\item Spiral of death still possible.
+  \begin{itemize}
+  \item Note: matching stepsize to framerate$\times n$ avoids death spiral.
+  \end{itemize}
+  
+  \item Leftover fraction of {\tt dt} is carried forward to next
+    render. 
+  \item Can interpolate again for fractional {\tt dt}.
+\item Note that {\tt dt} can be {\em longer} than time for a frame and it still
+  works.
+\end{itemize}
+\end{frame}
+
+
+\bframe{Differential Equations}
+Reading:
+\begin{itemize}
+\item Strange attractors
+\url{http://en.wikipedia.org/wiki/Attractor}
+
+\item Run: {\tt strange??.py}
+
+\item The Limits to Growth
+
+{
+\tiny
+
+\setlength{\parindent}{-1cm}
+
+%\url{http://www.csiro.au/files/files/plje.pdf}
+\url{http://www.manicore.com/fichiers/Turner_Meadows_vs_historical_data.pdf}
+
+
+%\url{http://www.csiro.au/files/files/plje.pdf}
+\url{http://www.theguardian.com/commentisfree/2014/sep/02/limits-to-growth-was-right-new-research-shows-were-nearing-collapse}
+
+
+}
+
+\end{itemize}
+\end{frame}
+
+\bframe{Symplectic Euler/Semi-implicit Euler}
+\begin{itemize}
+\item \url{http://en.wikipedia.org/wiki/Semi-implicit_Euler_method}
+\item Two forms:
+\begin{eqnarray*}
+v_{n+1} &=& v_{n} + a_{n}\Delta t\\
+p_{n+1} &=& p_{n} + v_{n+1}\Delta t
+\end{eqnarray*}
+and
+\begin{eqnarray*}
+p_{n+1} &=& p_{n} + v_{n}\Delta t\\
+v_{n+1} &=& v_{n} + a_{n+1}\Delta t
+\end{eqnarray*}
+\item Can use either one by itself, or alternate between them.
+\item Not accurate, but almost conserves energy.
+\item Easy to program when updates are by assignment.
+\end{itemize}
+\end{frame}
+
+\bframe{Verlet Integration}
+\begin{itemize}
+\item Begin with symplectic Euler
+\begin{eqnarray*}
+v_{n+1} &=& v_{n} + a_{n}\Delta t\\
+p_{n+1} &=& p_{n} + v_{n+1}\Delta t
+\end{eqnarray*}
+\item Substitute for $v_{n+1}$
+\begin{eqnarray*}
+v_{n+1} &=& v_{n} + a_{n}\Delta t\\
+p_{n+1} &=& p_{n} + (v_{n} + a_{n}\Delta t)\Delta t\\
+       &=& p_{n} + v_{n}\Delta t + a_{n}\Delta t^2
+\end{eqnarray*}
+\item Use old positions to approximate $v_n\Delta t \approx p_n - p_{n-1}$
+\begin{eqnarray*}
+p_{n+1} &=& p_{n} + v_{n}\Delta t + a_{n}\Delta t^2\\
+       &=& p_{n} + (p_{n} - p_{n-1}) + a_{n}\Delta t^2\\
+       &=& 2p_{n} - p_{n-1} + a_{n}\Delta t^2
+\end{eqnarray*}
+\item This is {\em velocityless Verlet}.  There are other versions.
+\end{itemize}
+\end{frame}
+
+\bframe{Verlet Integration}
+\begin{itemize}
+\item A Verlet based approach for 2D game physics (\url{www.gamedev.net})
+
+{\tiny\url{http://www.gamedev.net/page/resources/_/technical/math-and-physics/a-verlet-based-approach-for-2d-game-physics-r2714}}
+\item A nice web demo:
+
+{\tiny\url{http://gamedev.tutsplus.com/tutorials/implementation/simulate-fabric-and-ragdolls-with-simple-verlet-integration/}}
+\item Can be used as the basis of a collision response system.
+\item Run {\tt VerletPhysicsDemo.py}
+\end{itemize}
+\end{frame}
+
+
+\bframe{True elastic collisions}
+\begin{itemize}
+\item \url{http://en.wikipedia.org/wiki/Elastic_collision}
+\item Run {\tt BouncingBalls.py}
+\end{itemize}
+
+\end{frame}
+
+\end{document}
+
+\bframe{Advanced collision techniques}
+
+Reading:
+\begin{itemize}
+\item {\tiny
+\url{http://www.gamasutra.com/view/feature/3190/advanced_collision_detection_.php}
+}
+\item Very small objects
+\item Fast moving objects
+\item Complex objects
+\end{itemize}
+
+\end{frame}
+
+\bframe{Many objects}
+
+Reading:
+\begin{itemize}
+\item Partitioning
+\item Sweep and prune
+\item \url{http://en.wikipedia.org/wiki/Sweep_and_prune}
+\item \url{http://jitter-physics.com/wordpress/?tag=sweep-and-prune}
+\item Optional:  nice research on the algorithm:
+\url {http://danieljosephtracy.com/Daniel_Joseph_Tracy/Sweep_and_Prune.html}
+\end{itemize}
+
+\end{frame}
+
+\bframe{Use a Library}
+\begin{itemize}
+\item PyMunk: \url{http://code.google.com/p/pymunk/}
+\end{itemize}
+\end{frame}
+
+\end{document}

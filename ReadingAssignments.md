@@ -61,9 +61,17 @@
 
 ## Blender
 
-* [Textbook](http://www.cdschools.org/Page/455) Chapters 1,2,3,4,9,16,21,22
-* [Manual](https://www.blender.org/manual/)
+* [Textbook](http://www.cdschools.org/Page/455) Chapters 1,2,3,4,9,16,21,22.  Excellent guidebook.
+* [Manual](https://www.blender.org/manual/) Official documentation. Contains a good section on the game engine.
+* [youtube bge](https://www.youtube.com/watch?v=u-uQqhpXIQA&list=PLda3VoSoc_TSS7ht07sCt8zDCyAenOG6i) Excellent tutorial series focusing on games.
+* [The aMAZEing game](https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/An_aMAZEing_game_engine_tutorial) A simple but interesting game. 
+* [Miscellaneous Tutorials](http://www.tutorialsforblender3d.com/)
+* [cgmasters](https://cgmasters.net/)
+* [Bow and Arrow](https://cgmasters.net/free-tutorials/bow-and-arrow-part-2/)
+* [Python in the Game Engine](https://cgmasters.net/free-tutorials/python-scripting/)
+* [youtube channel] (https://www.youtube.com/playlist?list=PLa1F2ddGya_8V90Kd5eC5PeBjySbXWGK1)
 * Many tutorials listed in the lecture notes, and easy to find more online.
+
 
 ## Steering behaviors
 * [Reynolds](http://www.red3d.com/cwr/steer/)

@@ -770,7 +770,7 @@ while !quitting:
   t += dt       
   display()
   \end{Verbatim}
-  \item Physics will be ``same'' regardless of computer's speed.
+  \item Physics will be ``same'' regardless of computer's speed or framerate.
 \item But again physics update should be as fast as possible
   for most realism.
   \item We could increase the framerate, but then we'd be doing
@@ -817,9 +817,6 @@ while !quitting:
   display()
 \end{Verbatim}
 \item Spiral of death still possible.
-  \begin{itemize}
-  \item Note: matching stepsize to framerate$\times n$ avoids death spiral.
-  \end{itemize}
   
   \item Leftover fraction of {\tt dt} is carried forward to next
     render. 

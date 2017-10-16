@@ -63,7 +63,7 @@
 
 * [Textbook](http://www.cdschools.org/Page/455) Chapters 1,2,3,4,9,16,21,22.  Excellent guidebook.
 * [Manual](https://www.blender.org/manual/) Official documentation. Contains a good section on the game engine.
-* [youtube bge](https://www.youtube.com/watch?v=u-uQqhpXIQA&list=PLda3VoSoc_TSS7ht07sCt8zDCyAenOG6i) Excellent tutorial series focusing on games.
+* [youtube bge](https://www.youtube.com/playlist?list=PLda3VoSoc_TSS7ht07sCt8zDCyAenOG6i) Excellent tutorial series focusing on games.
 * [The aMAZEing game](https://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/An_aMAZEing_game_engine_tutorial) A simple but interesting game. 
 * [Miscellaneous Tutorials](http://www.tutorialsforblender3d.com/)
 * [cgmasters](https://cgmasters.net/)

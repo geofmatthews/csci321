@@ -42,7 +42,7 @@ def symplectic(state, dt):
 prevstate = None
 def verlet(state, dt):
     global prevstate
-    if prevstate!=None:
+    if prevstate != None:
         x,  v,  t  = state
         px, pv, pt = prevstate
         ddx, ddv, ddt = d(state)
@@ -71,7 +71,7 @@ def rungekutta(state, dt):
     k2 = d(state + k1 * dt/2)
     k3 = d(state + k2 * dt/2)
     k4 = d(state + k3 * dt)
-    newstate = state + (k1 + 2*k2 + 2*k3 + k4) * dt/6.0
+    newstate = state + (k1 + 2*k2 + 2*k3 + k4) *dt/6.0
     return newstate
 
 def main():
@@ -86,7 +86,7 @@ def main():
     m = 10.0
     k = 4.0
     t = 0
-    dt = 2
+    dt = 0.5
 
     startstate = array((20,0,t), dtype=float)
     eulerstate = startstate.copy()
@@ -101,7 +101,7 @@ def main():
         #pygame.draw.circle(background, (0,255,0), xt(midpointstate), 1)
         pygame.draw.circle(background, (0,0,255), xt(rungestate), 1)
         pygame.draw.circle(background, (0,255,255), xt(verletstate), 1)
-        pygame.draw.circle(background, (255,255,0), xt(sympstate), 1)
+        #pygame.draw.circle(background, (255,255,0), xt(sympstate), 1)
         screen.blit(background, (0,0))
         t += dt
         midpointstate = midpoint(midpointstate, dt)

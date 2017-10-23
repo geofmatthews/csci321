@@ -71,6 +71,16 @@ def run(updateFunction):
         texrow([t, x, v, accel(x)])
     print "\\end{tabular}"
 
+initialize(0.5, 2.0)
+run(Euler)
+
+
+initialize(0.5, 2.0)
+run(Midpoint)
+
+initialize(0.5, 2.0)
+run(RungeKutta)
+
 def sequence(updateFunction):
     initialize(4.0,8)
     run(updateFunction)
@@ -79,4 +89,4 @@ def sequence(updateFunction):
     initialize(1.0,5)
     run(updateFunction)
 
-sequence(RungeKutta)
+#sequence(RungeKutta)

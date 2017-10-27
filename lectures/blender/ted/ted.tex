@@ -1,0 +1,168 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\title{Modelling, Texturing, Rigging, Skinning, and Animating with
+  Blender}
+\author{Geoffrey Matthews}
+\newcommand{\bi}{\begin{enumerate}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{enumerate}}
+\newcommand{\arrow}{\ensuremath{\rightarrow}}
+
+\newcommand{\but}[1]{\framebox{\sf #1}}
+
+\begin{document}
+\maketitle
+
+\paragraph{Defaults}
+\bi
+\item Change the \but{Blender Render} dropdown at top to \but{Blender Game}.
+\item Enlarge the right hand side panel.
+\item In the Properties window, change the \but{Shading} from \but{
+  Multitexture} to \but{Glsl}.
+\item In the 3D window, change the \but{Viewport shading} from \but{
+  Solid} to \but{Texture}.
+\item  Enlarge the bottom panel and change the window from \but{
+  Timeline} to \but{Logic editor}.
+  \item Under the \but{Game} menu, enable \but{Show debug properties}.
+\item You may now want to save your defaults, with \but{File \arrow User
+  Preferences \arrow Interface \arrow Save User Settings}.
+
+  If you do this,
+  you only have to do the above steps once!
+\ei
+
+\paragraph{Modelling}
+\bi
+\item Delete the cube, then add a new one. (Default cube comes with
+  lots of stuff attached, which won't be there in general.)
+\item Name it \but{Ted}.
+\item Select Ted.
+\item Press \but{Numpad-.} to center the Ted.
+\item Press \but{Numpad-5} to enter orthographic mode.
+\item Press \but{Tab} to enter edit mode.
+\item Press \but{Z} to enter wireframe mode, or use the \but{Viewport
+  shading} popup.
+\item Scale Ted in Y with \but{S}, then \but{Y}, then mouse drag.
+\item Open the tools shelf with \but{T} toggle.
+\item Subdivide  Ted once with the \but{Add \arrow Subdivide} button
+  on the tools shelf.
+\item Smooth with \but{Deform \arrow Smooth Vertex} on the tools shelf.
+\item Go to front view with \but{Numpad-1}.
+\item Border select the top side vertices with \but{B}.
+\item Extrude them with \but{E}.
+\item Shape the head with scaling \but{S}, rotating \but{R}, and
+  translating \but{G} (for grab).
+\item Extrude and shape a left arm.
+\item Add right arm with menu item \but{Mesh \arrow Symmetrize}.
+\item Extrude and shape a left leg.
+\item Add right leg with menu item \but{Mesh \arrow Symmetrize}.
+\item Leave edit mode with \but{Tab}.
+\item Smooth the rendering with \but{Shading} set to \but{Smooth} in
+  the \but{Tools} shelf.
+\item If you like, add a \but{Subdivision surface} modifier in the
+  \but{Modifiers} button on the \but{Properties} panel.
+\ei
+
+\paragraph{Texturing}
+\bi
+\item Leave edit mode with \but{Tab} toggle.
+\item Add a material to Ted using the \but{Material} button in the
+  \but{Properties} panel.
+\item Add a texture to Ted using the \but{Texture} button in the
+  \but{Properties} panel.
+\item Make sure the texture is \but{Image or Movie} and that the
+  \but{Mapping} is \but{UV} Coordinates.
+\item Create a new texture with the \but{New} button.
+\item Name the texture \but{skin}.
+\item Drag the corner of the 3d view to creat two side-by-side panels.
+\item Change the right one to a \but{UV/Image editor}.
+\item Open the \but{skin} image in the image editor.
+\item In the 3d view, select Ted, and press \but{Tab} to enter edit
+  mode.
+\item Press \but{Z} to enter wireframe mode, or use the \but{Viewport
+  shading} popup.
+\item Go into side view with \but{Numpad-3}.
+\item Select the line down the middle with \but{B}, border select.
+\item Mark seam with \but{Mesh \arrow Edges \arrow Mark seam}.
+\item Select all with \but{A}.
+\item Unwrap with \but{Mesh \arrow UV Unwrap \arrow Unwrap}.
+\item Back in the UV editor window, change \but{View} mode to
+  \but{Paint} mode.
+\item Open the tools shelf and paint your image.
+\item Save the image with \but{Image \arrow Pack as PNG}.
+\item Also click \but{F} next to the image selection popup, to create
+  a false user of the texture.
+\item Remove the UV window.
+\ei
+
+\paragraph{Rigging}
+\bi
+\item Press \but{Z} to enter wireframe mode, or use the \but{Viewport
+  shading} popup.
+\item Select Ted.
+\item Go to front view with \but{Numpad-1}.
+\item Center the 3d cursor with \but{Shift-S \arrow Cursor to selected}
+\item Add a bone with \but{Shift-A \arrow Armature \arrow Single
+  Bone}.
+\item Go into edit mode with \but{Tab} or use the mode popup.
+\item Move the bone down in \but{Z} until its root is at hip level.
+\item Select the distal end of the bone and extrude a new bone with
+  \but{E}.
+\item Position end of new bone at the neck.
+\item Extrude a head bone from this new bone, position end at top of
+  head.
+\item In the \but{Tools} shelf, under \but{Options} tab, check
+  \but{X-Axis Mirror}.
+\item Select the top of the neck bone, and double-extrude with
+  \but{Shift-E}.
+\item Position the distal end of one of the arm bones at the shoulder
+  joint, and let the other one match it at the other shoulder.
+\item Extrude this bone again (should extrude a matching bone in the
+  other arm), and move its distal end to the end of the arm.
+\item Double-extrude from the base of the hips with \but{Shift-E}.
+\item Position the distal ends of these bones at the top of the leg.
+\item Extrude bones from these to the bottom of the leg.
+\item Go back to \but{Texture} in the viewport rendering popup.
+\item In the \but{Data} button of the armature select \but{X-Ray}
+  under the \but{Display} panel.
+\ei 
+
+
+\paragraph{Skinning}
+\bi
+\item Go back to \but{Object Mode}
+\item Select Ted's mesh.
+\item Shift-select the armature.
+\item Parent with \but{Control-P}, and \but{Set Parent to \arrow
+  Armature deform \arrow With Automatic Weights}
+\item Select the armature.
+\item Enter pose mode.
+\item Pose Ted by rotating bones to see if it worked.
+  
+\ei
+
+\paragraph{Animating}
+\bi
+\item Open a \but{Timeline} and a \but{Dope sheet} at the bottom.
+\item Press the little red \but{Record} button in the timesheet.
+\item Enter pose mode.
+\item Select all the bones and make a pose.
+\item Scrub the dope sheet forward, make another pose (use \but{Pose
+  \arrow Paste X-flipped} when you need it).
+\item Scrube forward again, make another pose.
+\item When done making poses, unclick record button.
+\item Set \but{Start} and \but{End} frames in timeline.
+\item Press \but{Play} in timeline and watch your animation.
+\item Name your animation.
+\item In the game logic, set \but{Actuator} to \but{Play} or
+  \but{Loop} your animation.
+\item {\em Don't forget to set start and end frames!}
+  \ei
+
+\end{document}
+
+
+
+  
+
+  

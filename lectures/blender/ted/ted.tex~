@@ -1,0 +1,244 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\title{Building a Simple Platformer with Blender}
+\author{Geoffrey Matthews}
+\newcommand{\bi}{\begin{enumerate}}
+\newcommand{\ii}{\item}
+\newcommand{\ei}{\end{enumerate}}
+\newcommand{\arrow}{\ensuremath{\rightarrow}}
+
+\newcommand{\but}[1]{\framebox{\sf #1}}
+
+\begin{document}
+\maketitle
+
+\paragraph{Defaults}
+\bi
+\item Change the \but{Blender Render} dropdown at top to \but{Blender Game}.
+\item Enlarge the right hand side panel.
+\item In the Properties window, change the \but{Shading} from \but{
+  Multitexture} to \but{Glsl}.
+\item In the 3D window, change the \but{Viewport shading} from \but{
+  Solid} to \but{Texture}.
+\item  Enlarge the bottom panel and change the window from \but{
+  Timeline} to \but{Logic editor}.
+  \item Under the \but{Game} menu, enable \but{Show debug properties}.
+\item You may now want to save your defaults, with \but{File \arrow User
+  Preferences \arrow Interface \arrow Save User Settings}.
+
+  If you do this,
+  you only have to do the above steps once!
+\ei
+
+\paragraph{Character movement on a plane}
+\bi
+\item Drag the cube up a couple units.
+\item Center the cursor with \but{Shift-C}
+\item Add a mesh plane with \but{Shift-A}
+\item Scale the plane with \but{S}, \but{20}, \but{Enter}.
+\item Select the cube with \but{Right-click}.
+\item In the physics button on the \but{Properties} panel, make the
+  cube's \but{Physics type} a \but{Character}.
+\item Also check the \but{Collision bounds} box.
+\item In the 3d window, press \but{P} to play the game and see if the
+  cube falls to the plane.
+\item Press \but{Escape} to stop playing the game.
+\item Select the cube with \but{Right-click}.
+\item Add a \but{Sensor} of type \but{Keyboard}.
+\item Click the \but{Key} field of the sensor and touch the \but{W}
+  key.  Also name the sensor \but{W}
+\item Add an \but{Actuator} of type \but{Motion}.
+\item Change the motion from \but{Simple motion} to \but{Character motion}.
+\item Change the \but{Y } field to \but{0.1}.
+\item Wire up the sensor to the actuator.
+\item In the 3d window press \but{P} and then in the game press \but{
+  W} to see if the character moves.
+\item Press \but{Escape} to stop playing the game.
+
+\ei
+
+\paragraph{Turning and jumping with the mouse}
+\bi
+\ii Add a \but{Mouse} sensor of type \but{Movement}
+\ii Connect it to a \but{Mouse} actuator of type \but{Look}
+\ii Disable the \but{Y} axis.
+\ii Test your game, moving and turning.
+\ii Add a \but{Keyboard} sensor for the \but{Space} key.
+\ii Activate the \but{Tap} button on the sensor.
+\ii Connect it to a \but{Movement } actuator of type \but{Character
+  motion} and select the \but{Jump} button.
+\ii Test your game, moving, turning, and jumping.
+\ii If you want higher jumps, adjust the \but{Jump force} in the \but{
+  Physics} button of the \but{Properties} panel.
+\ei
+
+\paragraph{Changing the shape of the cube}
+\bi
+\ii Select the cube.
+\ii Press \but{Tab} to enter edit mode.
+\ii Select the top two vertices on the \but{Y} side of the cube.
+\ii Scale them down a bit:  press \but{S} and then slide the mouse,
+then click.
+\ii Move them back a bit: press \but{G} and then \but{Shift-x} and
+then slide the mouse, then click
+\ii Rename the cube.  Call it \but{Bob}.
+\ei
+
+\paragraph{Add colors}
+\bi
+\ii Change the lamp to a sunlamp.  Select the lamp, and in
+the \but{Data} button on the \but{Properties} panel select \but{
+  Sun}.
+\ii Select the ground.  In the \but{Material} button on the \but{
+  Properties} panel add a new material.
+\ii Click in the \but{Diffuse} box and pick a color.
+\ii Slide the \but{Specular} intensity down to zero.
+\ii Similarly, pick a color for \but{Bob}.
+\ii Adjust your lamp intensity as desired.
+\ii You may want to add a (shadowless) backlight in the opposite
+direction of your sun.  Turn it way down.
+\ei
+
+\paragraph{Better Cameras}
+\begin{enumerate}
+  \item Camera 1:
+\bi
+\ii Select the camera.
+\ii Add an \but{Always} sensor.
+\ii Add a \but{Camera} actuator.  Pick some values for
+\but{Min}, \but{Max}, \but{Height} and \but{
+  Damping}.
+\ii Test the game,  experimenting
+with the \but{Min}, \but{Max}, \but{Height} and \but{
+  Damping} until you get it right.
+\ei
+\item Camera 2:
+  \bi
+\ii Add another camera.
+\ii Position this camera behind \but{Bob} so you can see over his/her
+shoulder:  In the \but{View} part of the \but{N-toggled} shelf in the
+3d view, click \but{Lock Camera to View}.  Then fiddle with the camera
+until you're happy.
+\ii Unclick the \but{Lock Camera to View} and move to where you can
+see both camera and Bob.
+\ii Parent the camera to Bob:
+\bi
+  \ii Select the camera
+  \ii Shift-select Bob
+  \ii Press \but{Control-P} and parent to the \but{Object}.
+\ei
+\ii Test game.
+\ii Select the camera by itself.
+\ii Add another \but{Mouse} \but{Movement} sensor.
+\ii Link it to a \but{Mouse} \but{Look} actuator.
+\ii Disable the \but{X} axis in the actuator.
+\ii Test game.
+\ei
+\ii Which camera do you like best?
+\bi
+\ii You can add a keypress to switch between cameras.
+\ei
+\ei
+
+\paragraph{Add platforms}
+\bi
+\ii Position 3d cursor.
+\ii Add a cylinder with \but{Shift-A}.  Name it \but{Platform}.
+\ii Scale \but{Z} small and scale \but{X} and \but{Y} large.
+Use \but{Shift-Z} to scale all {\em but} \but{Z}.
+\ii Add a material, color, turn down the specular.
+\ii Duplicate the platform and spread them about jumpable distances
+from each other.
+\ii Test the game.  Make one platform hard to get to.
+\ei
+
+\paragraph{Add moving obstacle}
+\bi
+\ii Add a cube just above one of the platforms.  Add material and
+color. Name it \but{Blocker}.
+\ii Add a \but{Property}:  Open the \but{N}-shelf in the \but{Logic} window,
+click the plus.  Set the type of the property to \but{Integer}.  Set
+its name to \but{Steps}.
+\ii Enable debugging for \but{Steps} by clicking the little \but{i}.
+\ii Add an \but{Always} sensor, and click the \but{True} pulse button
+(three dots on top).
+\ii Add a \but{Motion} actuator, moving \but{X} positive 0.1.
+\ii Add a \but{Property } actuator, which adds 1 to \but{Steps}.
+\ii Connect the \but{Always} sensor to {\em both} the \but{Motion} and
+\but{Property } actuators using a single \but{And} controller.
+\ii Add a \but{Property} actuator, which checks whether the \but{
+  Steps} value is greater than 120 (two seconds).
+\ii Connect this up to a \but{State} actuator which will change state
+to the lower-left corner state.  (Actually state 16.)
+\ii Switch to \but{State 16}.
+\ii Add an \but{Always} sensor (enable the \but{True} pulse button)
+that will move -0.1 in \but{X} every
+step, and add -1 to the \but{Steps} property.
+\ii Add a \but{Property} sensor that will change back to \but{State 1}
+when \but{Steps} becomes less than 0.
+\ii Test your game and see if the cube moves back and forth.
+\ii Duplicate the cube, rotate it, and place copies over other
+platforms. 
+\ei
+
+\paragraph{Ending the game}
+\bi
+\ii Select your ending platform.
+\ii Add a \but{Collision} sensor.  Set it to detect collisions with
+the \but{Material} of \but{Bob}.
+\ii Connect this sensor to a \but{Scene} actuator that \but{Restart}s
+the scene.
+\ii Test your game.
+\ei
+
+\paragraph{Game over delay}
+\bi
+\ii Select your ending platform.
+\ii Delete the \but{Scene} actuator that \but{Restart}s the game.
+\ii Replace it with a \but{State}  actuator that sets the state to the
+one in the lower left-hand corner.
+\ii Reveal the \but{State} panel using the tiny plus sign next to the
+\but{Add controller} in the logic panel.
+\ii Select the state in the lower left-hand corner.
+\ii Add a \but{Delay} actuator, with a delay of
+360 (3 seconds).
+\ii Connect the \but{Delay} actuator to a \but{Scene } actuator that
+will \but{Restart} the game.
+\ii Test your game.
+\ei
+
+\paragraph{Game Over overlay}
+\bi
+\ii Name the current scene \but{Game} by clicking inside the \but{
+  Scene } drop-down at top.
+\ii Add a new scene with the plus sign, and name it \but{Game Over
+  overlay}.
+\ii In this scene add a text object.  Edit the text to say \but{Game
+  Over}.
+\ii Convert the text to a mesh with the 3d view menu \but{
+  Object \arrow Convert to \arrow Mesh}.
+\ii Add a material and colorize the text however you like.  Edit the
+letters, scale them, go nuts.  But leave it legible.
+\ii Add a camera. 
+\ii Change the camera to an \but{ Orthographic} camera  with the \but{
+  Data} buttons in the \but{Properties} panel.
+\ii Position the camera so you can see the text (use the \but{Lock
+  Camera to View} checkbox.
+\ii Go back to the \but{Game} scene and select the final platform.
+\ii In the \but{Initial} state, where the platform has a \but{
+Collision} with Bob event, add a \but{Scene} actuator that will \but{
+Add Overlay Scene} with the \but{Game Overlay} scene
+selected.
+\ii In the other (lower-left) state, where the platform has a \but{
+  Delay} sensor, add a \but{Scene } actuator that will \but{Remove
+  Scene} with the \but{Game Overlay} scene selected.
+\ii Test the game.
+\ei
+
+\end{document}
+
+
+
+  
+
+  

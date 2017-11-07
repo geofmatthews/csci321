@@ -1,0 +1,13 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyvrb}
+\setlength{\parindent}{0cm}
+\begin{document}
+Name \hrulefill Number \hrulefill\\
+CSCI 321 Pop Quiz \#1
+
+\begin{Verbatim}[frame=single,label=For your information]
+Rect(left, top, width, height) -> Rect
+Rect((left, top), (width, height)) -> Rect
+Rect(object) -> Rect
+\end{Verbatim}

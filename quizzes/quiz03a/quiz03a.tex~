@@ -1,0 +1,32 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{tikz,amsmath}
+\usetikzlibrary{arrows}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0in}
+\newcommand{\blk}[1]{\rule{.5cm}{0cm}$#1$\rule{.5cm}{0cm}}
+
+\begin{document}
+Name\hrulefill Student Number\hrulefill \\
+CSCI321, Spring 2016, Quiz \#4
+
+
+In Blender you can create game logic without programming
+using sensors, controllers, and actuators.
+\begin{enumerate}
+
+\item Give one example of a Blender {\bf Sensor} and
+  briefly explain what it does.
+  \vfill
+  
+\item Give one example of a Blender {\bf Controller} and
+  briefly explain what it does.
+  \vfill
+  
+\item Give one example of a Blender {\bf Actuator} and
+  briefly explain what it does.
+  \vfill
+  
+\end{enumerate}
+
+\end{document}

@@ -1,16 +1,18 @@
 import numpy
 
 def force(x):
-    k = 5.0
-    return -k*x
+#    k = 5.0
+#    return -k*x
+    return 4.0*x
 def accel(x):
-    m = 10.0
+    m = 2.0
     return force(x)/m
+
 
 def initialize(newdt,newstop):
     global t,x,v,a,dt,stop
     t = 0.0
-    x = 20.0
+    x = 8.0
     v = 0.0
     a = None
     dt = newdt
@@ -59,7 +61,7 @@ def RungeKutta():
 
 def texrow(ls):
     for item in ls:
-        print round(item,1), " & ",
+        print round(item,3), " & ",
     print "\\\\"
 
 def run(updateFunction):
@@ -72,14 +74,16 @@ def run(updateFunction):
     print "\\end{tabular}"
 
 initialize(0.5, 2.0)
-run(Euler)
+#run(Euler)
 
 
-initialize(0.5, 2.0)
+initialize(0.5, 1.0)
+run(Midpoint)
+initialize(0.25, 1.0)
 run(Midpoint)
 
 initialize(0.5, 2.0)
-run(RungeKutta)
+#run(RungeKutta)
 
 def sequence(updateFunction):
     initialize(4.0,8)

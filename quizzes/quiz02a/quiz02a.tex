@@ -1,0 +1,79 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage[margin=1in]{geometry}
+\setlength{\parindent}{0cm}
+\begin{document}
+
+Name\hrulefill Number \hrulefill \\
+CSCI321, Fall 2017, Quiz\#2
+
+\begin{enumerate}
+
+  \item Euler
+
+    \begin{minipage}{0.3\textwidth}
+      \begin{tabular}{r|rrrr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0  &  20.0  &  0.0  &  -10.0  &  \\
+A & B & C & D
+\end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}{0.65\textwidth}
+The table at left is the start of an Euler integration trace
+with $\Delta t = 0.5$. What numbers replace the letters?  (You can
+leave your answers unsimplified.)
+    \end{minipage}
+    
+\begin{description}
+\item[A:]\vfill\item[B:]\vfill\item[C:]\vfill\item[D:]\vfill
+\end{description}
+
+
+\item Midpoint
+
+      \begin{minipage}{0.3\textwidth}
+\begin{tabular}{r|rrrr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.0  &  20.0  &  0.0  &  -10.0  &  \\
+0.25  &  20.0  &  -2.5  &  -10.0  &  \\
+A & B & C & D
+\end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}{0.65\textwidth}
+      The table at left is the start of a Midpoint integration trace,
+      including intermediate results,
+with $\Delta t = 0.5$. What numbers replace the letters? (You can
+leave your answers unsimplified.)
+\end{minipage}
+
+\begin{description}
+\item[A:]\vfill\item[B:]\vfill\item[C:]\vfill\item[D:]\vfill
+\end{description}
+
+
+\item Runge-Kutta
+  
+    \begin{minipage}{0.3\textwidth}
+\begin{tabular}{r|rrrr}
+$t$ & $x$ & $v$ & $a$ \\\hline
+0.00  &  20.0  &  0.0  &  -10.0  &  \\
+0.25  &  20.0  &  -2.5  &  -10.0  &  \\
+0.25  &  19.4  &  -2.5  &  -9.7  &  \\
+0.50  &  18.8  &  -4.8  &  -9.4  &  \\
+A & B & C & D 
+\end{tabular}
+    \end{minipage}\hfill
+    \begin{minipage}{0.65\textwidth}
+      The table at left is the start of a Runge-Kutta integration trace,
+      including intermediate results,
+with $\Delta t = 0.5$. What numbers replace the letters? (You can
+leave your answers unsimplified.)
+\end{minipage}
+
+\begin{description}
+\item[A:]\vfill\item[B:]\vfill\item[C:]\vfill\item[D:]\vfill
+\end{description}
+
+\end{enumerate}
+\end{document}
+

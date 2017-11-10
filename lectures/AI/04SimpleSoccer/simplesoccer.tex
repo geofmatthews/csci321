@@ -2,34 +2,20 @@
 \usetheme{Singapore}
 
 \sloppy
-%\usepackage[scaled]{helvet}
-%\usepackage{eulervm}
 
 \usepackage{multicol}
 \usepackage{fp-eval}
 \usepackage{hyperref}
 \usepackage{fancyvrb}
-%\usepackage{pstricks,pst-node,pst-tree,pst-plot,pst-3dplot,multido}
-\usepackage{graphicx}
 
-\usepackage{alltt}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
 
 
-\newcommand{\bframe}[1]{\begin{frame}[fragile]\frametitle{#1}}
 
-\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
-\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
-\newcommand{\ebnf}{\end{tabular}\end{center}}
 
-\newcommand{\myskip}{\vspace{-1em}\hrulefill}
-\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
-\newcommand{\myline}[1]{\centerline{#1}}
-\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
-\newcommand{\br}{\mbox{~}|\mbox{~}}
+\newcommand{\bframe}[1]{\begin{frame}[fragile]\frametitle{{#1}}}
 
-\definecolor{orange}{rgb}{1,.5,0}
-\definecolor{pink}{rgb}{1,.75,.75}
-\definecolor{ltblue}{rgb}{.75,.75,1}
 
 \newcommand{\be}{\begin{eqnarray*}}
 \newcommand{\ee}{\end{eqnarray*}}

@@ -1,0 +1,164 @@
+\documentclass{beamer}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{hyperref}
+\usepackage{fancyvrb}
+
+\newcommand{\bframe}[1]{\begin{frame}[fragile]{#1}}
+
+
+\newcommand{\point}[2]{
+  \draw[fill=black] (#1) circle (0.05) node[above] {\ensuremath{#2}};
+}
+
+\newcommand{\arr}[4]{
+  \draw[fill=black] (#1) circle (0.05);
+  \draw[thick,arrows=->,>=latex] (#1) -- (#2);
+  \draw (#1) node[above] {\ensuremath{#3}};
+  \draw (#2) node[above] {\ensuremath{#4}};
+}
+
+\title{Game Physics Notes 04}
+\author{CSCI 321}
+\institute{WWU}
+
+\begin{document}\small
+
+
+\bframe{~}
+\titlepage
+\end{frame}
+
+\bframe{Intersect two lines}
+\begin{itemize}
+\item Have to solve for both $s$ and $t$.
+\item Should be a better way.
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw[dotted] (10,0) -- (4,6);
+  \arr {8,2}{7,3}{q}{w};
+  \draw (5,1) node {$p+sv = q+tw$};
+\end{tikzpicture}
+
+\end{frame}
+
+
+\bframe{Intersect two lines}
+\begin{itemize}
+\item What will be true about $r-q$ if $r$ is on second line?
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw[dotted] (10,0) -- (4,6);
+  \arr {8,2}{7,3}{q}{w};
+  \arr {8,2}{7,5.5}{}{r-q};
+\end{tikzpicture}
+
+\end{frame}
+
+\bframe{Constraint on points in a line}
+\begin{itemize}
+\item Parametric {\em vs.} Implicit
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw[dotted] (10,0) -- (4,6);
+  \arr {8,2}{7,3}{q}{w};
+  \arr {8,2}{7,5.5}{}{u};
+  \draw (5,1) node {$u\cdot w = 0$};
+\end{tikzpicture}
+
+\end{frame}
+
+
+\bframe{Intersect two lines}
+
+\begin{itemize}
+\item use parametric for one and implicit for the other.
+\item Solve for $s$ in the resulting equations.
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw[dotted] (10,0) -- (4,6);
+  \arr {8,2}{7,3}{q}{w};
+  \arr {8,2}{7,5.5}{}{r-q};
+  \draw (5,1) node {$(r-q)\cdot w = 0$};
+  \draw (5,0) node {$((p+sv)-q)\cdot w = 0$};
+\end{tikzpicture}
+
+\end{frame}
+
+\bframe{Intersect line and circle}
+\begin{itemize}
+\item What is the implicit representation of a circle?
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw (7,4) circle (2);
+  \point{7,4}{c};
+  \draw (7,4) -- node[above] {$r$} (9,4);
+  \point{5.08,4.55}{x_1};
+  \point{7.7125,5.87}{x_2};
+\end{tikzpicture}
+
+\end{frame}
+
+\bframe{Intersect line and circle}
+\begin{itemize}
+\item What is the parametric representation of a line?
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw (7,4) circle (2);
+  \point{7,4}{c};
+  \draw (7,4) -- node[above] {$r$} (9,4);
+  \point{5.08,4.55}{x_1};
+  \point{7.7125,5.87}{x_2};
+  \draw (5,1) node {$|x_1 - c|^2 = r^2$};
+  \draw (5,0) node {$|x_2 - c|^2 = r^2$};
+\end{tikzpicture}
+
+\end{frame}
+
+\bframe{Intersect line and circle}
+\begin{itemize}
+\item Solve for $s$ in the quadratic equation.
+\item $x_1 = p + s_1v$
+\item $x_2 = p + s_2v$
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw (7,4) circle (2);
+  \point{7,4}{c};
+  \draw (7,4) -- node[above] {$r$} (9,4);
+  \point{5.08,4.55}{x_1};
+  \point{7.7125,5.87}{x_2};
+  \draw (5,1) node {$|(p+sv)-c|^2 = r^2$};
+\end{tikzpicture}
+
+\end{frame}
+
+\end{document}

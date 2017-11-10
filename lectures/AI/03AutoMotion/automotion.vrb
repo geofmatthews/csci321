@@ -1,19 +1,12 @@
-\frametitle{Prioritized Dithering}
-\begin{verbatim}
-prWallAvoid = 0.9
-prSeparation = 0.8
-prWander = 0.5
-
-if random.uniform() > prWallAvoid:
-  SteeringForce.Add( WallAvoid() * dWallAvoid / prWallAvoid )
-  return SteeringForce.Truncate(MAX_STEERING_FORCE)
-
-if random.uniform() > prSeparation:
-  SteeringForce.Add( Separation() * dSeparation / prSeparation )
-  return SteeringForce.Truncate(MAX_STEERING_FORCE)
-
-if random.uniform() > prWander:
-  SteeringForce.Add( Wander() * dWander / prWander )
-  return SteeringForce.Truncate(MAX_STEERING_FORCE)
-\end{verbatim}
+\frametitle{Smoothing}
+\begin{itemize}
+\item Occasionally bots appear to shudder.
+\item Different steering takes place every other frame:
+  \begin{itemize}
+  \item Toward object, away from obstacle, toward object, away from
+    obstacle, ...
+  \end{itemize}
+\item Simple solution:  decouple bot heading from actual velocity.
+\item Bot heading is average velocity of last few steps.
+\end{itemize}
 

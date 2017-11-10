@@ -8,7 +8,9 @@
 \usepackage{fp-eval}
 \usepackage{hyperref}
 \usepackage{fancyvrb}
-\usepackage{pstricks,pst-node,pst-tree,multido}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+
 \usepackage{graphicx}
 
 \usepackage{alltt}
@@ -16,29 +18,6 @@
 
 \newcommand{\bframe}[1]{\begin{frame}[fragile]{#1}}
 
-\newcommand{\bbnf}{\begin{center}\begin{tabular}{rcl}}
-\newcommand{\bnf}[2]{#1 & ::= & #2 \\}
-\newcommand{\ebnf}{\end{tabular}\end{center}}
-
-\newcommand{\myskip}{\vspace{-1em}\hrulefill}
-\newcommand{\myrule}[1]{\vspace{-1ex}\centerline{\rule{#1cm}{1pt}}}
-\newcommand{\myline}[1]{\centerline{#1}}
-\newcommand{\bkt}[1]{\ensuremath{\langle\mbox{#1}\rangle}}
-\newcommand{\br}{\mbox{~}|\mbox{~}}
-
-\definecolor{orange}{rgb}{1,.5,0}
-\definecolor{pink}{rgb}{1,.75,.75}
-\definecolor{ltblue}{rgb}{.75,.75,1}
-
-\newcommand{\be}{\begin{eqnarray*}}
-\newcommand{\ee}{\end{eqnarray*}}
-
-\AtBeginSection[]
-{
-\bframe{Outline}
-\tableofcontents[currentsection]
-\end{frame}
-}
 
 \title{Steering Behaviors}
 \author{CSCI 321\\
@@ -58,10 +37,6 @@ based on {\em Programming Game AI by Example,} Mat Buckland, 2005}
 \item The original:\\
 \url{https://www.red3d.com/cwr/steer/} 
 \end{itemize}
-\end{frame}
-
-\bframe{Finding the intersection of two lines}
-
 \end{frame}
 
 
@@ -122,6 +97,19 @@ return SteeringForce.Truncate(MAX_STEERING_FORCE)
 
 \end{frame}
 
+
+\bframe{Weighted Truncated Running Sum with Prioritization}
+\begin{itemize}
+\item
+  Wall avoidance more important than vehicle alignment.
+\item
+  Separation more important than align.
+\item
+  If any one force becomes large, the lower
+  priority forces are not even considered.
+\end{itemize}
+\end{frame}
+
 \bframe{Prioritized Dithering}
 \begin{verbatim}
 prWallAvoid = 0.9
@@ -142,6 +130,59 @@ if random.uniform() > prWander:
 \end{verbatim}
 
 \end{frame}
+
+\bframe{Ensuring Zero Overlap}
+
+\begin{itemize}
+\item Add simple collision detection using bounding circles.
+\item Move colliding objects along line between centers until not colliding
+\item No other physics (bouncing, {\em etc.}) added.
+\end{itemize}
+
+\begin{tikzpicture}[scale=0.5]
+  \draw[fill=lightgray] (0,0) -- (0,2) -- (4,1) -- cycle;
+  \draw (2,1) circle (2.2);
+  \draw[fill=lightgray] (4.5,1.5) -- (3.5,5.5) -- (5.5,5.5) -- cycle;
+  \draw (4.5,3.5) circle (2.2);
+  \draw[thick,arrows=<->,>=latex] (4.5,3.5) -- (2,1);
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}[scale=0.5]
+  \draw[fill=lightgray] (0,0) -- (0,2) -- (4,1) -- cycle;
+  \draw (2,1) circle (2.2);
+  \draw[fill=lightgray] (5.125,2.125) -- (4.125,6.125) -- (6.125,6.125) -- cycle;
+  \draw (5.125,4.125) circle (2.2);
+  \draw[thick,arrows=<->,>=latex] (5.125,4.125) -- (2,1);
+\end{tikzpicture}
+  
+\end{frame}
+
+\bframe{Spatial Partitioning}
+\begin{itemize}
+\item Partition space into $O(n)$ cells.
+\item Each object updates its cell location.
+\item Only check for collisions in cells which overlap collision bound
+  circle.
+\item Reduces $O(n^2)$ to $O(n)$.
+\item {\tt Another Big Shoal.exe}
+\end{itemize}
+
+\end{frame}
+
+\bframe{Smoothing}
+\begin{itemize}
+\item Occasionally bots appear to shudder.
+\item Different steering takes place every other frame:
+  \begin{itemize}
+  \item Toward object, away from obstacle, toward object, away from
+    obstacle, ...
+  \end{itemize}
+\item Simple solution:  decouple bot heading from actual velocity.
+\item Bot heading is average velocity of last few steps.
+\end{itemize}
+
+\end{frame}
+
 
 
 

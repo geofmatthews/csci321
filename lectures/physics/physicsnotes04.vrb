@@ -1,0 +1,19 @@
+\frametitle{Intersect line and circle}
+\begin{itemize}
+\item Solve for $s$ in the quadratic equation.
+\item $x_1 = p + s_1v$
+\item $x_2 = p + s_2v$
+\end{itemize}
+
+\begin{tikzpicture}[>=latex]
+%  \draw[lightgray,very thin] (0,0) grid (10,6);
+  \draw[dotted] (0,2) -- (8,6);
+  \arr {2,3}{4,4}{p}{v};
+  \draw (7,4) circle (2);
+  \point{7,4}{c};
+  \draw (7,4) -- node[above] {$r$} (9,4);
+  \point{5.08,4.55}{x_1};
+  \point{7.7125,5.87}{x_2};
+  \draw (5,1) node {$|(p+sv)-c|^2 = r^2$};
+\end{tikzpicture}
+

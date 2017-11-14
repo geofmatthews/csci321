@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Skein rootNode="node-0x15ee790" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Inform 7</generator>
+  <activeNode nodeId="node-0x7f2d9000d400"/>
+  <item nodeId="node-0x15ee790">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+Murder in the Kitchen
+An Interactive Fiction by Geoffrey Matthews
+Release 1 / Serial number 171114 / Inform 7 build 6M62 (I6/v6.33 lib 6/12N) SD
+
+kitchen
+Ratty gingham curtains flutter loosely in the window of the drab yellow kitchen.
+
+You can see a table (on which is a knife) and a fridge (closed) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124100"/>
+      <child nodeId="node-0x7f2d14124580"/>
+      <child nodeId="node-0x7f2d14124a00"/>
+      <child nodeId="node-0x7f2d180c85f0"/>
+      <child nodeId="node-0x15eea90"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124100">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">kitchen
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124280"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124280">
+    <command xml:space="preserve">get knife</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124400"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124400">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f2d14124580">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124700"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124700">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">kitchen
+You can see a table (on which is a knife) and a fridge (in which are some bread and some meat) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f2d14124a00">
+    <command xml:space="preserve">open fridge</command>
+    <result xml:space="preserve">You open the fridge, revealing some bread and some meat.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124880"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124880">
+    <command xml:space="preserve">make sandwich</command>
+    <result xml:space="preserve">You need meat.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124b80"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124b80">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">kitchen
+Ratty gingham curtains flutter loosely in the window of the drab yellow kitchen.
+
+You can see a table (on which is a knife) and a fridge (in which are some bread and some meat) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d14124d00"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d14124d00">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x7f2d180c85f0">
+    <command xml:space="preserve">test me</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] x knife
+On inspection, there appear to be rusty stains on the blade, and the initials &quot;GM&quot; on the handle.
+
+&gt;[2] i
+You are carrying nothing.
+
+&gt;[3] make sandwich
+You need meat.
+
+&gt;[4] i
+You are carrying nothing.
+
+&gt;[5] open fridge
+You open the fridge, revealing some bread and some meat.
+
+&gt;[6] get meat
+Taken.
+
+&gt;[7] make sandwich
+You need bread.
+
+&gt;[8] get bread
+Taken.
+
+&gt;[9] i
+You are carrying:
+  some bread
+  some meat
+
+&gt;[10] make sandwich
+You made a sandwich!
+
+&gt;[11] i
+You are carrying:
+  a sandwich
+
+&gt;[12] l
+kitchen
+Ratty gingham curtains flutter loosely in the window of the drab yellow kitchen.
+
+You can see a table (on which is a knife) and a fridge (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d180c8a70"/>
+      <child nodeId="node-0x15eef10"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d180c8a70">
+    <command xml:space="preserve">test sandwich</command>
+    <result xml:space="preserve">(Testing.)
+
+&gt;[1] i
+You are carrying nothing.
+
+&gt;[2] make sandwich
+You need meat.
+
+&gt;[3] i
+You are carrying nothing.
+
+&gt;[4] open fridge
+You open the fridge, revealing some bread and some meat.
+
+&gt;[5] get meat
+Taken.
+
+&gt;[6] make sandwich
+You need bread.
+
+&gt;[7] get bread
+Taken.
+
+&gt;[8] i
+You are carrying:
+  some bread
+  some meat
+
+&gt;[9] make sandwich
+You made a sandwich!
+
+&gt;[10] i
+You are carrying:
+  a sandwich
+
+&gt;[11] l
+kitchen
+You can see a table (on which is a knife) and a fridge (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x15eef10">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying:
+  a sandwich
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d180c8770"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d180c8770">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">kitchen
+Ratty gingham curtains flutter loosely in the window of the drab yellow kitchen.
+
+You can see a table (on which is a knife) and a fridge (empty) here.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d180c8bf0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d180c8bf0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d180c88f0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d180c88f0">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+    <children>
+      <child nodeId="node-0x7f2d9000d400"/>
+    </children>
+  </item>
+  <item nodeId="node-0x7f2d9000d400">
+    <command xml:space="preserve">z</command>
+    <result xml:space="preserve">Time passes.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+  <item nodeId="node-0x15eea90">
+    <command xml:space="preserve">x knife</command>
+    <result xml:space="preserve">On inspection, there appear to be rusty stains on the blade, and the initials &quot;GM&quot; on the handle.
+
+&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>NO</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <annotation xml:space="preserve"></annotation>
+  </item>
+</Skein>

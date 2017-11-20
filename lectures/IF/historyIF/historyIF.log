@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**aboutIF
-(./aboutIF.tex
+**historyIF
+(./historyIF.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -755,8 +755,8 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \c@FancyVerbLine=\count163
 \FV@StepNumber=\count164
 \FV@OutFile=\write5
-) (./aboutIF.aux)
-\openout1 = `aboutIF.aux'.
+) (./historyIF.aux)
+\openout1 = `historyIF.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
@@ -851,9 +851,9 @@ LaTeX Info: Redefining \ref on input line 23.
 LaTeX Info: Redefining \pageref on input line 23.
 LaTeX Info: Redefining \nameref on input line 23.
 
-(./aboutIF.out) (./aboutIF.out)
+(./historyIF.out) (./historyIF.out)
 \@outlinefile=\write6
-\openout6 = `aboutIF.out'.
+\openout6 = `historyIF.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 23.
@@ -923,7 +923,7 @@ orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Info: Redefining \includegraphics on input line 23.
- (./aboutIF.nav)
+ (./historyIF.nav)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 26.
@@ -931,426 +931,168 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+ (./historyIF.vrb
+LaTeX Font Info:    Try loading font information for U+msa on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)) [2
+)
+<MapofMammothCave.png, id=44, 759.83875pt x 511.9125pt>
+File: MapofMammothCave.png Graphic file (type png)
+
+<use MapofMammothCave.png>
+Package pdftex.def Info: MapofMammothCave.png used on input line 7.
+(pdftex.def)             Requested size: 759.83688pt x 511.91125pt.
+) [2
+
+ <./MapofMammothCave.png (PNG copy)>]
+\openout4 = `historyIF.vrb'.
+
+
+(./historyIF.vrb) [3
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [3
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [4
+ (./historyIF.vrb) [4
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [5
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [6
+ (./historyIF.vrb) [5
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [7
 
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [8
+(./historyIF.vrb) [6
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [9
+ (./historyIF.vrb
+<Adventureland_Cover.png, id=173, 220.825pt x 330.23375pt>
+File: Adventureland_Cover.png Graphic file (type png)
 
-]
-\openout4 = `aboutIF.vrb'.
+<use Adventureland_Cover.png>
+Package pdftex.def Info: Adventureland_Cover.png used on input line 3.
+(pdftex.def)             Requested size: 153.64493pt x 229.78136pt.
 
- (./aboutIF.vrb) [10
-
-]
-\openout4 = `aboutIF.vrb'.
-
-
-(./aboutIF.vrb) [11
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb
-<IFfigure01.png, id=301, 1449.415pt x 935.495pt>
-File: IFfigure01.png Graphic file (type png)
- <use IFfigure01.png>
-Package pdftex.def Info: IFfigure01.png used on input line 4.
-(pdftex.def)             Requested size: 307.28987pt x 198.3297pt.
-) [12
-
- <./IFfigure01.png>]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [13
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [14
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb)
-[15
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [16
-
-] (./aboutIF.vrb) [17
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [18
-
-]
-\openout4 = `aboutIF.vrb'.
-
-
-(./aboutIF.vrb) [19
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [20
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [21
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb)
-[22
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [23
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [24
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [25
-
-]
-\openout4 = `aboutIF.vrb'.
-
-
-(./aboutIF.vrb) [26
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [27
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [28
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb
-<IFfigure02.png, id=735, 1838.87pt x 349.305pt>
-File: IFfigure02.png Graphic file (type png)
- <use IFfigure02.png>
-Package pdftex.def Info: IFfigure02.png used on input line 2.
-(pdftex.def)             Requested size: 459.71637pt x 87.32603pt.
-
-Overfull \hbox (152.4265pt too wide) in paragraph at lines 2--4
-[][][]  
+Overfull \hbox (5.0pt too wide) in paragraph at lines 3--5
+[][]  
  []
 
-) [29
+)
+Overfull \vbox (4.10825pt too high) detected at line 101
+ []
 
- <./IFfigure02.png>]
-\openout4 = `aboutIF.vrb'.
+[7
 
- (./aboutIF.vrb) [30
+ <./Adventureland_Cover.png>]
+\openout4 = `historyIF.vrb'.
 
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb
-<IFfigure03.png, id=787, 803.0pt x 317.185pt>
-File: IFfigure03.png Graphic file (type png)
- <use IFfigure03.png>
-Package pdftex.def Info: IFfigure03.png used on input line 2.
-(pdftex.def)             Requested size: 200.74951pt x 79.29605pt.
-) [31
-
- <./IFfigure03.png>]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb <IFfigure04.png, id=814, 943.525pt x 610.28pt>
-File: IFfigure04.png Graphic file (type png)
-
-<use IFfigure04.png>
-Package pdftex.def Info: IFfigure04.png used on input line 5.
-(pdftex.def)             Requested size: 235.88066pt x 152.56963pt.
-) [32
-
- <./IFfigure04.png>]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [33
+ (./historyIF.vrb) [8
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
-
-(./aboutIF.vrb) [34
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [35
+ (./historyIF.vrb)
+[9
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [36
+ (./historyIF.vrb <ZorkI.jpg, id=252, 301.125pt x 359.3425pt>
+File: ZorkI.jpg Graphic file (type jpg)
 
-]
-\openout4 = `aboutIF.vrb'.
+<use ZorkI.jpg>
+Package pdftex.def Info: ZorkI.jpg used on input line 4.
+(pdftex.def)             Requested size: 153.64493pt x 183.35545pt.
 
- (./aboutIF.vrb)
-[37
+Overfull \hbox (5.0pt too wide) in paragraph at lines 4--6
+[][]  
+ []
 
-]
-\openout4 = `aboutIF.vrb'.
+) [10
 
- (./aboutIF.vrb) [38
+ <./ZorkI.jpg>]
+\openout4 = `historyIF.vrb'.
 
-]
-\openout4 = `aboutIF.vrb'.
+ (./historyIF.vrb
+<LeisureSuitLarry.jpg, id=278, 642.4pt x 779.91376pt>
+File: LeisureSuitLarry.jpg Graphic file (type jpg)
 
- (./aboutIF.vrb) [39
+<use LeisureSuitLarry.jpg>
+Package pdftex.def Info: LeisureSuitLarry.jpg used on input line 3.
+(pdftex.def)             Requested size: 642.39844pt x 779.91187pt.
+) [11
 
-]
-\openout4 = `aboutIF.vrb'.
+ <./LeisureSuitLarry.jpg>]
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [40
-
-]
-\openout4 = `aboutIF.vrb'.
-
-
-(./aboutIF.vrb) [41
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [42
+ (./historyIF.vrb)
+[12
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [43
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb)
-[44
+ (./historyIF.vrb) [13
 
 ]
-\openout4 = `aboutIF.vrb'.
+\openout4 = `historyIF.vrb'.
 
- (./aboutIF.vrb) [45
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [46
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [47
-
-]
-\openout4 = `aboutIF.vrb'.
-
-
-(./aboutIF.vrb) [48
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [49
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [50
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb)
-[51
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [52
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [53
-
-] (./aboutIF.vrb) [54
-
-]
-(./aboutIF.vrb) [55
-
-] (./aboutIF.vrb) [56
-
-] (./aboutIF.vrb) [57
-
-] (./aboutIF.vrb)
-[58
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [59
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [60
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [61
-
-]
-\openout4 = `aboutIF.vrb'.
-
-
-(./aboutIF.vrb) [62
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [63
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [64
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb)
-[65
-
-] (./aboutIF.vrb) [66
-
-] (./aboutIF.vrb) [67
-
-]
-\openout4 = `aboutIF.vrb'.
-
- (./aboutIF.vrb) [68
-
-]
-(./aboutIF.vrb) [69
-
-] (./aboutIF.vrb) [70
-
-] (./aboutIF.vrb) [71
-
-] (./aboutIF.vrb)
-[72
-
-] (./aboutIF.vrb) [73
+ (./historyIF.vrb) [14
 
 ]
 \tf@nav=\write7
-\openout7 = `aboutIF.nav'.
+\openout7 = `historyIF.nav'.
 
 \tf@toc=\write8
-\openout8 = `aboutIF.toc'.
+\openout8 = `historyIF.toc'.
 
 \tf@snm=\write9
-\openout9 = `aboutIF.snm'.
+\openout9 = `historyIF.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 801.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 801.
- (./aboutIF.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 801.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 801.
-Package rerunfilecheck Info: File `aboutIF.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 187.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 187.
+ (./historyIF.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
+Package rerunfilecheck Info: File `historyIF.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 801.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 187.
  ) 
 Here is how much of TeX's memory you used:
- 17354 strings out of 494910
- 326110 string characters out of 6179836
- 395496 words of memory out of 5000000
- 19967 multiletter control sequences out of 15000+600000
- 11950 words of font info for 44 fonts, out of 8000000 for 9000
+ 17020 strings out of 494910
+ 322869 string characters out of 6179836
+ 393508 words of memory out of 5000000
+ 19869 multiletter control sequences out of 15000+600000
+ 10773 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,14n,51p,401b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,14n,51p,403b,551s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/symbols/msam7.pfb>
-Output written on aboutIF.pdf (73 pages, 246448 bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on historyIF.pdf (14 pages, 411472 bytes).
 PDF statistics:
- 1943 PDF objects out of 2073 (max. 8388607)
- 1831 compressed objects within 19 object streams
- 147 named destinations out of 1000 (max. 500000)
+ 411 PDF objects out of 1000 (max. 8388607)
+ 374 compressed objects within 4 object streams
+ 29 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 

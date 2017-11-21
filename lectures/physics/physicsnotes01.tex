@@ -53,6 +53,13 @@
 \pstThreeDLine[arrows=->,linecolor=blue](0,0,0)(#1)
 }
 
+\newcommand{\mylink}[1]{
+  {\footnotesize
+    \url{#1}
+    }
+}
+
+
 \AtBeginSection[]
 {
 \bframe{Outline}
@@ -71,22 +78,21 @@
 \titlepage
 \end{frame}
 
-
 \bframe{References}
 
-{\footnotesize
-  \begin{itemize}
-  \item
-    \url{http://tutorial.math.lamar.edu/Classes/CalcII/VectorsIntro.aspx}
-  \item
-    \url{http://chortle.ccsu.edu/vectorlessons/vectorindex.html}
-  \item
-    \url{https://www.mathsisfun.com/algebra/vectors.html}
-  \item
-    \url{https://unity3d.com/learn/tutorials/topics/scripting/vector-maths  }
-  \end{itemize}
-}
+
+\mylink{http://chortle.ccsu.edu/vectorlessons/vectorindex.html}
+
+\mylink{http://tutorial.math.lamar.edu/Classes/CalcII/VectorsIntro.aspx}
+
+\mylink{https://www.mathsisfun.com/algebra/vectors.html}
+
+\mylink{http://emweb.unl.edu/Math/mathweb/vectors/vectors.html}
+
+\mylink{https://unity3d.com/learn/tutorials/topics/scripting/vector-maths}
+
 \end{frame}
+
 
 \bframe{numpy}
 A nice python library for dealing with mathematical vectors and matrices.

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2017.10.4)  30 NOV 2017 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=latex 2017.10.4)  30 NOV 2017 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**ravennotes02
-(./ravennotes02.tex
+**ravennotes03
+(./ravennotes03.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamer.cls
@@ -1044,8 +1044,8 @@ File: pstricks-add.cfg 2005/01/10 v0.1 addtional user stuff (hv)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 1997/06/16 v2.0g defines alltt environment
-) (./ravennotes02.aux)
-\openout1 = `ravennotes02.aux'.
+) (./ravennotes03.aux)
+\openout1 = `ravennotes03.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
@@ -1112,9 +1112,9 @@ LaTeX Info: Redefining \ref on input line 53.
 LaTeX Info: Redefining \pageref on input line 53.
 LaTeX Info: Redefining \nameref on input line 53.
 
-(./ravennotes02.out) (./ravennotes02.out)
+(./ravennotes03.out) (./ravennotes03.out)
 \@outlinefile=\write6
-\openout6 = `ravennotes02.out'.
+\openout6 = `ravennotes03.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 53.
@@ -1184,10 +1184,10 @@ orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 LaTeX Info: Redefining \includegraphics on input line 53.
- (./ravennotes02.nav)
-\openout4 = `ravennotes02.vrb'.
+ (./ravennotes03.nav)
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb)
+ (./ravennotes03.vrb)
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 57.
@@ -1195,9 +1195,9 @@ LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 [1
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb
+ (./ravennotes03.vrb
 LaTeX Font Info:    Try loading font information for OMS+cmss on input line 3.
 LaTeX Font Info:    No file OMScmss.fd. on input line 3.
 
@@ -1209,101 +1209,154 @@ LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
 ) [2
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb
-LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+ (./ravennotes03.vrb
+LaTeX Font Info:    Try loading font information for U+msa on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+LaTeX Font Info:    Try loading font information for U+msb on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )) [3
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
 
-(./ravennotes02.vrb) [4
-
-]
-\openout4 = `ravennotes02.vrb'.
-
- (./ravennotes02.vrb) [5
+(./ravennotes03.vrb) [4
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb) [6
-
-]
-\openout4 = `ravennotes02.vrb'.
-
-
-(./ravennotes02.vrb) [7
+ (./ravennotes03.vrb) [5
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb) [8
-
-]
-\openout4 = `ravennotes02.vrb'.
-
- (./ravennotes02.vrb) [9
+ (./ravennotes03.vrb) [6
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
 
-(./ravennotes02.vrb) [10
-
-]
-\openout4 = `ravennotes02.vrb'.
-
- (./ravennotes02.vrb) [11
+(./ravennotes03.vrb) [7
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb)
+ (./ravennotes03.vrb) [8
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [9
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+
+(./ravennotes03.vrb) [10
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [11
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb)
 [12
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb) [13
-
-]
-\openout4 = `ravennotes02.vrb'.
-
- (./ravennotes02.vrb) [14
+ (./ravennotes03.vrb) [13
 
 ]
-\openout4 = `ravennotes02.vrb'.
+\openout4 = `ravennotes03.vrb'.
 
- (./ravennotes02.vrb)
+ (./ravennotes03.vrb) [14
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb)
 [15
 
 ]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [16
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [17
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb)
+[18
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [19
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [20
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb)
+[21
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [22
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [23
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb)
+[24
+
+]
+\openout4 = `ravennotes03.vrb'.
+
+ (./ravennotes03.vrb) [25
+
+]
 \tf@nav=\write7
-\openout7 = `ravennotes02.nav'.
+\openout7 = `ravennotes03.nav'.
 
 \tf@toc=\write8
-\openout8 = `ravennotes02.toc'.
+\openout8 = `ravennotes03.toc'.
 
 \tf@snm=\write9
-\openout9 = `ravennotes02.snm'.
+\openout9 = `ravennotes03.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 305.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 305.
- (./ravennotes02.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 305.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 305.
-Package rerunfilecheck Info: File `ravennotes02.out' has not changed.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 544.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 544.
+ (./ravennotes03.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 544.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 544.
+Package rerunfilecheck Info: File `ravennotes03.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
@@ -1313,15 +1366,15 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 305.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 544.
  ) 
 Here is how much of TeX's memory you used:
- 21230 strings out of 494911
- 389778 string characters out of 6179862
- 563806 words of memory out of 5000000
- 23975 multiletter control sequences out of 15000+600000
- 10377 words of font info for 38 fonts, out of 8000000 for 9000
+ 21209 strings out of 494911
+ 389456 string characters out of 6179862
+ 604624 words of memory out of 5000000
+ 23935 multiletter control sequences out of 15000+600000
+ 10020 words of font info for 37 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 48i,15n,58p,564b,983s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,15n,51p,588b,1203s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ravennotes02.dvi (15 pages, 154000 bytes).
+Output written on ravennotes03.dvi (25 pages, 626556 bytes).

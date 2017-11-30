@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.4)  9 NOV 2017 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.4)  27 NOV 2017 08:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1369,10 +1369,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 429.
  ) 
 Here is how much of TeX's memory you used:
- 21206 strings out of 494910
- 416321 string characters out of 6179836
+ 21273 strings out of 494910
+ 416848 string characters out of 6179836
  495455 words of memory out of 5000000
- 23882 multiletter control sequences out of 15000+600000
+ 23949 multiletter control sequences out of 15000+600000
  10193 words of font info for 38 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  48i,15n,58p,408b,534s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1386,7 +1386,7 @@ ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmtt10.pfb>
-Output written on simplesoccer.pdf (31 pages, 388727 bytes).
+Output written on simplesoccer.pdf (31 pages, 388554 bytes).
 PDF statistics:
  251 PDF objects out of 1000 (max. 8388607)
  188 compressed objects within 2 object streams
